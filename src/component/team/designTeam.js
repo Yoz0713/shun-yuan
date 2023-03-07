@@ -38,7 +38,7 @@ export const DesignTeam = () => {
                 duration: 0.6,
                 opacity: 0,
             }, "<+0.3")
-        })
+        }, [animateRef])
         return () => ctx.revert()
     }, [])
     return (

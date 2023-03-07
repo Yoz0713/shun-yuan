@@ -118,6 +118,10 @@
                             line-height: normal;
                             font-weight: 700;
                             cursor: pointer;
+
+                            a {
+                                color: #000;
+                            }
                         }
 
                         &> :not(:last-child) {
@@ -276,6 +280,243 @@
             left: 2.5vw;
             bottom: 0;
             width: 40%;
+        }
+    }
+
+    .portfolio {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+        .left {
+            position: relative;
+            width: 43%;
+            height: 100%;
+
+            .slice-bg {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 100%;
+                height: 97%;
+                z-index: 2;
+
+                img {
+                    width: 7.5vw;
+                    height: auto;
+                    object-fit: contain;
+                }
+
+                & :nth-child(1),
+                & :nth-child(3) {
+                    align-self: flex-start;
+                    margin-top: 10vw;
+                }
+
+                & :nth-child(2) {
+                    margin: 4vw 3.65vw 0;
+                    align-self: flex-start;
+                }
+            }
+
+            .square-bg {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 100%;
+
+                img {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: auto;
+                    height: 95%;
+                }
+            }
+
+            .more {
+                position: absolute;
+                border: 1px solid $gold_color;
+                padding: 0 2.2vw 0 0.9vw;
+                width: fit-content;
+                line-height: 1.8;
+                cursor: pointer;
+                right: 6.8vw;
+                bottom: 4.43vw;
+                pointer-events: auto;
+
+                p {
+                    @include para-ch();
+                    color: $gold_color;
+                    font-weight: 500;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    right: 0.7vw;
+                    width: 18%;
+                    height: 1px;
+                    background-color: $gold_color;
+                }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    right: 0.7vw;
+                    width: 5%;
+                    height: 1px;
+                    background-color: $gold_color;
+                    transform-origin: right center;
+                    transform: rotate(35deg);
+                }
+
+                &:hover::after {
+                    animation-name: more;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                }
+
+                &:hover::before {
+                    animation-name: more2;
+                    animation-duration: 1.5s;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+
+        .right {
+            width: 50%;
+            margin-right: 6.8vw;
+            padding-top: 4.7vw;
+
+            .paraBox {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 100%;
+                margin-bottom: 4vw;
+
+                .title {
+                    width: 50%;
+                    margin-bottom: 0.9vw;
+
+                    h3 {
+                        color: $gold_color;
+                        font-size: var(--ch_m_text);
+                        font-weight: 500;
+                        text-align: end;
+                        letter-spacing: 0.1em;
+                    }
+                }
+
+                .para {
+                    width: 62%;
+
+                    p {
+                        @include para-ch();
+                        font-size: var(--ch_xs_test);
+                        font-weight: 600;
+                        line-height: 1.5;
+                        text-align: justify;
+
+                    }
+
+                    & :nth-child(1) {
+                        margin-bottom: 0.5vw;
+                    }
+                }
+            }
+
+            .imgBox {
+                display: flex;
+                justify-content: flex-end;
+                position: relative;
+
+                img {
+                    width: 40vw;
+                }
+
+                p {
+                    position: absolute;
+                    font-size: var(--ch_s_text);
+                    font-weight: 900;
+                    color: #000000c7;
+
+                    span {
+                        margin: 0 0.7vw;
+                        font-size: var(--ch_ml_text);
+                        color: $gold_color;
+                        font-weight: 700;
+                    }
+                }
+
+                .taipei {
+                    left: 19vw;
+                    top: -0.8vw;
+                }
+
+                .newTaipei {
+                    left: 15.8vw;
+                    top: 3.8vw;
+                }
+
+                .taoyuan {
+                    left: 10.6vw;
+                    top: 7.4vw;
+                }
+            }
+        }
+
+        .total {
+            position: absolute;
+            bottom: 8.6vw;
+            right: 34.4vw;
+
+
+            div {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+
+                p {
+                    font-size: var(--ch_ml_text);
+                    font-weight: 700;
+                    color: #00303C;
+                    letter-spacing: 0.02em;
+                }
+
+                img {
+                    margin: 0 1.59vw;
+                }
+            }
+
+            .case {
+                img {
+                    width: 6.42vw;
+                }
+            }
+
+            .household {
+                margin-top: 2.4vw;
+
+                img {
+                    width: 14.9vw;
+                }
+            }
         }
     }
 }

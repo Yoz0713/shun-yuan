@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
+
 import spliText from '../config/splitText';
 import gsap from 'gsap';
 const requireWebp = require.context("../../../img/team/coporation/sunland/webp", false, /^\.\/.*\.webp$/);
@@ -15,6 +16,7 @@ export const Coporation = () => {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
+            gsap.config({ nullTargetWarn: false })
             let gg = gsap.timeline()
             gg.from(".imgBox", {
                 x: -40,
@@ -38,7 +40,7 @@ export const Coporation = () => {
                 duration: 0.6,
                 opacity: 0,
             }, "<")
-        })
+        }, [animateRef])
         return () => ctx.revert()
     }, [])
     return (
@@ -46,6 +48,7 @@ export const Coporation = () => {
             <Routes>
                 <Route path="/sunland" element={<Sunland />}></Route>
                 <Route path="/oliv" element={<Oliv />}></Route>
+
             </Routes>
         </div>
 
@@ -84,7 +87,12 @@ function SunlandNav() {
     return (
         <div className="nav">
             <ul>
-                <li>歷年業績</li>
+
+                <li>
+                    <Link to="/team/portfolio">
+                        歷年業績
+                    </Link>
+                </li>
                 <li>摩天41</li>
             </ul>
         </div>
