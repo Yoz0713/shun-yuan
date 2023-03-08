@@ -1,5 +1,5 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'
-import { Pdf } from '../pdf/Pdf';
+import React, { useState, useLayoutEffect, useRef, lazy, Suspense, useEffect } from 'react'
+import Pdf from '../pdf/Pdf';
 import gsap from 'gsap';
 import RunNumber from '../config/runNumber';
 const requireWebp = require.context("../../../img/team/coporation/portfolio/webp", false, /^\.\/.*\.webp$/);
@@ -8,7 +8,9 @@ const requireSvg = require.context("../../../img/team/coporation/portfolio/svg",
 const svg = requireSvg.keys().map(requireSvg);
 export default function Portfolio() {
     const [active, setActive] = useState(false)
-    const animateRef = useRef(null)
+    const animateRef = useRef(null);
+
+
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             let gg = gsap.timeline();
@@ -44,7 +46,6 @@ export default function Portfolio() {
                 duration: 0.8,
             }, "<+0.3").from(".total img", {
                 y: "5vw",
-
                 duration: 0.8,
                 stagger: 0.3
             }, "<+0.3")

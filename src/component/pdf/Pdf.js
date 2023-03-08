@@ -2,31 +2,40 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-export function Pdf({ url, active, setActive }) {
+export default function Pdf({ url, active, setActive }) {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
-
+    const [pdfLoaded, setPdfLoaded] = useState(false);
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages);
     }
-
+    useEffect(() => {
+        // 當頁面載入後1秒後，設置Pdf元件已經載入完成
+        setTimeout(() => {
+            setPdfLoaded(true);
+        }, 3500);
+    }, []);
     return (
-        <div style={{ scale: active == false ? "0" : "1", overflowY: 'hidden', height: '100vh', pointerEvents: "auto", position: "fixed", left: 0, top: 0, zIndex: 2, width: "100%", transition: "0.5s", transformOrigin: "left top" }} >
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", backgroundColor: "#fff", visibility: active == false ? "hidden" : "visible", scale: active == false ? "0" : "1", transition: "0.5s", transformOrigin: "left top", pointerEvents: "auto", position: "fixed", left: 0, top: 0, zIndex: 2, overflowY: 'hidden', height: '100vh' }} >
+            {!pdfLoaded ? (
+                <div style={{ fontSize: "1.6vw", fontWeight: "600" }}>Loading...</div>
+            ) : (
+                <div className="main-pdf" onClick={() => { setActive(false) }} style={{ width: "100%", overflowY: 'scroll', height: '100vh' }}>
+                    <Document
+                        file={url}
+                        onLoadSuccess={onDocumentLoadSuccess}
 
-            <div className="main-pdf" onClick={() => { setActive(false) }} style={{ width: "100%", overflowY: 'scroll', height: '100vh' }}>
-                <Document
-                    file={url}
-                    onLoadSuccess={onDocumentLoadSuccess}
+                    >
+                        {[...Array(numPages)].map((_, index) => (
 
-                >
-                    {[...Array(numPages)].map((_, index) => (
-
-                        <Page key={`page_${index + 1}`} pageNumber={index + 1} scale={5} />
+                            <Page key={`page_${index + 1}`} pageNumber={index + 1} scale={2.5} />
 
 
-                    ))}
-                </Document>
-            </div>
+                        ))}
+                    </Document>
+                </div>
+            )}
+
 
 
         </div >
