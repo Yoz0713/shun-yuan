@@ -537,14 +537,16 @@
 
                 span {
                     display: inline-block;
-                    font-family: 'EB Garamond', serif;
+                    font-family: 'Noto Serif JP', serif;
+                    font-style: italic;
                     font-size: 5.92vw;
                     padding: 0 1.59vw;
-                    background: linear-gradient(90deg, #87512E 0%, #EADCA2 33%, #CEAE5D 66%, #F4E49D 100%);
+                    // background: linear-gradient(90deg, #87512E 0%, #EADCA2 33%, #CEAE5D 66%, #F4E49D 100%);
                     margin-top: -2vw;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    color: rgba(0, 0, 0, 0);
+                    // background-clip: text;
+                    // -webkit-background-clip: text;
+                    // color: rgba(0, 0, 0, 0);
+                    color: #dac48e;
                 }
             }
 

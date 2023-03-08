@@ -87,12 +87,12 @@ export default function Portfolio() {
                 <div className="total">
                     <div className="case">
                         <p>全台共</p>
-                        <RunNumber target={92} speed={8} delay={2600} />
+                        <RunNumber target={92} speed={8} delay={2700} />
                         <p>案</p>
                     </div>
                     <div className="household">
                         <p>累計</p>
-                        <RunNumber target={15259} init={15150} speed={8} delay={2700} />
+                        <RunNumber target={15259} gap={40} init={11256} speed={8} delay={2700} />
                         <p>戶</p>
                     </div>
                 </div>
