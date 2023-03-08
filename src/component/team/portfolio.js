@@ -44,10 +44,9 @@ export default function Portfolio() {
                 y: "5vw",
                 opacity: 0,
                 duration: 0.8,
-            }, "<+0.3").from(".total img", {
-                y: "5vw",
-                duration: 0.8,
-                stagger: 0.3
+            }, "<+0.3").from(".total span", {
+                y: "8vw",
+                duration: 1,
             }, "<+0.3")
         }, [animateRef])
         return () => ctx.revert()
@@ -88,12 +87,12 @@ export default function Portfolio() {
                 <div className="total">
                     <div className="case">
                         <p>全台共</p>
-                        <img src={svg[1]} />
+                        <RunNumber target={92} speed={8} delay={2600} />
                         <p>案</p>
                     </div>
                     <div className="household">
                         <p>累計</p>
-                        <img src={svg[2]} />
+                        <RunNumber target={15259} init={15150} speed={8} delay={2700} />
                         <p>戶</p>
                     </div>
                 </div>

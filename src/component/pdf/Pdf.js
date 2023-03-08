@@ -16,7 +16,7 @@ export default function Pdf({ url, active, setActive }) {
         }, 3500);
     }, []);
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", backgroundColor: "#fff", visibility: active == false ? "hidden" : "visible", scale: active == false ? "0" : "1", transition: "0.5s", transformOrigin: "left top", pointerEvents: "auto", position: "fixed", left: 0, top: 0, zIndex: 2, overflowY: 'hidden', height: '100vh' }} >
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", backgroundColor: "#fff", visibility: active == false ? "hidden" : "visible", opacity: active == false ? "0" : "1", transition: "0.5s", pointerEvents: "auto", position: "fixed", left: 0, top: 0, zIndex: 2, overflowY: 'hidden', height: '100vh' }} >
             {!pdfLoaded ? (
                 <div style={{ fontSize: "1.6vw", fontWeight: "600" }}>Loading...</div>
             ) : (

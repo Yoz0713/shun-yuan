@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 
-export default function RunNumber({ target, speed, delay }) {
-    const [number, setNumber] = useState(0);
+export default function RunNumber({ target, init, speed, delay }) {
+    const [number, setNumber] = useState(init || 0);
     useEffect(() => {
         let timer;
         setTimeout(() => {
-            let num = 0
+            let num = number
             timer = setInterval(() => {
                 num++
                 if (num == target + 1) {

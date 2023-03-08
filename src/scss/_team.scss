@@ -535,30 +535,26 @@
                     transform: translateZ(0);
                 }
 
-                img {
-                    margin: 0 1.59vw;
+                span {
+                    display: inline-block;
+                    font-family: 'EB Garamond', serif;
+                    font-size: 5.92vw;
+                    padding: 0 1.59vw;
                     will-change: transform;
                     -webkit-transform: translateZ(0);
                     -moz-transform: translateZ(0);
                     -ms-transform: translateZ(0);
                     -o-transform: translateZ(0);
                     transform: translateZ(0);
+                    background: linear-gradient(90deg, #87512E 0%, #EADCA2 33%, #CEAE5D 66%, #F4E49D 100%);
+
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    color: rgba(0, 0, 0, 0);
                 }
             }
 
-            .case {
-                img {
-                    width: 6.42vw;
-                }
-            }
-
-            .household {
-                margin-top: 2.4vw;
-
-                img {
-                    width: 14.9vw;
-                }
-            }
+            .case {}
         }
     }
 }
