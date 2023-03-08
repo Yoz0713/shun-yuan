@@ -513,7 +513,7 @@
 
         .total {
             position: absolute;
-            bottom: 8.6vw;
+            bottom: 8.3vw;
             right: 34.4vw;
 
 
@@ -540,21 +540,17 @@
                     font-family: 'EB Garamond', serif;
                     font-size: 5.92vw;
                     padding: 0 1.59vw;
-                    will-change: transform;
-                    -webkit-transform: translateZ(0);
-                    -moz-transform: translateZ(0);
-                    -ms-transform: translateZ(0);
-                    -o-transform: translateZ(0);
-                    transform: translateZ(0);
                     background: linear-gradient(90deg, #87512E 0%, #EADCA2 33%, #CEAE5D 66%, #F4E49D 100%);
-
+                    margin-top: -2vw;
                     background-clip: text;
                     -webkit-background-clip: text;
                     color: rgba(0, 0, 0, 0);
                 }
             }
 
-            .case {}
+            .case {
+                margin-bottom: 0.1vw;
+            }
         }
     }
 }
