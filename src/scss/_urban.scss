@@ -1,0 +1,194 @@
+.urban {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(100vw*(9/16));
+
+    &-left {
+        width: fit-content;
+        margin-right: 3.5vw;
+
+        .urban-bg {
+
+            .imgBox {
+
+                overflow: hidden;
+                width: pxConvertor(1339.76);
+                height: pxConvertor(913.0113);
+                pointer-events: auto;
+
+                .box {
+                    position: relative;
+
+                    img {
+
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+
+                    }
+                }
+
+            }
+
+
+            .zoom {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                right: 2vw;
+                bottom: 8.9vw;
+
+                img {
+                    width: pxConvertor(32.75);
+                    cursor: pointer;
+                    pointer-events: auto;
+                }
+
+                & :nth-child(1) {
+                    margin-bottom: 0.6vw;
+                }
+            }
+        }
+    }
+
+    &-right {
+        width: fit-content;
+
+        .urban-para {
+            width: pxConvertor(415);
+
+            .title-box {
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: fit-content;
+                margin-bottom: 1.5vw;
+
+
+                img {
+                    width: 2.7vw;
+                    margin-right: 1.7vw;
+                }
+
+                h3 {
+                    @include title();
+                }
+
+            }
+
+            .paraBox {
+                position: relative;
+                margin-bottom: 5vw;
+
+                p {
+                    font-size: var(--ch_s_text);
+                    color: #666666;
+                    font-weight: 500;
+                    font-family: "Microsoft JhengHei", serif;
+                    line-height: 2.2;
+                    letter-spacing: 0.1em;
+                }
+
+                &::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -3vw;
+                    width: 3VW;
+                    height: 1px;
+                    background-color: $gold_color ;
+                    transform-origin: left center;
+                    transform: rotate(-38deg);
+                }
+            }
+
+            .section-nav {
+                .nav {
+                    width: 100%;
+
+                    li {
+                        display: flex;
+                        margin-bottom: 2vw;
+                        padding-left: 2vw;
+                        cursor: pointer;
+                        position: relative;
+                        pointer-events: auto;
+
+                        p {
+                            pointer-events: none;
+                            transition: 0.5s;
+                        }
+
+                        & :nth-child(1) {
+                            position: absolute;
+                            left: 2vw;
+                            bottom: -1.5vw;
+                            opacity: 0;
+                            font-size: var(--ch_m_text);
+                            color: #666666;
+                            font-weight: 300;
+                            letter-spacing: 0.05em;
+
+                        }
+
+                        & :nth-child(2) {
+                            font-size: var(--ch_m_text);
+                            color: #666666;
+                            font-weight: 300;
+                            letter-spacing: 0.02em;
+                            font-family: 'Cormorant Garamond', serif;
+                        }
+
+                        &::after {
+                            display: block;
+                            content: "";
+                            width: 0.3vw;
+                            height: 0.3vw;
+                            background-color: $gold_color;
+                            transform: rotate(45deg);
+                            transition: 1s;
+                            position: absolute;
+                            bottom: 0;
+                            top: 0;
+                            margin: auto 0;
+                            left: 0.5vw;
+                        }
+
+                        &::before {
+                            display: block;
+                            content: "";
+                            width: 100%;
+                            height: 1px;
+                            background-color: #cccccc;
+                            position: absolute;
+                            left: 0;
+                            bottom: -1vw;
+                        }
+
+                        &:hover {
+                            & :nth-child(1) {
+                                color: $gold_color;
+                                opacity: 1;
+                                bottom: 0;
+                            }
+
+                            & :nth-child(2) {
+                                color: $gold_color;
+                                transform: translateY(-1.2vw);
+                                opacity: 0;
+                            }
+                        }
+
+                        &:hover::after {
+                            transform: rotate(405deg);
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+}

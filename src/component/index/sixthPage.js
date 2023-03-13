@@ -21,14 +21,16 @@ function SixthPage({ reduxState }) {
                 gg = gsap.timeline({ paused: true })
                 gg.from(".sixth-page-card .card", {
                     opacity: 0,
+                    filter: "blur(2px)",
+                    duration: 1.8,
                     y: "2.5vw",
-                    stagger: "0.3"
+                    stagger: 0.5
                 }).fromTo(".sixth-page-card .card .imgBox", {
                     rotateY: 60,
 
                 }, {
                     rotateY: 0,
-                    stagger: 0.3,
+                    stagger: 0.5,
                     duration: 1.4
                 }, "<").then(() => {
                     animationDone = true

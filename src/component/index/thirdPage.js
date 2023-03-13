@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HomeThirdPageCover } from "../config/svgCollection"
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 // Import animation libary
 import { gsap } from "gsap";
 const requireSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
@@ -12,55 +13,65 @@ const requirePng = require.context("../../../img/index/png", false, /^\.\/.*\.pn
 const png = requirePng.keys().map(requirePng);
 
 
-export default function ThirdPage() {
+function ThirdPage({ reduxState }) {
     const [change, setChange] = useState(0)
     const slide = useRef(null)
     const animate = useRef(null)
     let count;
-
     useLayoutEffect(() => {
 
         let ctx = gsap.context(() => {
-            let gg = gsap.timeline({
-                yoyo: true,
-                repeat: 1,
-                repeatDelay: 1,
-                ease: 'power3.out',
-            })
+            let gg;
+            if (reduxState === 2) {
 
-            gg.from(".swiper-slide img", {
-                scale: 1.2,
-                duration: 3
-            }).fromTo(`.home-third-clip polygon:nth-child(odd)`, {
-                opacity: 1,
-            }, {
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.02,
-            }, "<").fromTo(`.home-third-clip polygon:nth-child(even)`, {
-                opacity: 1,
-            }, {
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.02,
-            }, "<").then(() => {
-                if (slide.current) {
-                    if (change >= 0 && change < slide.current.children.length - 1) {
-                        count = change
-                        count++
-                        setChange(count)
-                    } else {
-                        setChange(0)
+                gg = gsap.timeline({
+                    yoyo: true,
+                    repeat: 1,
+                    repeatDelay: 1,
+                    ease: 'power3.out',
+                })
+
+                gg.fromTo(".imgBox img", {
+                    scale: 1.2,
+                }, {
+                    scale: 1,
+                    duration: 3
+                }).fromTo(`.home-third-clip polygon:nth-child(odd)`, {
+                    opacity: 1,
+                }, {
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.02,
+                }, "<").fromTo(`.home-third-clip polygon:nth-child(even)`, {
+                    opacity: 1,
+                }, {
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.02,
+                }, "<").then(() => {
+                    if (slide.current) {
+                        if (change >= 0 && change < slide.current.children.length - 1) {
+                            count = change
+                            count++
+                            setChange(count)
+                        } else {
+                            setChange(0)
+                        }
                     }
-                }
 
-            })
+                })
+            }
 
 
-        }, animate)
-        return () => ctx.revert()
+        }, [animate])
+        return () => {
+            setTimeout(() => {
+                ctx.revert()
+            }, 300)
+        }
 
-    }, [change])
+    }, [change, reduxState])
+
 
     return (
         <section className="third-page" ref={animate}>
@@ -90,7 +101,12 @@ export default function ThirdPage() {
         </section>
     )
 }
+export default connect((state) => {
+    return {
+        reduxState: state.slideReducer.slide,
+    }
 
+}, null)(ThirdPage)
 function SectionNav({ handleClick }) {
     let item = [{
         id: 1,
@@ -116,7 +132,7 @@ function SectionNav({ handleClick }) {
                             </li>
                         </Link>
                     } else {
-                        return <Link key={item.id}>
+                        return <Link to={"urban"} key={item.id}>
                             <li className={`team${i + 1}`} onClick={handleClick}>
                                 <p >{item.ch}</p><p>{item.en}</p>
                             </li>

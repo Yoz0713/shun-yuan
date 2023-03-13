@@ -35,6 +35,7 @@ function SecondPage({ reduxState, teamState }) {
                 }, "<").from(`.building-team`, {
                     x: 50,
                     opacity: 0,
+                    filter: "blur(3px)",
                     duration: 0.8
                 }, "<").from(`.building-team .thumb img`, {
                     y: 25,
@@ -53,13 +54,13 @@ function SecondPage({ reduxState, teamState }) {
                     strokeDasharray: 2200,
                 }, {
                     strokeDashoffset: type == "team1" ? 0 : type == "team2" ? 1650 : 450,
-                    duration: 3,
+                    duration: 4,
                 }).to("svg", {
                     opacity: 0,
-                    duration: 0.9,
-                }, "<+1").from(".cover-logo .imgBox > img", {
+                    duration: 1.7,
+                }, "<+2").from(".cover-logo .imgBox > img", {
                     opacity: 0,
-                    duration: 0.9,
+                    duration: 1.7,
 
                 }, "<").from(".cover-logo .imgBox > img", {
                     scale: 1.6,

@@ -2,14 +2,20 @@ $gold_color: #c3a457;
 
 $white_color: #f7f7f7;
 
+@function pxConvertor($args) {
+    @return $args/1920*100vw;
+}
+
 :root {
     --ch_xs_test: 0.75vw;
-    --ch_s_text: 0.9vw;
-    --ch_m_text: 1.1vw;
-    --ch_ml_text: 1.6vw;
-    --ch_l_text: 1.97vw;
-    --ch_xl_text: 2.45vw;
+    --ch_s_text:#{pxConvertor(18)};
+    --ch_m_text: #{pxConvertor(24)};
+    --ch_ml_text: #{pxConvertor(30)};
+    --ch_l_text: #{pxConvertor(36)};
+    --ch_xl_text: #{pxConvertor(48)};
 }
+
+
 
 * {
     font-family: 'Noto Serif TC', serif;
@@ -19,10 +25,10 @@ $white_color: #f7f7f7;
 
 .header {
     position: fixed;
-    width: 100%;
+    width: fit-content;
     height: fit-content;
     padding: 2vw 3vw;
-    z-index: 5;
+    z-index: 22;
     transition: opacity 1s;
 
     img {
@@ -81,7 +87,7 @@ $white_color: #f7f7f7;
         justify-content: flex-end;
         position: absolute;
         top: 0;
-        width: 7vw;
+        width: 5vw;
         height: 100%;
         z-index: 10;
         transition: right 0.2s;

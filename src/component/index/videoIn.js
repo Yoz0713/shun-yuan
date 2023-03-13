@@ -1,5 +1,5 @@
 import React from 'react';
-import video from '-!file-loader!../../../video/final_01.mp4'
+import video from '-!file-loader!../../../video/final_02.mp4'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 
