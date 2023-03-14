@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import sunlandSvg from "../../../img/index/svg/002-slogan.svg"
 import { Routes, Route } from 'react-router-dom';
 import spliText from '../config/splitText';
@@ -37,7 +37,12 @@ export const DesignTeam = () => {
                 x: 80,
                 duration: 0.6,
                 opacity: 0,
-            }, "<+0.3")
+            }, "<+0.3").from(".nav li", {
+                x: -40,
+                duration: 0.6,
+                opacity: 0,
+                stagger: 0.3
+            }, "<+0.4")
         }, [animateRef])
         return () => ctx.revert()
     }, [])
@@ -51,7 +56,7 @@ export const DesignTeam = () => {
                     <Route path="/lanscapeDesigner" element={<LanscapeDesigner right={"14vw"} />}></Route>
                 </Routes>
 
-                <img src={sunlandSvg} alt="" />
+                <img src={sunlandSvg} />
             </section>
         </>
 
@@ -60,7 +65,7 @@ export const DesignTeam = () => {
 
 
 function ArchitecturalDesigner({ height, right }) {
-    const para = {
+    const para1 = {
         title: `ARCHITECTURAL DESIGN\nDESIGN CONCEPT`,
         paragraph: {
             para1: {
@@ -68,14 +73,38 @@ function ArchitecturalDesigner({ height, right }) {
                 paraInner2: `廖錦盈`,
                 paraInner3: `建築師`
             },
-            para2: `三十餘年來榮獲103年度、104年度北台灣10大建築師及\n2018倫敦設計獎的肯定，秉持「關心環境、創新建築」的\n設計理念，將建築賦予生命、將空間賦予生機，更致力於\n建築與環境之配合，提升建築品質，以期創造出和諧的都\n市空間與環境。\nCLASSY HOME建案以都市景觀融入⾃然環境作為出發點，\n沿街步道式開放空間及廣場式開放空間，並且塑造雙排行\n道樹的林蔭步道，使空間豐富有質感，提供社區住戶舒適\n宜人的休憩空間。`
+            para2: `倫敦大獎 創新建築美學`,
+            para3: `三十餘年來遍布北台灣800個作品，囊括精品別墅、大型社\n區、華廈、摩天大樓，其中以林口、龜山最為集中，創新設\n計建築走在國際趨勢前端，為北台灣10大建築師並榮獲\n2018倫敦設計獎的肯定。`
         }
+    }
+    const para2 = {
+        title: `ARCHITECTURAL DESIGN\nDESIGN CONCEPT`,
+        paragraph: {
+            para1: {
+                paraInner1: `廖錦盈建築師事務所`,
+                paraInner2: `廖錦盈`,
+                paraInner3: `建築師`
+            },
+            para2: `倫敦大獎 創新建築美學`,
+            para3: `三十餘年來遍布北台灣800個作品，囊括精品別墅、大型社\n區、華廈、摩天大樓，其中以林口、龜山最為集中，創新設\n計建築走在國際趨勢前端，為北台灣10大建築師並榮獲\n2018倫敦設計獎的肯定。`
+        }
+    }
+    const [text, setText] = useState("para1")
+    const handleClick = (state) => {
+        setText(state)
     }
     return (
         <>
 
             <div className="para-box">
-                <ParaBox title={para.title} para={para.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} />
+                {text == "para1" ?
+                    <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} /> :
+                    <ParaBox title={para2.title} para={para2.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} />}
+
+                <div className="nav">
+                    <TextNav text={text} title={"建築大師"} handleClick={handleClick} />
+                </div>
+
             </div>
             <div className="img-box">
                 <img src={svg[0]} />
@@ -93,7 +122,7 @@ function ArchitecturalDesigner({ height, right }) {
 }
 
 function PostylateDesigner({ height, right }) {
-    const para = {
+    const para1 = {
         title: `POSTULATE DESIGN\nDESIGN CONCEPT`,
         paragraph: {
             para1: {
@@ -101,14 +130,36 @@ function PostylateDesigner({ height, right }) {
                 paraInner2: `陳柏壽`,
                 paraInner3: `設計師`
             },
-            para2: `自許能隨時代脈動，成為空間整合設計之專業組織團隊，並\n秉持誠信、創新、貼心之工作理念。\nCLASSY HOME建案是都市中難得的完整街廓，在建築師與\n景觀設計師的共同激盪下設計創造出了都市秘境森林，本案\n的公設室內設計便是建築與景觀中間穿針引線的中介空間。`
+            para2: `巧思構築 建築中介空間`,
+            para3: `二十多年隨時代脈動整合空間設計，公設室內設計便是\n建築與景觀中間穿針引線的中介空間，扮演連續內外空\n間的角色，迎景入室，以光線、動線、家具家飾及材質\n，鋪陳每個空間特有的故事。`
         }
+    }
+    const para2 = {
+        title: `POSTULATE DESIGN\nDESIGN CONCEPT`,
+        paragraph: {
+            para1: {
+                paraInner1: `雲鼎設計`,
+                paraInner2: `陳柏壽`,
+                paraInner3: `設計師`
+            },
+            para2: `巧思構築 建築中介空間`,
+            para3: `二十多年隨時代脈動整合空間設計，公設室內設計便是\n建築與景觀中間穿針引線的中介空間，扮演連續內外空\n間的角色，迎景入室，以光線、動線、家具家飾及材質\n，鋪陳每個空間特有的故事。`
+        }
+    }
+    const [text, setText] = useState("para1")
+    const handleClick = (state) => {
+        setText(state)
     }
     return (
         <>
 
             <div className="para-box">
-                <ParaBox title={para.title} para={para.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} />
+                {text == "para1" ?
+                    <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} /> :
+                    <ParaBox title={para2.title} para={para2.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} />}
+                <div className="nav">
+                    <TextNav text={text} title={"公設大師"} handleClick={handleClick} />
+                </div>
             </div>
             <div className="img-box">
                 <img src={svg[0]} />
@@ -116,7 +167,7 @@ function PostylateDesigner({ height, right }) {
                     <img src={webp[1].default} />
                 </div>
                 <div className="designer">
-                    <p>建築設計師</p>
+                    <p>公設設計師</p>
                     <img src={svg[2].default} />
                 </div>
             </div>
@@ -126,7 +177,7 @@ function PostylateDesigner({ height, right }) {
 }
 
 function LightingDesigner({ height, right }) {
-    const para = {
+    const para1 = {
         title: `LIGHTING DESIGN\nDESIGN CONCEPT`,
         paragraph: {
             para1: {
@@ -134,14 +185,37 @@ function LightingDesigner({ height, right }) {
                 paraInner2: `張文貴`,
                 paraInner3: `設計總監`
             },
-            para2: `日大照明符合建築精神語彙的燈光，滿足對光的功能需求。\n能源環保， 與相關廠商間的協力創作將燈具融入建築中。\nCLASSY HOME建案選擇高演色性光源與間接照明來詮釋，\n設置不斷光連續線燈，營造出夜間地標建築宏偉輪廓。`
+            para2: `點亮林口 星光璀璨之夜`,
+            para3: `建築的光影能雕塑建築豐富層次，呈現夜間視覺印象，靜謐\n的燈光更刻畫出另一幅幸福溫暖的城市風貌；符合建築精神\n語彙的燈光設計，滿足能源環保、使用成本、維護考量，點\n亮城市天際線。`
         }
+    }
+    const para2 = {
+        title: `LIGHTING DESIGN\nDESIGN CONCEPT`,
+        paragraph: {
+            para1: {
+                paraInner1: `日大照明`,
+                paraInner2: `張文貴`,
+                paraInner3: `設計總監`
+            },
+            para2: `點亮林口 星光璀璨之夜`,
+            para3: `建築的光影能雕塑建築豐富層次，呈現夜間視覺印象，靜謐\n的燈光更刻畫出另一幅幸福溫暖的城市風貌；符合建築精神\n語彙的燈光設計，滿足能源環保、使用成本、維護考量，點\n亮城市天際線。`
+        }
+    }
+    const [text, setText] = useState("para1")
+    const handleClick = (state) => {
+        setText(state)
     }
     return (
         <>
 
             <div className="para-box">
-                <ParaBox title={para.title} para={para.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} />
+                {text == "para1" ?
+                    <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} /> :
+                    <ParaBox title={para2.title} para={para2.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} />}
+
+                <div className="nav">
+                    <TextNav text={text} title={"燈光大師"} handleClick={handleClick} />
+                </div>
             </div>
             <div className="img-box">
                 <img src={svg[0]} />
@@ -149,7 +223,7 @@ function LightingDesigner({ height, right }) {
                     <img src={webp[2].default} />
                 </div>
                 <div className="designer">
-                    <p>建築設計師</p>
+                    <p>燈光設計師</p>
                     <img src={svg[3].default} />
                 </div>
             </div>
@@ -159,7 +233,7 @@ function LightingDesigner({ height, right }) {
 }
 
 function LanscapeDesigner({ height, right }) {
-    const para = {
+    const para1 = {
         title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
         paragraph: {
             para1: {
@@ -167,14 +241,37 @@ function LanscapeDesigner({ height, right }) {
                 paraInner2: `蘇瑞泉`,
                 paraInner3: `董事長`
             },
-            para2: `六國景觀涵蓋都市設計及環境景觀業務。擁有一批年輕化、\n知識化、專業化的菁英團隊。營業30餘年，拿下過無數的獎\n項，成為台灣豪宅的一把推手，以目前台灣景觀業界中，論\n規模、專業水準及業績均為上乘之選。\nCLASSY HOME建案為營造優質都市空間及舒適居住環境，\n臨路既有人行道規劃2M綠化空間，創造多條寬闊的林蔭帶\n狀空間。社區造型獨特的會所搭配植栽景觀，儼然成為林口\n區的打卡亮點，經過這片多層次的都市森林可以讓人們跳脫\n嘈雜擁擠的生活，感受到更多綠意盎然生命力。`
+            para2: `國際格局 成就豪宅景觀`,
+            para3: `台灣景觀業界中豪宅的第一把推手，包括天母富邦、仁愛鴻\n禧、信義富邦、信義之星等，與國外知名建築師合作信義\nD3 (英國 Norman Foster)、信義聯勤 (英國 Richard\n Rogers)等實力斐然。`
         }
+    }
+    const para2 = {
+        title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
+        paragraph: {
+            para1: {
+                paraInner1: `六國景觀`,
+                paraInner2: `蘇瑞泉`,
+                paraInner3: `董事長`
+            },
+            para2: `國際格局 成就豪宅景觀`,
+            para3: `台灣景觀業界中豪宅的第一把推手，包括天母富邦、仁愛鴻\n禧、信義富邦、信義之星等，與國外知名建築師合作信義\nD3 (英國 Norman Foster)、信義聯勤 (英國 Richard\n Rogers)等實力斐然。`
+        }
+    }
+    const [text, setText] = useState("para1")
+    const handleClick = (state) => {
+        setText(state)
     }
     return (
         <>
 
             <div className="para-box">
-                <ParaBox title={para.title} para={para.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} />
+                {text == "para1" ?
+                    <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} /> :
+                    <ParaBox title={para2.title} para={para2.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"} text={text} />}
+
+                <div className="nav">
+                    <TextNav text={text} title={"景觀大師"} handleClick={handleClick} />
+                </div>
             </div>
             <div className="img-box">
                 <img src={svg[0]} />
@@ -182,7 +279,7 @@ function LanscapeDesigner({ height, right }) {
                     <img src={webp[3].default} />
                 </div>
                 <div className="designer">
-                    <p>建築設計師</p>
+                    <p>景觀設計師</p>
                     <img src={svg[4].default} />
                 </div>
             </div>
@@ -191,7 +288,7 @@ function LanscapeDesigner({ height, right }) {
     )
 }
 
-function ParaBox({ title, para, linePosition, mb }) {
+function ParaBox({ title, para, linePosition, mb, text }) {
     let newArr = spliText(title);
     return (
         <div className="paraBox">
@@ -207,8 +304,25 @@ function ParaBox({ title, para, linePosition, mb }) {
             </div>
             <div className="para">
                 <p style={{ whiteSpace: "pre-wrap", marginBottom: mb }}>{para.para1.paraInner1}<span>{para.para1.paraInner2}</span>{para.para1.paraInner3}</p>
-                <p style={{ whiteSpace: "pre-wrap" }}>{para.para2}</p>
+                <p style={{ whiteSpace: "pre-wrap", color: text == "para2" ? "red" : "#000" }}>{para.para2}</p>
+                <p style={{ whiteSpace: "pre-wrap", color: text == "para2" ? "red" : "#000" }}>{para.para3}</p>
             </div>
-        </div>
+        </div >
+    )
+}
+
+function TextNav({ text, title, handleClick }) {
+    return (
+        <ul>
+            <li onClick={() => {
+                handleClick("para1")
+            }} style={{ color: text == "para1" ? "#c3a457" : "#000" }}>
+                {title}
+            </li>
+            <li onClick={() => {
+                handleClick("para2")
+            }} style={{ color: text == "para2" ? "#c3a457" : "#000" }}>
+                設計理念</li>
+        </ul>
     )
 }

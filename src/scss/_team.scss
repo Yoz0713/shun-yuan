@@ -11,7 +11,7 @@
     font-weight: 500;
     font-family: "Microsoft JhengHei", serif;
     font-size: var(--ch_s_text);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     color: #313131;
     line-height: 2;
 
@@ -34,32 +34,101 @@
             display: flex;
             width: 100%;
 
-            .imgBox {
-                position: relative;
+            .left {
+                display: flex;
+                justify-items: center;
                 width: pxConvertor(773);
 
                 margin-right: 6vw;
 
-                img {
+                >.imgBox {
                     position: relative;
                     width: 100%;
-                    height: auto;
-                    object-fit: cover;
-                    z-index: 2;
+
+
+                    img {
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
+                        z-index: 2;
+                    }
+
+                    &::after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        right: -1vw;
+                        bottom: -1vw;
+                        border: 1px solid $gold_color;
+                    }
                 }
 
-                &::after {
-                    display: block;
-                    content: "";
-                    position: absolute;
-                    z-index: 1;
-                    width: 100%;
-                    height: 100%;
-                    right: -1vw;
-                    bottom: -1vw;
-                    border: 1px solid $gold_color;
+                .swiperBox {
+                    position: relative;
+                    width: pxConvertor(717);
+                    height: pxConvertor(956.0712);
+
+
+                    .imgBox {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: auto;
+                        z-index: 5;
+
+                        img {
+
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+
+
+                    }
+
+                    .navBox {
+                        display: flex;
+                        justify-content: space-between;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                        width: 100%;
+                        height: 0;
+                        padding: 0 1.5vw;
+                        z-index: 10;
+
+                        div {
+                            cursor: pointer;
+                            width: 1vw;
+                            height: 1vw;
+                            background-color: #000;
+                            pointer-events: auto;
+                        }
+                    }
+
+                    &::after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100%;
+                        right: -1vw;
+                        bottom: -1vw;
+                        border: 1px solid $gold_color;
+                    }
                 }
+
             }
+
 
             .right {
                 display: flex;
@@ -70,7 +139,6 @@
 
                 .paraBox {
                     width: 100%;
-
 
                     .title {
                         position: relative;
@@ -94,17 +162,21 @@
                     }
 
                     .para {
+                        width: 91%;
+
                         p {
                             @include para-ch();
                         }
+
+
                     }
 
 
                 }
 
                 .nav {
-                    pointer-events: auto;
-                    margin-top: 3vw;
+
+                    margin-top: 2vw;
                     width: 100%;
 
                     ul {
@@ -113,14 +185,26 @@
 
                         li {
                             @include para-ch();
-                            font-size: var(--ch_m_text);
+                            font-size: pxConvertor(21);
                             font-family: 'Noto Serif TC', serif;
                             line-height: normal;
                             font-weight: 700;
                             cursor: pointer;
+                            pointer-events: auto;
+                            color: #000;
+                            transition: color 0.2s;
 
                             a {
                                 color: #000;
+                                transition: color 0.2s;
+                            }
+
+                            &:hover a {
+                                color: $gold_color;
+                            }
+
+                            &:hover {
+                                color: $gold_color;
                             }
                         }
 
@@ -147,7 +231,7 @@
                 .slogan {
                     display: flex;
                     justify-content: space-around;
-                    width: 95%;
+                    width: 80%;
                     margin-top: 2vw;
 
                     img {
@@ -166,6 +250,18 @@
 
         }
 
+        .sunland {
+            .right {
+                .paraBox {
+                    .para {
+                        & :nth-child(1) {
+                            font-size: pxConvertor(21);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
 
 
 
@@ -173,16 +269,15 @@
 
     .designTeam {
         display: flex;
-        width: 100%;
+        width: 92.5%;
         height: 100%;
+        margin: 0 0 0 auto;
         overflow: hidden;
 
 
         .para-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 36.5%;
+            width: 32%;
+            margin: auto 0;
 
             .paraBox {
                 width: fit-content;
@@ -216,16 +311,27 @@
                         @include para-ch();
                     }
 
+
+
                     & :nth-child(1) {
                         font-size: var(--ch_s_text);
                         font-weight: 600;
                         font-family: 'Noto Serif TC', serif;
                         color: #000;
 
+
                         span {
                             font-size: var(--ch_ml_text);
                             margin: 0 0.65vw;
                         }
+                    }
+
+                    & :nth-child(2) {
+                        font-size: pxConvertor(21);
+                        font-weight: 700;
+                        font-family: 'Noto Serif TC', serif;
+                        color: #000;
+                        margin: 1.5vw 0 0.5vw;
                     }
                 }
 
@@ -234,7 +340,7 @@
         }
 
         .img-box {
-            width: 61.5%;
+            width: 68%;
             height: 100%;
             position: relative;
 
@@ -280,6 +386,60 @@
             left: 2.5vw;
             bottom: 0;
             width: 40%;
+        }
+
+        .nav {
+
+            margin-top: 2vw;
+            width: 100%;
+
+            ul {
+                display: flex;
+                width: 100%;
+
+                li {
+                    @include para-ch();
+                    font-size: pxConvertor(21);
+                    font-family: 'Noto Serif TC', serif;
+                    line-height: normal;
+                    font-weight: 700;
+                    cursor: pointer;
+                    pointer-events: auto;
+                    color: #000;
+                    transition: color 0.2s;
+
+                    a {
+                        color: #000;
+                        transition: color 0.2s;
+                    }
+
+                    &:hover a {
+                        color: $gold_color;
+                    }
+
+                    &:hover {
+                        color: $gold_color;
+                    }
+                }
+
+                &> :not(:last-child) {
+                    position: relative;
+                    margin-right: 3vw;
+
+                    &::after {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        width: 1px;
+                        height: 80%;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto 0;
+                        right: -1.5vw;
+                        background-color: #1a1a1a;
+                    }
+                }
+            }
         }
     }
 
