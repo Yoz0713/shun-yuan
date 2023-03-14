@@ -11,21 +11,249 @@
         .urban-bg {
 
             .imgBox {
-
+                position: relative;
                 overflow: hidden;
-                width: pxConvertor(1339.76);
-                height: pxConvertor(913.0113);
-                pointer-events: auto;
+                width: fit-content;
+                height: fit-content;
 
                 .box {
                     position: relative;
+                    width: pxConvertor(1339.76);
+                    height: pxConvertor(913.0113);
+                    pointer-events: auto;
+                    transition: 0.6s;
 
                     img {
-
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
 
+                    }
+
+                    >div {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        pointer-events: auto;
+
+                        .dot {
+                            position: absolute;
+                            width: pxConvertor(21.5672);
+                            height: pxConvertor(30.8963);
+                            animation-name: anchorDotFlow;
+                            animation-duration: 3s;
+                            animation-timing-function: linear;
+                            animation-fill-mode: forwards;
+                            animation-iteration-count: infinite;
+                            cursor: pointer;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                z-index: 1;
+                            }
+
+                            .imgBox {
+                                position: absolute;
+                                right: -6.3vw;
+                                margin: 0 auto;
+                                bottom: 105%;
+                                width: pxConvertor(263);
+                                height: pxConvertor(174);
+                                opacity: 0;
+                                pointer-events: none;
+                                transition: 0.3s;
+                                z-index: 10;
+                            }
+
+                            &:hover {
+                                .imgBox {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+
+                    .transportation {
+                        &> :nth-child(1) {
+                            //捷運a9
+                            left: 10.5vw;
+                            bottom: 2vw;
+                        }
+
+                        &> :nth-child(2) {
+                            //轉運站
+                            left: 11vw;
+                            bottom: 3.8vw;
+                        }
+
+                        &> :nth-child(3) {
+                            //交流道
+                            left: 22vw;
+                            bottom: 3.4vw;
+                        }
+                    }
+
+                    .construction {
+                        &> :nth-child(1) {
+                            //新興ai
+                            left: 20.8vw;
+                            top: 11vw;
+                        }
+
+                        &> :nth-child(2) {
+                            //國家檔案館
+                            left: 29.5vw;
+                            top: 32.2vw;
+                        }
+
+                        &> :nth-child(3) {
+                            //林口新創
+                            left: 31.5vw;
+                            bottom: 20vw;
+                        }
+
+                        &> :nth-child(4) {
+                            //105世道
+                            left: 36.5vw;
+                            top: 0.4vw;
+                        }
+                    }
+
+                    .nationSchool {
+                        &> :nth-child(1) {
+                            //小木屋
+                            left: 13.8vw;
+                            bottom: 14.4vw;
+
+
+                        }
+
+                        &> :nth-child(2) {
+                            //夏哲森
+                            left: 18.5vw;
+                            bottom: 15.8vw;
+                        }
+
+                        &> :nth-child(3) {
+                            //奇異鳥
+                            left: 25.5vw;
+                            bottom: 10.8vw;
+                        }
+
+                        &> :nth-child(4) {
+                            //夏恩
+                            left: 49.7vw;
+                            bottom: 14.2vw;
+                        }
+
+                        &> :nth-child(5) {
+                            //馬里遜
+                            left: 51.4vw;
+                            bottom: 14.2vw;
+                        }
+
+                        &> :nth-child(6) {
+                            //康橋國際
+                            left: 55.3vw;
+                            bottom: 15.8vw;
+                        }
+
+                        &> :nth-child(7) {
+                            //師大林口
+                            left: 65.6vw;
+                            bottom: 6vw;
+
+                            .imgBox {
+                                right: 0vw;
+                            }
+                        }
+                    }
+
+                    .qualitySchool {
+                        &> :nth-child(1) {
+                            //新林國小
+                            left: 7.2vw;
+                            bottom: 8.5vw;
+                        }
+
+                        &> :nth-child(2) {
+                            //南勢國小
+                            left: 6.6vw;
+                            bottom: 17vw;
+                        }
+
+                        &> :nth-child(3) {
+                            //南勢國中
+                            left: 12.5vw;
+                            bottom: 18.3vw;
+                        }
+
+                        &> :nth-child(4) {
+                            //麗林國小
+                            left: 21.2vw;
+                            bottom: 6.3vw;
+                        }
+
+                        &> :nth-child(5) {
+                            //崇林國小
+                            left: 24.3vw;
+                            bottom: 4.5vw;
+                        }
+
+                        &> :nth-child(6) {
+                            //林口國中
+                            left: 34.1vw;
+                            bottom: 20.2vw;
+                        }
+
+                        &> :nth-child(7) {
+                            //頭湖國小
+                            left: 26.4vw;
+                            bottom: 29.1vw;
+                        }
+                    }
+
+                    .environment {
+                        &> :nth-child(1) {
+                            //第二運動公園
+                            left: 20vw;
+                            bottom: 22vw;
+                        }
+
+                        &> :nth-child(2) {
+                            //力行公園
+                            left: 22.1vw;
+                            bottom: 21.2vw;
+                        }
+
+                        &> :nth-child(3) {
+                            //翰林公園
+                            left: 27vw;
+                            bottom: 27vw;
+                        }
+
+                        &> :nth-child(4) {
+                            //第一運動公園
+                            left: 31.8vw;
+                            bottom: 16vw;
+                        }
+
+                        &> :nth-child(5) {
+                            //文林公園
+                            left: 31.3vw;
+                            bottom: 36.9vw;
+                        }
+
+                        &> :nth-child(6) {
+                            //一品公園
+                            left: 42.6vw;
+                            bottom: 31vw;
+                        }
                     }
                 }
 
@@ -34,10 +262,9 @@
 
             .zoom {
                 display: flex;
-                flex-direction: column;
                 position: absolute;
-                right: 2vw;
-                bottom: 8.9vw;
+                right: -8.2vw;
+                bottom: 1.5vw;
 
                 img {
                     width: pxConvertor(32.75);
@@ -46,7 +273,7 @@
                 }
 
                 & :nth-child(1) {
-                    margin-bottom: 0.6vw;
+                    margin-right: 0.6vw;
                 }
             }
         }
@@ -118,7 +345,8 @@
 
                         p {
                             pointer-events: none;
-                            transition: 0.5s;
+                            transition: bottom 0.5s, opacity 0.5s, transform 0.5s;
+                            white-space: nowrap;
                         }
 
                         & :nth-child(1) {
@@ -154,6 +382,7 @@
                             top: 0;
                             margin: auto 0;
                             left: 0.5vw;
+
                         }
 
                         &::before {
@@ -190,5 +419,20 @@
             }
         }
 
+    }
+}
+
+
+@keyframes anchorDotFlow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.5vw);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
