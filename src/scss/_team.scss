@@ -107,10 +107,18 @@
 
                         div {
                             cursor: pointer;
-                            width: 1vw;
-                            height: 1vw;
-                            background-color: #000;
                             pointer-events: auto;
+
+                            img {
+                                width: 1vw;
+                                filter: drop-shadow(0 0 2px #000);
+                            }
+                        }
+
+                        .prev {
+                            img {
+                                transform: rotateY(180deg);
+                            }
                         }
                     }
 

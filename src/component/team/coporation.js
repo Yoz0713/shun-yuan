@@ -4,10 +4,11 @@ import { Routes, Route, Link } from 'react-router-dom';
 import spliText from '../config/splitText';
 import gsap from 'gsap';
 const requireWebp = require.context("../../../img/team/coporation/sunland/webp", false, /^\.\/.*\.webp$/);
-
 const sunlandWebp = requireWebp.keys().map(requireWebp);
 const requireSvg2 = require.context("../../../img/team/coporation/oliv/svg", false, /^\.\/.*\.svg$/);
 const olivSvg = requireSvg2.keys().map(requireSvg2);
+const requireSvg3 = require.context("../../../img/team/coporation/sunland/svg", false, /^\.\/.*\.svg$/);
+const sunlandSvg = requireSvg3.keys().map(requireSvg3);
 const requireWebp2 = require.context("../../../img/team/coporation/oliv/webp", false, /^\.\/.*\.webp$/);
 const olivWebp = requireWebp2.keys().map(requireWebp2);
 const indexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
@@ -264,7 +265,7 @@ function Swiper41() {
                         console.log(slide)
                     }
                 }}>
-
+                    <img src={sunlandSvg[0]} />
                 </div>
                 <div className="next" onClick={() => {
                     if (slider.current) {
@@ -276,7 +277,7 @@ function Swiper41() {
                         }
                     }
                 }}>
-
+                    <img src={sunlandSvg[0]} />
                 </div>
             </div>
         </div>
