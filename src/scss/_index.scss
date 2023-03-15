@@ -527,12 +527,15 @@
                     width: 100%;
                     height: 100%;
 
-                    >img {
-                        width: auto;
-                        height: 18vw;
-                        object-fit: contain;
-                        margin-top: 5vw;
+                    a {
+                        img {
+                            width: auto;
+                            height: 15vw;
+                            object-fit: contain;
+                            margin-top: 5vw;
+                        }
                     }
+
 
                     .thumb {
                         display: flex;

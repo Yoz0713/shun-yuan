@@ -5,21 +5,23 @@
     height: calc(100vw*(9/16));
 
     &-left {
+        position: relative;
         width: fit-content;
         margin-right: 3.5vw;
 
         .urban-bg {
 
-            .imgBox {
+            >.imgBox {
                 position: relative;
                 overflow: hidden;
-                width: fit-content;
-                height: fit-content;
+                width: pxConvertor(1339.76);
+                height: pxConvertor(913.0113);
+
 
                 .box {
                     position: relative;
-                    width: pxConvertor(1339.76);
-                    height: pxConvertor(913.0113);
+                    width: 100%;
+                    height: 100%;
                     pointer-events: auto;
                     transition: 0.6s;
 
@@ -43,11 +45,7 @@
                             position: absolute;
                             width: pxConvertor(21.5672);
                             height: pxConvertor(30.8963);
-                            animation-name: anchorDotFlow;
-                            animation-duration: 3s;
-                            animation-timing-function: linear;
-                            animation-fill-mode: forwards;
-                            animation-iteration-count: infinite;
+
                             cursor: pointer;
 
                             img {
@@ -62,8 +60,7 @@
                                 right: -6.3vw;
                                 margin: 0 auto;
                                 bottom: 105%;
-                                width: pxConvertor(263);
-                                height: pxConvertor(174);
+                                width: pxConvertor(400);
                                 opacity: 0;
                                 pointer-events: none;
                                 transition: 0.3s;
@@ -71,7 +68,13 @@
                             }
 
                             &:hover {
-                                .imgBox {
+                                // animation-name: anchorDotFlow;
+                                // animation-duration: 3s;
+                                // animation-timing-function: linear;
+                                // animation-fill-mode: forwards;
+                                // animation-iteration-count: infinite;
+
+                                >.imgBox {
                                     opacity: 1;
                                 }
                             }
@@ -121,6 +124,12 @@
                             //105世道
                             left: 36.5vw;
                             top: 0.4vw;
+                        }
+
+                        &> :nth-child(5) {
+                            //元智大學
+                            left: 42.6vw;
+                            top: 10.2vw;
                         }
                     }
 
@@ -263,7 +272,7 @@
             .zoom {
                 display: flex;
                 position: absolute;
-                right: -8.2vw;
+                right: -8.1vw;
                 bottom: 1.5vw;
 
                 img {

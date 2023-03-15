@@ -1,6 +1,6 @@
 import React from 'react';
 import video from '-!file-loader!../../../video/final_02.mp4'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { connect } from 'react-redux';
 
 const requireSvg = require.context("../../../img/layout/svg", false, /^\.\/.*\.svg$/);

@@ -1,5 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap';
+import FancyBox from '../config/fancyBox';
+import Construction from './construction';
 const requireindexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const indexSvg = requireindexSvg.keys().map(requireindexSvg);
 const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.svg$/);
@@ -14,7 +16,7 @@ export default function Urban() {
             let gg = gsap.timeline()
             gg.from(".urban-left", {
                 opacity: 0,
-                y: 35,
+                bottom: -30,
                 duration: 1.4
             }).from(".urban-right .title-box", {
                 opacity: 0,
@@ -109,7 +111,6 @@ function UrbanBg({ showDot }) {
                     <AnchorDotQualitySchool showDot={showDot} />
                     <AnchorDotEnvironment showDot={showDot} />
                 </div>
-
             </div>
             <div className="zoom">
                 <img src={svg[1]} onClick={zoomIn} style={{ filter: scaleRatio == 1.5 ? "brightness(0.8) grayscale(100%)" : "none" }} />
@@ -191,13 +192,17 @@ function AnchorDotTransportation({ showDot }) {
 }
 
 function AnchorDotConstruction({ showDot }) {
-
+    const para = [{
+        title: `MAJOR CONSTRUCTION`,
+        para1: `新興AI科技園`,
+        para2: `數位媒體、OTT影音串流虛擬實境、AI新創、尖端醫療…全球趨勢產業匯聚，世界半導體霸主ASML艾司摩爾投資規模達300億為史上最大在台投資案，吸引跨國科技人才，融合工作、生活、休閒、創富，林口一路領先全國。`
+    }]
     return (
         <div className="construction" style={{
             opacity: showDot == "construction" ? 1 : 0,
             pointerEvents: showDot == "construction" ? "auto" : "none"
         }}>
-            {[...Array(4)].map((item, i) => <div className='dot' key={i}> <img src={svg[3].default} /></div>)}
+            {[...Array(5)].map((item, i) => <div className='dot' key={i}><FancyBox thumbUrl={svg[3].default} ><Construction url={webp[0].default} para={para[0]} /></FancyBox> </div>)}
         </div>
     )
 }

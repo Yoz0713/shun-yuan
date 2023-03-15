@@ -1,7 +1,7 @@
 import React from 'react';
-
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { closeVideo } from '../redux/action/videoToggle';
 const requireSvg = require.context("../../../img/layout/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 
@@ -9,10 +9,12 @@ const svg = requireSvg.keys().map(requireSvg);
 
 function Headers({ reduxState }) {
     const location = useLocation();
-
+    const dispatch = useDispatch()
     return (
         <div className="header">
-            <Link to={"/"}>
+            <Link to={"/"} onClick={() => {
+                dispatch(closeVideo())
+            }}>
                 <img src={svg[0].default} style={{ opacity: location.pathname == "/lifefunction" ? "0" : location.pathname != "/" ? "1" : reduxState == 0 ? "0" : "1", transition: "0.5s" }} />
             </Link>
 
