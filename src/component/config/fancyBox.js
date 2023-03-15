@@ -22,7 +22,7 @@ export default function FancyBox({ thumbUrl, text, children }) {
                     text ? <p>{text}</p> : null
                 }
             </div>
-            {open ? <Modal open={open} setOpen={setOpen} children={children} /> : null}
+            <Modal open={open} setOpen={setOpen} children={children} />
 
 
         </>
@@ -43,7 +43,8 @@ function Modal({ open, setOpen, children }) {
         opacity: open ? "1" : "0",
         pointerEvents: open ? "auto" : "none",
         transition: "0.6s",
-        backgroundColor: "#f7f7f7"
+        backgroundColor: "#f7f7f7",
+        zIndex: 21
     }
     const closeStyle = {
 
@@ -66,6 +67,6 @@ function Modal({ open, setOpen, children }) {
                 <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>
             </div>
         </div>,
-        domNode
+        document.body
     )
 }

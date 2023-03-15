@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Construction({ url, para }) {
+export default function BasicContent({ para }) {
     return (
-        <div className="construction">
+        <div className="basicContent">
             <div className="left">
                 <div className="imgBox">
-                    <img src={url} />
+                    <img src={para.img} />
                 </div>
             </div>
             <div className="right">

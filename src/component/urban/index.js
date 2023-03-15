@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import gsap from 'gsap';
 import FancyBox from '../config/fancyBox';
-import Construction from './construction';
+import BasicContent from './construction';
 const requireindexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const indexSvg = requireindexSvg.keys().map(requireindexSvg);
 const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.svg$/);
@@ -193,16 +193,45 @@ function AnchorDotTransportation({ showDot }) {
 
 function AnchorDotConstruction({ showDot }) {
     const para = [{
+        img: webp[7].default,
         title: `MAJOR CONSTRUCTION`,
         para1: `新興AI科技園`,
         para2: `數位媒體、OTT影音串流虛擬實境、AI新創、尖端醫療…全球趨勢產業匯聚，世界半導體霸主ASML艾司摩爾投資規模達300億為史上最大在台投資案，吸引跨國科技人才，融合工作、生活、休閒、創富，林口一路領先全國。`
+    }, {
+        img: webp[8].default,
+        title: `MAJOR CONSTRUCTION`,
+        para1: `林口新創園區`,
+        para2: `為鼓勵臺灣新創接軌國際、促進國際新創交流，經濟部中小企業處將台北世界大學運動會選手村場域活化為林口新創園。本聚落將提供新創辦公室、住宿空間、共同工作空間及展演空間等設施，並廣邀特色商店及國際級加速器和育成中心進駐，結合鄰近產業供應鏈及場域實證空間，期能成為國際新創來臺發展的最佳場域。`
+    }, {
+        img: webp[9].default,
+        title: `MAJOR CONSTRUCTION`,
+        para1: `國家檔案館`,
+        para2: `「建立國家級建設」為主軸，預計在 2024 年完工；規劃規模為地上10層、地下2層，樓地板面積約14,834坪，興建目的在滿足未來20年所需100公里典藏容量空間，並同步建置多元服務、技術研發等空間，提供開放應用及教育推廣等各項服務。`
+    }, {
+        img: webp[10].default,
+        title: `MAJOR CONSTRUCTION`,
+        para1: `105市道改善工程`,
+        para2: `為滿足目標年交通量需求規劃雙向各2車道，工程起點為八里區長坑國小南側，工程終點為林口高爾夫球場，道路開闢長度為2.46公里，完工後將解決既有蜿蜒路線不符合大型車輛運轉軌跡之規範問題，提供安全舒適之行車環境，確保道路安全及提升整體區域路網。`
+    }, {
+        img: webp[11].default,
+        title: `MAJOR CONSTRUCTION`,
+        para1: `元智大學`,
+        para2: `預計在2024年完工，佔地2.5公頃之文教用地成立「元智大學新北分部醫護學院」，結合產學研人才，搭配集團內的產業資源， 培育全人智慧醫療人才，以協助因應國家未來智慧醫療人力需求與智慧醫療之推廣。 `
     }]
     return (
         <div className="construction" style={{
             opacity: showDot == "construction" ? 1 : 0,
             pointerEvents: showDot == "construction" ? "auto" : "none"
         }}>
-            {[...Array(5)].map((item, i) => <div className='dot' key={i}><FancyBox thumbUrl={svg[3].default} ><Construction url={webp[0].default} para={para[0]} /></FancyBox> </div>)}
+            {[...Array(5)].map((item, i) => {
+                return (
+                    <div className='dot' key={i}>
+                        <FancyBox thumbUrl={svg[3].default} >
+                            <BasicContent para={para[i]} />
+                        </FancyBox>
+                    </div>
+                )
+            })}
         </div>
     )
 }
