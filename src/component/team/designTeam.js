@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import sunlandSvg from "../../../img/index/svg/002-slogan.svg"
 import { Routes, Route } from 'react-router-dom';
-import spliText from '../config/splitText';
+import SpliText from '../config/splitText';
 import gsap from 'gsap';
 const requireWebp = require.context("../../../img/team/design/webp", false, /^\.\/.*\.webp$/);
 const webp = requireWebp.keys().map(requireWebp);
@@ -289,17 +289,10 @@ function LanscapeDesigner({ height, right }) {
 }
 
 function ParaBox({ title, para, linePosition, mb, text }) {
-    let newArr = spliText(title);
     return (
         <div className="paraBox">
             <div className="title">
-                <h2 style={{ whiteSpace: "pre-wrap" }}>{newArr.map((item, i) => {
-                    if (item != "\n") {
-                        return <span key={i} style={{ display: "inline-block" }}>{item}</span>
-                    } else {
-                        return "\n"
-                    }
-                })}</h2>
+                <h2 style={{ whiteSpace: "pre-wrap" }}><SpliText text={title} /></h2>
                 <div className="line" style={linePosition}></div>
             </div>
             <div className="para">

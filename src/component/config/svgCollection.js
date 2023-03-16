@@ -1,6 +1,5 @@
 import React from 'react';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
+import { useEffect, useRef } from 'react';
 export function HomeSecondPageSvgTree(props) {
     return (
         <svg className='tree'

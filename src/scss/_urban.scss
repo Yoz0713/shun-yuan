@@ -12,18 +12,11 @@
         .urban-bg {
 
             >.imgBox {
-                position: relative;
-                overflow: hidden;
                 width: pxConvertor(1339.76);
                 height: pxConvertor(913.0113);
 
 
                 .box {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    pointer-events: auto;
-                    transition: 0.6s;
 
                     img {
                         width: 100%;
@@ -57,14 +50,30 @@
 
                             .imgBox {
                                 position: absolute;
-                                right: -6.3vw;
+                                right: -9.8vw;
                                 margin: 0 auto;
-                                bottom: 105%;
+                                bottom: 600%;
                                 width: pxConvertor(400);
                                 opacity: 0;
                                 pointer-events: none;
-                                transition: 0.3s;
+                                transition: 0.6s;
                                 z-index: 10;
+
+                                &::after {
+                                    display: block;
+                                    content: "";
+                                    width: 1px;
+                                    height: 0%;
+                                    background-color: #666666;
+                                    position: absolute;
+                                    left: 0;
+                                    right: 0;
+                                    margin: 0 auto;
+                                    bottom: -56.5%;
+                                    transition: 0.5s;
+                                }
+
+
                             }
 
                             &:hover {
@@ -76,8 +85,15 @@
 
                                 >.imgBox {
                                     opacity: 1;
+
+                                    &::after {
+                                        height: 61%;
+                                    }
                                 }
+
                             }
+
+
                         }
                     }
 
@@ -275,12 +291,6 @@
                 right: -8.1vw;
                 bottom: 1.5vw;
 
-                img {
-                    width: pxConvertor(32.75);
-                    cursor: pointer;
-                    pointer-events: auto;
-                }
-
                 & :nth-child(1) {
                     margin-right: 0.6vw;
                 }
@@ -431,6 +441,116 @@
     }
 }
 
+.fancyBox {
+    height: calc(100vw*(9/16));
+
+    .mrt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .mrt-route {
+            position: relative;
+            width: pxConvertor(1595.25);
+            height: pxConvertor(910.311);
+
+            >div {
+                position: absolute;
+                width: 2.9vw;
+                height: 2.9vw;
+                border-radius: 50%;
+                cursor: pointer;
+                top: 16.76vw;
+
+                .thumbBox {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .spot-anchor1 {
+                //台北車站
+                right: 5.75vw;
+            }
+
+            .spot-anchor2 {
+                //三重
+                right: 9.05vw;
+            }
+
+            .spot-anchor3 {
+                //新北產業園區
+                right: 12.3vw;
+            }
+
+            .spot-anchor4 {
+                //體育大學
+                right: 25.3vw;
+            }
+
+            .spot-anchor5 {
+                //桃園航空城
+                right: 41.5vw;
+                width: 10vw;
+                border-radius: none;
+            }
+        }
+
+        .mrt-map {
+            position: absolute;
+            right: 6vw;
+            bottom: 6vw;
+            padding: 0.5vw 1vw;
+            border: 1px solid #1a1a1a;
+            cursor: pointer;
+
+            p {
+                font-size: pxConvertor(21);
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                pointer-events: none;
+            }
+        }
+
+        .taipei-mrt-route {
+            position: relative;
+            height: 100%;
+            background-color: #fff;
+
+            .imgBox {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+                .box {
+                    >img {
+                        width: 100%;
+                    }
+                }
+
+            }
+
+            .zoom {
+                position: absolute;
+                right: 1.5vw;
+                bottom: 1.5vw;
+                z-index: 20;
+
+                img {
+                    display: block;
+                }
+
+                & :nth-child(1) {
+                    margin-bottom: 0.6vw;
+                }
+            }
+        }
+    }
+
+
+}
 
 @keyframes anchorDotFlow {
     0% {

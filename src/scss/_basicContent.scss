@@ -29,16 +29,17 @@
             margin-bottom: pxConvertor(65);
 
             h2 {
-                color: $gold_color;
-                font-family: 'Cormorant Garamond', serif;
-                font-weight: 400;
-                font-size: var(--ch_l_text);
-                letter-spacing: 0.02em;
+                span {
+                    color: $gold_color;
+                    font-family: 'Cormorant Garamond', serif;
+                    font-weight: 400;
+                    font-size: var(--ch_l_text);
+                    letter-spacing: 0.02em;
+                }
+
             }
 
-            &::after {
-                display: block;
-                content: "";
+            .line {
                 position: absolute;
                 width: 3vw;
                 height: 1px;
@@ -50,7 +51,8 @@
 
         .paraBox {
             p {
-                letter-spacing: 0.05em;
+                letter-spacing: 0.07em;
+                white-space: pre-wrap;
             }
 
             & :nth-child(1) {
@@ -64,8 +66,63 @@
                 font-weight: 500;
                 color: #333;
                 font-family: "Microsoft JhengHei", serif;
-                line-height: 2.1;
+                line-height: 2;
             }
         }
+
+        ul {
+            display: flex;
+            margin-top: 3vw;
+
+            li {
+                color: #1a1a1a;
+                font-size: pxConvertor(21);
+                line-height: 1;
+                letter-spacing: 0.1em;
+                font-weight: 600;
+
+                cursor: pointer;
+
+                &:hover {
+                    color: $gold_color;
+                }
+            }
+
+            & :not(:last-child) {
+                position: relative;
+                margin-right: 2vw;
+
+                &::after {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    right: -1vw;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    height: 100%;
+                    width: 1px;
+                    background-color: #1a1a1a;
+                }
+            }
+        }
+    }
+}
+
+.opposite {
+    width: 83%;
+
+    .left {
+        margin: 0;
+        margin-left: 10vw;
+
+        .imgBox {
+            width: pxConvertor(817);
+            height: pxConvertor(817);
+        }
+    }
+
+    .right {
+        order: -1;
     }
 }

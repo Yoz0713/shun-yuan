@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom';
 export default function FancyBox({ thumbUrl, text, children }) {
     const [open, setOpen] = useState(false);
@@ -22,7 +22,8 @@ export default function FancyBox({ thumbUrl, text, children }) {
                     text ? <p>{text}</p> : null
                 }
             </div>
-            <Modal open={open} setOpen={setOpen} children={children} />
+            {open ? <Modal open={open} setOpen={setOpen} children={children} /> : null}
+
 
 
         </>
@@ -30,8 +31,8 @@ export default function FancyBox({ thumbUrl, text, children }) {
     )
 }
 
-function Modal({ open, setOpen, children }) {
-    const domNode = document.querySelector(".fadeIn");
+function Modal({ setOpen, children }) {
+    const [trans, setTrans] = useState(false)
     const fancyBoxStyle = {
         position: "fixed",
         left: 0,
@@ -40,8 +41,8 @@ function Modal({ open, setOpen, children }) {
         height: "100%",
         objectFit: "cover",
         pointerEvents: "auto",
-        opacity: open ? "1" : "0",
-        pointerEvents: open ? "auto" : "none",
+        opacity: trans ? "1" : "0",
+        pointerEvents: trans ? "auto" : "none",
         transition: "0.6s",
         backgroundColor: "#f7f7f7",
         zIndex: 21
@@ -57,11 +58,15 @@ function Modal({ open, setOpen, children }) {
         left: 0,
         margin: "auto"
     }
+    useEffect(() => {
+        setTrans(true)
+    })
     return ReactDOM.createPortal(
         <div className="fancyBox" style={fancyBoxStyle} >
             {children}
             <div className="close" style={{ position: "absolute", right: "4vw", top: "2vw", cursor: "pointer", width: "2vw", height: "2vw" }} onClick={() => {
-                setOpen(false)
+                setOpen(false);
+                setTrans(false)
             }}>
                 <div className="line1" style={{ ...closeStyle, transform: "rotate(45deg)" }}></div>
                 <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>

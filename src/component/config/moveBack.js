@@ -23,7 +23,7 @@ const MoveBack = ({ z }) => {
         setUrl(path)
     }, [path]);
     return (
-        <section className="move-back" onDoubleClick={handleClick} style={{ width: "100%", height: "100%", position: "fixed", zIndex: z, left: 0, top: 0, pointerEvents: url == "/" ? "none" : "auto" }}>
+        <section className="move-back" onClick={handleClick} style={{ width: "100%", height: "100%", position: "fixed", zIndex: z, left: 0, top: 0, pointerEvents: url == "/" ? "none" : "auto" }}>
 
         </section>
     )
