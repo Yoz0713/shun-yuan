@@ -43,9 +43,10 @@ export default function Urban() {
     }, [])
     useEffect(() => {
         for (let i = 0; i < webp.length; i++) {
+
             preloadImage(webp[i].default)
         }
-
+        preloadImage(svg[4].default)
     }, [])
     return (
         <section className='urban' ref={animateRef}>
