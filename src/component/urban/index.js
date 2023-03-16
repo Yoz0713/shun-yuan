@@ -1,8 +1,9 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState, useEffect } from 'react'
 import gsap from 'gsap';
 import FancyBox from '../config/fancyBox';
 import BasicContent from '../config/basicContent';
 import ScaleDrag from '../config/scaleDrag';
+import preloadImage from "../config/preload"
 const requireindexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const indexSvg = requireindexSvg.keys().map(requireindexSvg);
 const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.svg$/);
@@ -39,6 +40,12 @@ export default function Urban() {
             }, "<+0.5")
         }, [animateRef])
         return () => ctx.revert()
+    }, [])
+    useEffect(() => {
+        for (let i = 0; i < webp.length; i++) {
+            preloadImage(webp[i].default)
+        }
+
     }, [])
     return (
         <section className='urban' ref={animateRef}>
