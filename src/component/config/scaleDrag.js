@@ -15,10 +15,13 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
 
     const zoomIn = () => {
         setScaleRatio(maxRatio);
+
         requestAnimationFrame(() => {
             setX(init.x);
             setY(init.y);
         });
+
+
 
     }
     const zoomOut = () => {
@@ -57,7 +60,6 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
         position: "relative",
         width: "100%",
         height: "100%",
-
         transform: `scale(${scaleRatio}) `,
         left: `${x}`,
         top: `${y}`,
@@ -80,7 +82,7 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
                     {children}
                 </div>
             </div>
-            <div className="zoom" style={{ display: maxRatio == 1 ? "none" : "flex" }}>
+            <div className="zoom" style={{ display: maxRatio == 1 ? "none" : "flex", pointerEvents: "auto", padding: "0.6vw" }}>
                 <img src={zoomImg1} onClick={zoomIn} style={{ ...zoomImgStyle, filter: scaleRatio == maxRatio ? "brightness(0.8) grayscale(100%)" : "none" }} />
                 <img src={zoomImg2} onClick={zoomOut} style={{ ...zoomImgStyle, filter: scaleRatio == 1 ? "brightness(0.8) grayscale(100%)" : "none" }} />
             </div>

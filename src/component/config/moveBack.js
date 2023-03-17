@@ -19,6 +19,7 @@ const MoveBack = ({ z }) => {
             navigate("/");
         }
     }
+
     useEffect(() => {
         setUrl(path)
     }, [path]);

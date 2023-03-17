@@ -12,11 +12,16 @@ export default function BasicContent({ para }) {
             gg.from(".left", {
                 opacity: 0,
                 x: -30,
+                duration: 1.2
             }).from(".right h2 span", {
                 opacity: 0,
                 x: 30,
                 stagger: 0.03
             }, "<+0.5").from(".right p", {
+                opacity: 0,
+                x: 30,
+                stagger: 0.3
+            }, "<+0.3").from(".right li", {
                 opacity: 0,
                 x: 30,
                 stagger: 0.3
@@ -64,7 +69,8 @@ function Nav({ para, text, setText }) {
                     <li
                         key={item}
                         style={{ color: text == `para${i + 1}` ? "#c2a357" : "#1a1a1a" }}
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.stopPropagation()
                             setText(`para${i + 1}`)
                         }}
                     >

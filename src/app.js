@@ -79,7 +79,7 @@ function Content() {
     return (
         <div
             className={`${transitionStage}`}
-            style={location.pathname !== "/" ? { position: "relative", pointerEvents: "none", zIndex: 21 } : {}}
+            style={location.pathname !== "/" ? { position: "relative", pointerEvents: transitionStage == "fadeOut" ? "auto" : "none", zIndex: 21 } : {}}
         >
             <Routes location={displayLocation}>
                 <Route path="/" element={<Home />} />

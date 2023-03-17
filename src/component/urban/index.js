@@ -18,7 +18,7 @@ export default function Urban() {
             let gg = gsap.timeline()
             gg.from(".urban-left", {
                 opacity: 0,
-                bottom: -30,
+                y: 30,
                 duration: 1.4
             }).from(".urban-right .title-box", {
                 opacity: 0,
