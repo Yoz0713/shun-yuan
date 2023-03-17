@@ -14,6 +14,7 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
 
 
     const zoomIn = () => {
+
         setScaleRatio(maxRatio);
 
         requestAnimationFrame(() => {

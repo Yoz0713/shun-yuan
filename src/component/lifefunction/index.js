@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useLayoutEffect, useRef } from 'react';
 // Import animation libary
 import { gsap } from "gsap";
-
+import Glow from '../config/glow';
 const requireLayoutSvg = require.context("../../../img/layout/svg", false, /^\.\/.*\.svg$/);
 const layoutSvg = requireLayoutSvg.keys().map(requireLayoutSvg);
 const requireSvg = require.context("../../../img/lifefunction/svg", false, /^\.\/.*\.svg$/);
@@ -62,26 +62,12 @@ function AerialImage({ setTransistionStage }) {
 //     )
 // }
 function LogoBox() {
-    let dot = [];
-    for (let i = 0; i < 40; i++) {
-        dot.push(
-            {
-                x: Math.floor(Math.random() * 100) + "%",
-                scale: Math.random() * 1.5 + 0.3,
-                duration: Math.random() * 7 + 3 + "s",
-                delay: Math.random() * 3 + "s",
-            }
-        )
-    }
+
     return (
         <div className="logo">
             <img src={layoutSvg[4].default} />
-            <div className="glow">
-                {dot.map((item, i) => {
-                    return <div key={i} className='dot' style={{ left: item.x, animationDuration: item.duration, animationDelay: item.delay, transform: `scale(${item.scale})` }}></div>
-                })}
-                <img src={webp[1].default} />
-            </div>
+            <Glow number={40} color={"#fff"} />
+
         </div>
     )
 }

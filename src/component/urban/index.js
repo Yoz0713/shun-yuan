@@ -4,6 +4,7 @@ import FancyBox from '../config/fancyBox';
 import BasicContent from '../config/basicContent';
 import ScaleDrag from '../config/scaleDrag';
 import preloadImage from "../config/preload"
+import Glow from '../config/glow';
 const requireindexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const indexSvg = requireindexSvg.keys().map(requireindexSvg);
 const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.svg$/);
@@ -71,6 +72,8 @@ function UrbanBg({ showDot }) {
                 <AnchorDotNationSchool showDot={showDot} />
                 <AnchorDotQualitySchool showDot={showDot} />
                 <AnchorDotEnvironment showDot={showDot} />
+                <Glow number={15} color={"#fff"} />
+
             </ScaleDrag>
 
         </div>
@@ -327,6 +330,15 @@ function AnchorDotNationSchool({ showDot }) {
         }
         , {
             id: 7,
+            img: webp[6].default
+        }, {
+            id: 8,
+            img: webp[6].default
+        }, {
+            id: 9,
+            img: webp[6].default
+        }, {
+            id: 10,
             img: webp[6].default
         }
     ]
