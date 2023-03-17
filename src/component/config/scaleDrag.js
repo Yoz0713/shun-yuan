@@ -41,6 +41,7 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
     }, [flag, scaleRatio, maxRatio, press]);
 
     const onMouseDown = (e) => {
+
         setFlag(true);
         setPress({
             x: e.pageX - dragTarget.current.offsetLeft,
@@ -72,7 +73,9 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
     }
     return (
         <>
-            <div className="imgBox" onMouseDown={onMouseDown} style={imgBoxStyle}
+            <div className="imgBox" onClick={(e) => {
+                e.stopPropagation()
+            }} onMouseDown={onMouseDown} style={imgBoxStyle}
                 onMouseMove={onMouseMove}
                 onMouseUp={onMouseUp}
                 onMouseLeave={onMouseUp}>
