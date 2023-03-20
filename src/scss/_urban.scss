@@ -239,7 +239,7 @@
                         }
 
                         &> :nth-child(10) {
-                            //新北美國
+                            //和柯
                             left: 40.2vw;
                             bottom: 41.5vw;
                         }
@@ -324,6 +324,18 @@
                             //一品公園
                             left: 42.6vw;
                             bottom: 31vw;
+                        }
+
+                        &>:nth-child(7) {
+                            //立言公園
+                            left: 12.5vw;
+                            bottom: 13.8vw;
+                        }
+
+                        &>:nth-child(8) {
+                            //扶輪公園
+                            left: 20.5vw;
+                            bottom: 14vw;
                         }
                     }
 

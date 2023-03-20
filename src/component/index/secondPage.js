@@ -192,10 +192,10 @@ function BuildingTeam({ type }) {
             <Link to={"/team/designTeam/postylateDesigner"}>
                 <img src={webp[7].default} style={{ display: thumb == "thumb2" ? "block" : "none" }} />
             </Link>
-            <Link to={"/team/designTeam/lightingDesigner"}>
+            <Link to={"/team/designTeam/lanscapeDesigner"}>
                 <img src={webp[8].default} style={{ display: thumb == "thumb3" ? "block" : "none" }} />
             </Link>
-            <Link to={"/team/designTeam/lanscapeDesigner"}>
+            <Link to={"/team/designTeam/lightingDesigner"}>
                 <img src={png[1].default} style={{ display: thumb == "thumb4" ? "block" : "none" }} />
             </Link>
 

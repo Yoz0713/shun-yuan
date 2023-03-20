@@ -46,16 +46,7 @@ function Content() {
                 opacity: 0,
                 onComplete: () => {
                     setDisplayLocation(location);
-                    if (location.pathname != "/lifefunction") {
-                        setTransistionStage("fadeIn")
-                    }
-                    // setTimeout(() => {
-                    //     setTransistionStage("fadeIn")
-                    // }, 200)
-
-
-
-
+                    setTransistionStage("fadeIn")
                 }
             })
         } else {
@@ -83,7 +74,7 @@ function Content() {
         >
             <Routes location={displayLocation}>
                 <Route path="/" element={<Home />} />
-                <Route path="/lifefunction" element={<LifeFunction setTransistionStage={setTransistionStage} />} />
+                <Route path="/lifefunction" element={<LifeFunction />} />
                 <Route path="/team/*" element={<Team />} />
                 <Route path="/urban" element={<Urban />} />
                 <Route path="*" element={<><h1 style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>目前頁面正在製作中，請點選空白處回首頁</h1><MoveBack /></>} />

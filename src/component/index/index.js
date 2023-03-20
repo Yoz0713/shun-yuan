@@ -46,13 +46,7 @@ function Home({ slideChangeAction, myState, teamState }) {
             });
             swiper1.slideTo(myState, 0)
         }
-        //預載入第二層級首圖
-        let url = [
-            "../../../img/lifefunction/webp/000-bg1.webp",
-            "../../../img/team/coporation/sunland/webp/000-sunland-bg.webp",
-            "../../../img/team/coporation/oliv/webp/000-oliv-bg.webp",
-            "../../../img/team/urban/svg/000-urban-bg.svg",
-        ]
+
 
         preloadImage(require("../../../img/lifefunction/webp/000-bg1.webp").default);
         preloadImage(require("../../../img/team/coporation/sunland/webp/000-sunland-bg.webp").default);

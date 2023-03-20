@@ -333,13 +333,13 @@ function AnchorDotNationSchool({ showDot }) {
             img: webp[6].default
         }, {
             id: 8,
-            img: webp[6].default
+            img: webp[21].default
         }, {
             id: 9,
-            img: webp[6].default
+            img: webp[22].default
         }, {
             id: 10,
-            img: webp[6].default
+            img: webp[23].default
         }
     ]
     return (
@@ -367,7 +367,7 @@ function AnchorDotEnvironment({ showDot }) {
 
     return (
         <div className="environment" style={{ opacity: showDot == "environment" ? 1 : 0, pointerEvents: showDot == "environment" ? "auto" : "none" }}>
-            {[...Array(6)].map((item, i) => <div className='dot' key={i}> <img src={svg[3].default} /></div>)}
+            {[...Array(8)].map((item, i) => <div className='dot' key={i}> <img src={svg[3].default} /></div>)}
         </div>
     )
 } 

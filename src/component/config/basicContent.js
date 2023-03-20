@@ -1,6 +1,6 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'
+import React, { useState, useLayoutEffect, useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import SpliText from './splitText'
+import SpliText from './splitText';
 export default function BasicContent({ para }) {
     const [text, setText] = useState("para1")
     const animateRef = useRef(null);

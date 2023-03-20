@@ -1,32 +1,24 @@
-import React, { useState, useLayoutEffect, useRef, lazy, Suspense, useEffect } from 'react'
-import Pdf from '../pdf/Pdf';
+import React, { useState, useLayoutEffect, useRef } from 'react'
+
 import gsap from 'gsap';
 import RunNumber from '../config/runNumber';
+import { taoyuanData, linkouData, taipeiData, newTaipeiData } from './portfolioData';
 const requireWebp = require.context("../../../img/team/coporation/portfolio/webp", false, /^\.\/.*\.webp$/);
 const webp = requireWebp.keys().map(requireWebp);
 const requireSvg = require.context("../../../img/team/coporation/portfolio/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 export default function Portfolio() {
-    const [active, setActive] = useState(false)
     const animateRef = useRef(null);
-
-
+    const [type, setType] = useState(0)
+    const [isAnimate, setIsanimate] = useState(false)
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             let gg = gsap.timeline();
-            gg.from(".slice-bg img", {
-                y: 20,
-                opacity: 0,
-                duration: 1.2,
-                stagger: 0.4
-            }).from(".square-bg img", {
-                y: -50,
-                opacity: 0,
-                duration: 1.2,
-            }, "<+0.6").from(".right .title h3", {
+            gg.from(".right .title h3", {
                 x: 50,
                 opacity: 0,
                 duration: 0.8,
+                delay: 0.5
             }, "<").from(".right .para p", {
                 x: 50,
                 opacity: 0,
@@ -51,21 +43,77 @@ export default function Portfolio() {
         }, [animateRef])
         return () => ctx.revert()
     }, [])
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            let gg = gsap.timeline();
+            gg.from(".slice-bg img", {
+                y: 20,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.4
+            }).from(".square-bg img", {
+                y: -50,
+                opacity: 0,
+                duration: 1.2,
+                onStart: () => {
+                    setTimeout(() => {
+                        setIsanimate(false)
+                    }, 300)
+
+                }
+            }, "<+0.6")
+        }, [animateRef])
+        return () => ctx.revert()
+    }, [type])
+    const fadeOut = (city) => {
+        setIsanimate(true)
+        let ctx = gsap.context(() => {
+            let gg = gsap.timeline()
+            if (city != 0) {
+                gg.to(".slice-bg", {
+                    opacity: 0,
+                    duration: 0.2
+                }).to(".square-bg img", {
+                    y: -50,
+                    opacity: 0,
+                    duration: 0.3,
+                }, "<").to(".area", {
+                    opacity: 0,
+                    duration: 0.2
+                }, "<").then(() => {
+                    setType(city)
+                })
+            }
+
+
+
+
+
+        }, [animateRef])
+    }
     return (
         <>
             <section className="portfolio" ref={animateRef}>
                 <div className="left">
-                    <div className="slice-bg">
+                    {type == 0 ? <div className="slice-bg">
                         <img src={webp[0].default} />
                         <img src={webp[1].default} />
                         <img src={webp[2].default} />
-                    </div>
+                        <img src={webp[3].default} />
+                    </div> : type == "taoyuan" ?
+                        <Area data={taoyuanData} setType={setType} type={type} />
+                        : type == "taipei" ?
+                            <Area data={taipeiData} setType={setType} type={type} />
+                            : type == "newTaipei" ?
+                                <Area data={newTaipeiData} setType={setType} type={type} />
+                                : <Area data={linkouData} setType={setType} type={type} />
+                    }
+
+
                     <div className="square-bg">
                         <img src={svg[0].default} />
                     </div>
-                    <div className="more" onClick={() => setActive(true)}>
-                        <p>更多業績</p>
-                    </div>
+
                 </div>
                 <div className="right">
                     <div className="paraBox">
@@ -77,17 +125,26 @@ export default function Portfolio() {
                             <p>累積四十年品牌，總案量已超過一萬五千戶以上。在大台北地區開枝散葉，共創一片生生不息的建築森林。</p>
                         </div>
                     </div>
-                    <div className="imgBox">
-                        <img src={webp[3].default} />
-                        <p className='taipei'>台北<RunNumber target={4} speed={90} delay={1800} />案</p>
-                        <p className='newTaipei'>新北<RunNumber target={67} speed={15} delay={2000} />案</p>
-                        <p className='taoyuan'>桃園<RunNumber target={21} speed={40} delay={2200} />案</p>
+                    <div className="imgBox" >
+                        <img src={webp[4].default} />
+                        <p className='taipei' onClick={() => {
+                            fadeOut("taipei")
+                        }} style={{ pointerEvents: isAnimate ? "none" : type == "taipei" ? "none" : "auto" }}>台北<RunNumber target={13} speed={95} delay={1800} />案</p>
+                        <p className='linkou' onClick={() => {
+                            fadeOut("linkou")
+                        }} style={{ pointerEvents: isAnimate ? "none" : type == "linkou" ? "none" : "auto" }}>林口<RunNumber target={26} speed={60} delay={1900} />案</p>
+                        <p className='newTaipei' onClick={() => {
+                            fadeOut("newTaipei")
+                        }} style={{ pointerEvents: isAnimate ? "none" : type == "newTaipei" ? "none" : "auto" }}>新北<RunNumber target={32} speed={40} delay={2000} />案</p>
+                        <p className='taoyuan' onClick={() => {
+                            fadeOut("taoyuan")
+                        }} style={{ pointerEvents: isAnimate ? "none" : type == "taoyuan" ? "none" : "auto" }}>桃園<RunNumber target={21} speed={65} delay={2100} />案</p>
                     </div>
                 </div>
                 <div className="total">
                     <div className="case">
                         <p>全台共</p>
-                        <RunNumber target={92} speed={8} delay={2700} />
+                        <RunNumber target={92} gap={3} speed={30} delay={2700} />
                         <p>案</p>
                     </div>
                     <div className="household">
@@ -97,8 +154,84 @@ export default function Portfolio() {
                     </div>
                 </div>
             </section>
-            <Pdf url={"./portfolio.pdf"} active={active} setActive={setActive} />
+            {/* <Pdf url={"./portfolio.pdf"} active={active} setActive={setActive} /> */}
         </>
 
+    )
+}
+
+function Area({ data, setType, type }) {
+    const animateRef = useRef(null)
+    const closeStyle = {
+
+        position: "absolute",
+        backgroundColor: "#fff",
+        width: "100%", height: "2px",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        margin: "auto"
+    }
+    useLayoutEffect(() => {
+        let ctx = gsap.context(() => {
+            let gg = gsap.timeline()
+            gg.from(animateRef.current, {
+                opacity: 0,
+                duration: 1,
+                y: 30,
+                delay: 0.15
+
+            }).from(".area-form", {
+                opacity: 0,
+                duration: 1,
+                y: 30,
+
+            }, "<+0.3").from(".close", {
+                opacity: 0,
+                duration: 1,
+                y: 30,
+
+            }, "<")
+        }, [animateRef])
+        return () => ctx.revert()
+    }, [type])
+    const fadeOut = () => {
+        let ctx = gsap.context(() => {
+            let gg = gsap.timeline()
+            gg.to(animateRef.current, {
+                opacity: 0,
+                duration: 0.3
+            }).then(() => {
+                setType(0)
+            })
+        }, [animateRef])
+    }
+    return (
+        <section className="area" ref={animateRef}>
+            <div className="area-title">
+                <h3>{data.title}</h3>
+            </div>
+            <div className="area-form">
+                <div className="area-form-head">
+                    <h4>完工年度</h4>
+                    <h4>案名</h4>
+                </div>
+                <div className="area-form-body">
+                    {data.body.map((item, i) => {
+                        return (
+                            <div className="box">
+                                <p>{item.year}</p>
+                                <p>{item.name}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+            <div className="close" style={{ position: "absolute", right: "0.7vw", top: "3.6vw", cursor: "pointer", width: "2vw", height: "2vw" }} onClick={fadeOut}>
+                <div className="line1" style={{ ...closeStyle, transform: "rotate(45deg)" }}></div>
+                <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>
+            </div>
+        </section>
     )
 }

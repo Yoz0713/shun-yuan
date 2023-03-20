@@ -456,18 +456,20 @@
         justify-content: space-between;
         width: 100%;
         height: 100%;
+        background-color: #fff;
 
         .left {
-            position: relative;
-            width: 43%;
+
+            width: pxConvertor(840);
             height: 100%;
+            margin-left: pxConvertor(140);
 
             .slice-bg {
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 position: relative;
                 width: 100%;
-                height: 97%;
+                height: 87%;
                 z-index: 2;
                 overflow: hidden;
 
@@ -478,20 +480,129 @@
                     -ms-transform: translateZ(0);
                     -o-transform: translateZ(0);
                     transform: translateZ(0);
-                    width: 7.5vw;
+                    width: pxConvertor(151);
                     height: auto;
                     object-fit: contain;
                 }
 
                 & :nth-child(1),
                 & :nth-child(3) {
-                    align-self: flex-start;
+                    align-self: center;
                     margin-top: 10vw;
                 }
 
+                & :nth-child(3) {
+                    margin-top: 5vw;
+                }
+
                 & :nth-child(2) {
-                    margin: 4vw 3.65vw 0;
-                    align-self: flex-start;
+                    align-self: center;
+                }
+
+                & :nth-child(4) {
+                    width: pxConvertor(237);
+                }
+            }
+
+            .area {
+                position: relative;
+                margin-top: pxConvertor(166);
+                width: 100%;
+                z-index: 20;
+                pointer-events: auto;
+
+                &-title {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-bottom: pxConvertor(16);
+
+                    h3 {
+                        font-size: var(--ch_ml_text);
+                        color: #00303C;
+                        font-weight: 700;
+                    }
+                }
+
+                &-form {
+                    width: 100%;
+
+
+                    &-head {
+                        display: flex;
+                        background-color: #00303C;
+                        padding: pxConvertor(17) 0;
+                        width: 100%;
+
+                        h4 {
+                            width: 50%;
+                            text-align: center;
+                            font-size: var(--ch_s_text);
+                            color: #fff;
+                            font-weight: 400;
+                        }
+                    }
+
+                    &-body {
+                        width: 100%;
+                        height: 38vw;
+                        overflow-y: scroll;
+
+
+                        .box {
+                            display: flex;
+                            width: 100%;
+
+
+                            p {
+                                width: 50%;
+                                text-align: center;
+                                font-size: var(--ch_s_text);
+                                color: #000000b4;
+                                font-weight: 600;
+                                letter-spacing: 0.05em;
+                                padding: pxConvertor(24) 0;
+                                background-color: #fff;
+                            }
+
+                            & :nth-child(1) {
+                                background-color: #f2f2f2;
+                            }
+                        }
+
+                        &::-webkit-scrollbar {
+
+                            width: 2px;
+
+                        }
+
+                        &::-webkit-scrollbar-button {
+
+                            background: transparent;
+
+                        }
+
+                        &::-webkit-scrollbar-track-piece {
+
+                            background: #ebebeb;
+
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+
+                            border-radius: 4px;
+
+                            background-color: #ACACAC;
+
+
+                        }
+
+                        &::-webkit-scrollbar-track {
+
+                            box-shadow: transparent;
+
+                        }
+                    }
                 }
             }
 
@@ -580,8 +691,8 @@
         }
 
         .right {
-            width: 50%;
-            margin-right: 6.8vw;
+            width: 40%;
+            margin-right: pxConvertor(121);
             padding-top: 4.7vw;
 
             .paraBox {
@@ -611,7 +722,7 @@
                 }
 
                 .para {
-                    width: 62%;
+                    width: 83%;
 
                     p {
                         @include para-ch();
@@ -643,9 +754,10 @@
                 -ms-transform: translateZ(0);
                 -o-transform: translateZ(0);
                 transform: translateZ(0);
+                pointer-events: auto;
 
                 img {
-                    width: 40vw;
+                    width: pxConvertor(630);
                 }
 
                 p {
@@ -653,6 +765,9 @@
                     font-size: var(--ch_s_text);
                     font-weight: 900;
                     color: #000000c7;
+                    cursor: pointer;
+
+                    padding: 0.5vw;
 
                     span {
                         margin: 0 0.7vw;
@@ -663,26 +778,33 @@
                 }
 
                 .taipei {
-                    left: 19vw;
-                    top: -0.8vw;
+                    left: 7vw;
+                    top: -0.6vw;
                 }
 
                 .newTaipei {
-                    left: 15.8vw;
-                    top: 3.8vw;
+                    left: 7vw;
+                    top: 7.1vw;
+                }
+
+                .linkou {
+                    left: 7vw;
+
+                    top: 3.3vw;
                 }
 
                 .taoyuan {
-                    left: 10.6vw;
-                    top: 7.4vw;
+                    left: 7vw;
+                    top: 10.7vw;
                 }
+
             }
         }
 
         .total {
             position: absolute;
-            bottom: 8.3vw;
-            right: 34.4vw;
+            bottom: pxConvertor(146);
+            right: pxConvertor(300);
 
 
             div {
