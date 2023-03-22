@@ -11,6 +11,9 @@ const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.sv
 const svg = requireSvg.keys().map(requireSvg);
 const requireWebp = require.context("../../../img/urban/webp", false, /^\.\/.*\.webp$/);
 const webp = requireWebp.keys().map(requireWebp);
+const requirePreloadWebp = require.context("../../../img/urban/webp", false, /.*preload\.webp$/);
+const preloadWebp = requirePreloadWebp.keys().map(requirePreloadWebp);
+
 export default function Urban() {
     const [showDot, setShowDot] = useState(false)
     const animateRef = useRef(null);
@@ -43,9 +46,9 @@ export default function Urban() {
         return () => ctx.revert()
     }, [])
     useEffect(() => {
-        for (let i = 0; i < webp.length; i++) {
+        for (let i = 0; i < preloadWebp.length; i++) {
 
-            preloadImage(webp[i].default)
+            preloadImage(preloadWebp[i].default)
         }
         preloadImage(svg[4].default)
     }, [])
@@ -342,10 +345,65 @@ function AnchorDotNationSchool({ showDot }) {
             img: webp[23].default
         }
     ]
+    const para = [{
+        img: webp[7].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `小木屋蒙特梭利幼兒園`,
+        para2: `本園採用開放式教學，以蒙特梭利教育為基礎，提供安全、溫馨的學習環境，協助幼兒建立自信、自主學習和社交技能。幼兒通過觀察、探索和實踐學習，接觸各種學習材料，提升理解力、好奇心和想像力。\n除了學術方面，園方也注重品德教育和社交技能培養，教導幼兒尊重他人、合作和分享，建立友誼和信任關係。
+        `
+    }, {
+        img: webp[9].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `夏哲森幼兒園`,
+        para2: `「君子務本，本立而道生」，一種相信教育本質與價值的服務。夏哲森幼兒園以「探究、尊重、愛」為理念，注重幼兒的自我發展和學習興趣，提供多元化的學習體驗，培養幼兒的觀察、探究、思考和創意表達能力。此外，強調家長參與和師生互動，建立教育夥伴關係，促進幼兒全人發展。
+        `
+    }, {
+        img: webp[8].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `Annie’s School 奇異鳥幼兒園`,
+        para2: `「奇異鳥美國學校」，創立於1987年，提供零歲至18歲完整嬰幼護理、托育及教育服務。以國際化前瞻為學童引進美國百年卡爾維特小學 (Calvert School) 課程，都是以英文學習。並透過海內外升學輔導機構，協助家長培育具國際觀的下一代。`
+    }, {
+        img: webp[10].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `夏恩國際幼兒園`,
+        para2: `夏恩國際幼兒園是一所國際化的幼兒園，提供2至6歲的孩童教育。學校以培養孩子的多元智能和英語能力為目標，並結合學科主題與創意表達，讓孩子們在快樂中學習。夏恩國際幼兒園也重視孩子的情緒與品德教育，透過正向心理學的理念，幫助孩子發展自信心和社交能力。此外，學校的教學團隊均具有國際化背景與專業知識，能提供孩子良好的英語環境與全方位的照顧。`
+    }, {
+        img: webp[11].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `馬禮遜美國國際學校（伯大尼）`,
+        para2: `目前已經獲得ASCI(基督學校機構)、 WASC(美國西部學院認證協會) 兩所國際知名評鑑機構的認證。申請的條件就是必須持有外籍護照，並且有台灣的居留簽證(僑民身份)。`
+    }, {
+        img: webp[11].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `康橋國際學校`,
+        para2: `從幼稚園到高中的私立學校，目前有7個校區，不需持有外國護照即可申請，入學皆以直升為主。宗旨為培養學⽣的國際競爭力，除了英語能⼒外也強調藝術和體育。`
+    }, {
+        img: webp[11].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `楓葉國際實驗學校`,
+        para2: `台版的加拿大國際學校，將有國中與高中，實驗課程是與國立臺灣師範大學合作設計，並且融入加拿大英屬哥倫比亞省課程， 期待提供給台灣的孩子全新的學習體驗。`
+    }, {
+        img: webp[11].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `LUYA Academy 奇異鳥國小部`,
+        para2: `由奇異鳥集團百分之百支持辦學，提供國際觀、品德力、學習力與創新力全方位教育核心課程，創立於1987年，提供零歲至18歲完整嬰幼護理、托育及教育服務。以國際化前瞻為學童引進美國百年卡爾維特小學 (Calvert School) 課程。`
+    }, {
+        img: webp[11].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `AAIA 新北美國學校`,
+        para2: `在2016年首度招生，課程採美國加州學制。學生必須持有美國護照方可申請和天母美國學校（TAS）一樣，是經美國在台協會（AIT）核准，申請時學生需進行英語測驗。`
+    }, {
+        img: webp[11].default,
+        title: `INTERNATIONAL SCHOOL`,
+        para1: `翰科實驗小學`,
+        para2: `學校以STEAM教學法為主，結合科技、藝術和人文等領域，提供學生全方位的學習體驗，注重學生的多元發展，提供豐富的課外活動，培養學生的創造力、國際觀和社會責任感。學校致力於培養學生的批判思考、創意表達和實踐力，讓學生成為未來的領袖和世界公民。`
+    }]
     return (
         <div className="nationSchool" style={{ opacity: showDot == "nationSchool" ? 1 : 0, pointerEvents: showDot == "nationSchool" ? "auto" : "none" }}>
             {images.map((item, i) => <div className='dot' key={i}>
-                <img src={svg[3].default} />
+                <FancyBox thumbUrl={svg[3].default} >
+                    <BasicContent para={para[i]} />
+                </FancyBox>
                 <div className='imgBox'>
                     {item.img ? <img src={item.img} /> : null}
                 </div>
@@ -355,19 +413,93 @@ function AnchorDotNationSchool({ showDot }) {
 }
 
 function AnchorDotQualitySchool({ showDot }) {
-
+    let images = [
+        {
+            id: 1,
+            img: webp[24].default
+        },
+        {
+            id: 2,
+            img: webp[25].default
+        },
+        {
+            id: 3,
+            img: webp[26].default
+        },
+        {
+            id: 4,
+            img: webp[27].default
+        },
+        {
+            id: 5,
+            img: webp[28].default
+        }, {
+            id: 6,
+            img: webp[29].default
+        }
+        , {
+            id: 7,
+            img: webp[30].default
+        }
+    ]
     return (
         <div className="qualitySchool" style={{ opacity: showDot == "qualitySchool" ? 1 : 0, pointerEvents: showDot == "qualitySchool" ? "auto" : "none" }}>
-            {[...Array(7)].map((item, i) => <div className='dot' key={i}> <img src={svg[3].default} /></div>)}
+            {
+                images.map((item, i) => <div className='dot' key={i}>
+                    <img src={svg[3].default} />
+                    <div className='imgBox'>
+                        {item.img ? <img src={item.img} /> : null}
+                    </div>
+                </div>)
+            }
         </div>
     )
 }
 
 function AnchorDotEnvironment({ showDot }) {
-
+    let images = [
+        {
+            id: 1,
+            img: webp[31].default
+        },
+        {
+            id: 2,
+            img: webp[32].default
+        },
+        {
+            id: 3,
+            img: webp[33].default
+        },
+        {
+            id: 4,
+            img: webp[34].default
+        },
+        {
+            id: 5,
+            img: webp[35].default
+        }, {
+            id: 6,
+            img: webp[36].default
+        }
+        , {
+            id: 7,
+            img: webp[37].default
+        }
+        , {
+            id: 8,
+            img: webp[38].default
+        }
+    ]
     return (
         <div className="environment" style={{ opacity: showDot == "environment" ? 1 : 0, pointerEvents: showDot == "environment" ? "auto" : "none" }}>
-            {[...Array(8)].map((item, i) => <div className='dot' key={i}> <img src={svg[3].default} /></div>)}
+            {
+                images.map((item, i) => <div className='dot' key={i}>
+                    <img src={svg[3].default} />
+                    <div className='imgBox'>
+                        {item.img ? <img src={item.img} /> : null}
+                    </div>
+                </div>)
+            }
         </div>
     )
 } 

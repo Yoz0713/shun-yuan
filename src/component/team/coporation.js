@@ -87,7 +87,7 @@ function Sunland({ animate, setAnimate }) {
             <div className="sunland">
                 <div className="left">
                     {animate == "nav3" ?
-                        <Swiper41 /> : <ImgBox url={sunlandWebp[0].default} />
+                        <Swiper41 /> : animate == "nav1" ? <ImgBox url={sunlandWebp[0].default} /> : <ImgBox url={sunlandWebp[5].default} />
                     }
                 </div>
 
@@ -163,7 +163,11 @@ function Oliv({ animate, setAnimate }) {
         <>
             <div className="oliv">
                 <div className="left">
-                    <ImgBox url={olivWebp[0].default} />
+                    {text == "para1" ?
+                        <ImgBox url={olivWebp[0].default} /> :
+                        <ImgBox url={olivWebp[1].default} />
+                    }
+
                 </div>
 
                 <div className="right">
@@ -239,13 +243,21 @@ function ParaBox({ title, para, linePosition, mb }) {
 function Swiper41() {
     let count;
     const [slide, setSlide] = useState(0);
-    const slider = useRef(null)
+    const slider = useRef(null);
+    const image = [
+        sunlandWebp[1],
+        sunlandWebp[2],
+        sunlandWebp[3],
+        sunlandWebp[4],
+        sunlandWebp[6],
+        sunlandWebp[7],
+    ]
     return (
         <div className="swiperBox" ref={slider}>
-            {[...Array(4)].map((item, i) => {
+            {image.map((item, i) => {
                 return (
                     <div key={i} className="imgBox" style={{ opacity: slide == i ? "1" : "0", pointerEvents: "none", transition: "0.5s" }}>
-                        <img src={sunlandWebp[i + 1].default} />
+                        <img src={item.default} />
                     </div>
                 )
             })}
