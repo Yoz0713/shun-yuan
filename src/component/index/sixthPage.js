@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef, useState, useLayoutEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 // Import animation libary
 import { gsap } from "gsap";
 
@@ -91,12 +92,12 @@ function SixthPageCard() {
     return (
         <div className="sixth-page-card">
             <Card img={webp[20].default} num={"01."} text={"NEWS"} style={{ marginTop: "6.5vw" }} style2={{ objectPosition: "center 0%" }} />
-            <Card img={webp[21].default} num={"02."} text={"CALCULATION"} style2={{ objectPosition: "85% center" }} />
+            <Card img={webp[21].default} url={"/calculator"} num={"02."} text={"CALCULATION"} style2={{ objectPosition: "85% center" }} />
             <Card img={webp[22].default} num={"03."} text={"INFORMATION"} style={{ marginTop: "-6.5vw" }} />
         </div>
     )
 }
-function Card({ img, num, text, style, style2 }) {
+function Card({ img, num, text, style, style2, url }) {
     return (
         <div className="card" style={style}>
             <div className="imgBox">
@@ -109,6 +110,7 @@ function Card({ img, num, text, style, style2 }) {
             <div className="paraBox">
                 <h6>{text}</h6>
             </div>
+            <Link to={url}></Link>
         </div>
     )
 }

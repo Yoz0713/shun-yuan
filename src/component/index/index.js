@@ -14,8 +14,10 @@ import { slideChangeAction } from '../redux/action/slideChange';
 import Swiper, { EffectCreative } from 'swiper';
 import 'swiper/css';
 import SwiperCore, { Mousewheel } from "swiper/core";
-import preloadImage from '../config/preload';
+import preloadImage from "../config/preload"
 SwiperCore.use([Mousewheel]);
+const requireWebp1 = require.context("../../../img", true, /^\.\/.*\.webp$/);
+const allWebp = requireWebp1.keys().map(requireWebp1);
 //組合成首頁
 function Home({ slideChangeAction, myState, teamState }) {
     const swiperRef = useRef()
@@ -47,15 +49,9 @@ function Home({ slideChangeAction, myState, teamState }) {
             swiper1.slideTo(myState, 0)
         }
 
-
-        preloadImage(require("../../../img/lifefunction/webp/000-bg1.webp").default);
-        preloadImage(require("../../../img/team/coporation/sunland/webp/000-sunland-bg.webp").default);
-        preloadImage(require("../../../img/team/coporation/oliv/webp/000-oliv-bg.webp").default);
-        preloadImage(require("../../../img/urban/svg/000-urban-bg.svg").default);
-        preloadImage(require("../../../img/team/design/webp/000-architecture.webp").default);
-        preloadImage(require("../../../img/team/design/webp/001-yunDing.webp").default);
-        preloadImage(require("../../../img/team/design/webp/002-sunDa.webp").default);
-        preloadImage(require("../../../img/team/design/webp/003-liuGuao.webp").default);
+        allWebp.forEach((item, i) => {
+            preloadImage(item.default)
+        });
 
     }, []);
 

@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import FancyBox from '../config/fancyBox';
 import BasicContent from '../config/basicContent';
 import ScaleDrag from '../config/scaleDrag';
-import preloadImage from "../config/preload"
 import Glow from '../config/glow';
 const requireindexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const indexSvg = requireindexSvg.keys().map(requireindexSvg);
@@ -11,8 +10,7 @@ const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.sv
 const svg = requireSvg.keys().map(requireSvg);
 const requireWebp = require.context("../../../img/urban/webp", false, /^\.\/.*\.webp$/);
 const webp = requireWebp.keys().map(requireWebp);
-const requirePreloadWebp = require.context("../../../img/urban/webp", false, /.*preload\.webp$/);
-const preloadWebp = requirePreloadWebp.keys().map(requirePreloadWebp);
+
 
 export default function Urban() {
     const [showDot, setShowDot] = useState(false)
@@ -45,13 +43,7 @@ export default function Urban() {
         }, [animateRef])
         return () => ctx.revert()
     }, [])
-    useEffect(() => {
-        for (let i = 0; i < preloadWebp.length; i++) {
 
-            preloadImage(preloadWebp[i].default)
-        }
-        preloadImage(svg[4].default)
-    }, [])
     return (
         <section className='urban' ref={animateRef}>
             <div className="urban-left">
@@ -263,15 +255,13 @@ function AnchorDotTransportation({ showDot }) {
 
 function AnchorDotConstruction({ showDot }) {
     const para = [{
-        img: webp[7].default,
-        title: `MAJOR CONSTRUCTION`,
-        para1: `新興AI科技園`,
-        para2: `數位媒體、OTT影音串流虛擬實境、AI新創、尖端醫療…全球趨勢產業匯聚，世界半導體霸主ASML艾司摩爾投資規模達300億為史上最大在台投資案，吸引跨國科技人才，融合工作、生活、休閒、創富，林口一路領先全國。`
+        img: null,
     }, {
         img: webp[9].default,
         title: `MAJOR CONSTRUCTION`,
         para1: `國家檔案館`,
-        para2: `「建立國家級建設」為主軸，預計在 2024 年完工；規劃規模為地上10層、地下2層，樓地板面積約14,834坪，興建目的在滿足未來20年所需100公里典藏容量空間，並同步建置多元服務、技術研發等空間，提供開放應用及教育推廣等各項服務。`
+        para2: `「建立國家級建設」為主軸，預計在 2024 年完工；規劃規模為地上10層、地下2層，樓地板面積約14,834坪，興建目的在滿足未來20年所需100公里典藏容量空間，並同步建置多元服務、技術研發等空間，提供開放應用及教育推廣等各項服務。`,
+        expect: "預計2024年完工開幕，2025年對外開放"
     }, {
         img: webp[8].default,
         title: `MAJOR CONSTRUCTION`,
@@ -281,12 +271,14 @@ function AnchorDotConstruction({ showDot }) {
         img: webp[10].default,
         title: `MAJOR CONSTRUCTION`,
         para1: `105市道改善工程`,
-        para2: `為滿足目標年交通量需求規劃雙向各2車道，工程起點為八里區長坑國小南側，工程終點為林口高爾夫球場，道路開闢長度為2.46公里，完工後將解決既有蜿蜒路線不符合大型車輛運轉軌跡之規範問題，提供安全舒適之行車環境，確保道路安全及提升整體區域路網。`
+        para2: `為滿足目標年交通量需求規劃雙向各2車道，工程起點為八里區長坑國小南側，工程終點為林口高爾夫球場，道路開闢長度為2.46公里，完工後將解決既有蜿蜒路線不符合大型車輛運轉軌跡之規範問題，提供安全舒適之行車環境，確保道路安全及提升整體區域路網。`,
+        expect: "第一階段工程 全長2.13公里，預計2025年底完工\n第二階段工程 全長2.46公里，預計2028年底完工"
     }, {
         img: webp[11].default,
         title: `MAJOR CONSTRUCTION`,
         para1: `元智大學`,
-        para2: `預計在2024年完工，佔地2.5公頃之文教用地成立「元智大學新北分部醫護學院」，結合產學研人才，搭配集團內的產業資源， 培育全人智慧醫療人才，以協助因應國家未來智慧醫療人力需求與智慧醫療之推廣。 `
+        para2: `預計在2024年完工，佔地2.5公頃之文教用地成立「元智大學新北分部醫護學院」，結合產學研人才，搭配集團內的產業資源， 培育全人智慧醫療人才，以協助因應國家未來智慧醫療人力需求與智慧醫療之推廣。`,
+        expect: "預計2024年完工"
     }]
     return (
         <div className="construction" style={{

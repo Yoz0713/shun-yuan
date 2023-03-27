@@ -1,5 +1,5 @@
 import React from 'react';
-import video from '-!file-loader!../../../video/final_02.mp4'
+import video from '-!file-loader!../../../video/final_03.mp4'
 import { useRef, useState } from 'react';
 import { connect } from 'react-redux';
 
@@ -39,7 +39,7 @@ function VideoIn({ videoState }) {
                 <p>SKIP</p>
             </div>
             <div className="full-screen" style={{ display: fullscrenn == true ? "none" : "block" }} onClick={handleClick}>
-                <img src={svg[0].default} />
+                <img src={svg[4].default} />
             </div>
         </div>
     )

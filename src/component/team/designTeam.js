@@ -4,13 +4,10 @@ import { Routes, Route } from 'react-router-dom';
 import SpliText from '../config/splitText';
 import gsap from 'gsap';
 import FancyBox from '../config/fancyBox';
-import preloadImage from '../config/preload';
 const requireWebp = require.context("../../../img/team/design/webp", false, /^\.\/.*\.webp$/);
 const webp = requireWebp.keys().map(requireWebp);
 const requireSvg = require.context("../../../img/team/design/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
-const requirePreloadWebp = require.context("../../../img/team/design/webp", false, /.*preload\.webp$/);
-const preloadWebp = requirePreloadWebp.keys().map(requirePreloadWebp);
 
 export const DesignTeam = () => {
     const animateRef = useRef(null)
@@ -49,12 +46,7 @@ export const DesignTeam = () => {
         }, [animateRef])
         return () => ctx.revert()
     }, [])
-    useEffect(() => {
-        for (let i = 0; i < preloadWebp.length; i++) {
-            preloadImage(preloadWebp[i].default)
-        }
 
-    }, [])
     return (
         <>
             <section className="designTeam" ref={animateRef}>
@@ -64,7 +56,6 @@ export const DesignTeam = () => {
                     <Route path="/lightingDesigner" element={<LightingDesigner right={"14vw"} />}></Route>
                     <Route path="/lanscapeDesigner" element={<LanscapeDesigner right={"14vw"} />}></Route>
                 </Routes>
-
                 <img src={sunlandSvg} />
             </section>
         </>
@@ -230,7 +221,7 @@ function LanscapeDesigner({ height, right }) {
         img: webp[9].default
     }, {
         title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[11],
+        svgPara: svg[11].default,
         img: webp[10].default
     }, {
         title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,

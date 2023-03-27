@@ -70,6 +70,16 @@
             }
         }
 
+        .expect {
+            font-size: var(--ch_s_text);
+            color: #333333;
+            margin-top: 1vw;
+            font-weight: 600;
+            font-family: "Microsoft JhengHei", serif;
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+
         ul {
             display: flex;
             margin-top: 3vw;

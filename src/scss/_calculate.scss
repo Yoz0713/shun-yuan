@@ -1,0 +1,177 @@
+.calculate {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+
+    .calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-grow: 1;
+        height: 100%;
+        padding-top: 5vw;
+        pointer-events: auto;
+
+
+        p,
+        span {
+            font-size: var(--ch_s_text);
+            letter-spacing: 0.06em;
+        }
+
+        .title {
+            position: relative;
+
+            h2 {
+                color: $gold_color;
+                font-size: var(--ch_l_text);
+                font-family: 'Cormorant Garamond', serif;
+                font-weight: 300;
+                letter-spacing: 0.05em;
+            }
+
+            &::after {
+                display: block;
+                content: "";
+                position: absolute;
+                width: 25%;
+                height: 1px;
+                background-color: $gold_color;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: -0.8vw;
+            }
+        }
+
+        .parameters {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 4vw auto 3vw;
+
+            p {
+                margin-bottom: 0.4vw;
+            }
+
+            p,
+            span {
+                font-weight: 600;
+            }
+
+            input {
+                border: none;
+                outline: none;
+                background-color: #f2f2f2;
+                font-size: var(--ch_m_text);
+                height: pxConvertor(52);
+                width: pxConvertor(217);
+                margin-right: 0.5vw;
+                padding-left: 0.5vw;
+            }
+
+
+        }
+
+        .button {
+            display: flex;
+
+            >div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: pxConvertor(145);
+                height: pxConvertor(47);
+                border: 1px solid $gold_color;
+                cursor: pointer;
+                margin-left: 0.5vw;
+
+                p {
+                    transition: 0.3s;
+                }
+
+                &:hover {
+                    p {
+                        transform: scale(0.8);
+                    }
+                }
+
+            }
+
+            &> :nth-child(1) {
+                background-color: $gold_color;
+                margin: 0;
+
+                p {
+                    color: #fff;
+                }
+
+            }
+
+
+        }
+
+        .result {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 2.5vw auto 0;
+            padding: 0 10vw;
+            background-color: #f2f2f2;
+            height: pxConvertor(600);
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                height: 80%;
+                margin: auto 0;
+
+                .box {
+                    display: flex;
+                    justify-content: space-between;
+
+                    p {
+                        white-space: nowrap;
+
+                        &:nth-child(1) {
+                            flex: 0 0 28%;
+                        }
+
+                    }
+
+                    span {
+                        display: inline-block;
+                        width: pxConvertor(180);
+                        border-bottom: 1px solid #1c1d1d;
+                        margin: 0 1vw;
+                        text-align: center;
+                        padding-bottom: 0.5vw;
+                    }
+
+                    &:not(:last-child) {
+
+                        margin-bottom: 1.5vw;
+                    }
+                }
+
+
+            }
+
+
+        }
+    }
+
+    .imgBox {
+        flex: 0 0 pxConvertor(502);
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

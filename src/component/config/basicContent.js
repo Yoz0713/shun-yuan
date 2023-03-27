@@ -53,7 +53,7 @@ export default function BasicContent({ para }) {
                         <p>{para.nav.para2}</p>
                     </div>
                 }
-
+                {para.expect && <p className='expect'>{para.expect}</p>}
                 {para.nav ? <Nav para={para.nav} text={text} setText={setText} /> : null}
             </div>
         </div>

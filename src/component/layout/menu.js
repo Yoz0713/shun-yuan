@@ -90,7 +90,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "最新消息",
         slide: 5,
     }, {
-        id: 2,
+        id: "/calculator",
         ch: "房貸試算",
         slide: 5,
     }, {

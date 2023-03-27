@@ -51,10 +51,10 @@
 
                             .imgBox {
                                 position: absolute;
-                                right: -9.82vw;
+                                right: -7.25vw;
                                 margin: 0 auto;
-                                bottom: 9vw;
-                                width: pxConvertor(400);
+                                bottom: 5vw;
+                                width: pxConvertor(300);
                                 opacity: 0;
                                 pointer-events: none;
                                 transition: 1s;
@@ -70,11 +70,28 @@
                                     left: 0;
                                     right: 0;
                                     margin: 0 auto;
-                                    top: 17vw;
+                                    top: 8.7vw;
                                     transition: 0.6s;
                                     transition-delay: 0.4s;
                                     z-index: 2;
                                     opacity: 0;
+                                }
+
+                                &::before {
+                                    display: none;
+                                    content: "";
+                                    width: 0%;
+                                    height: 1px;
+                                    background-color: #666666;
+                                    position: absolute;
+                                    transition: 0.6s;
+                                    transition-delay: 0.4s;
+                                    z-index: 2;
+                                    opacity: 0;
+                                    left: -7vw;
+                                    top: 0;
+                                    bottom: 0;
+                                    margin: auto 0;
                                 }
 
                                 img {
@@ -98,16 +115,30 @@
 
                                     &::after {
                                         height: 8.4vw;
+                                        opacity: 1;
                                         animation-name: anchorDotFlow;
                                         animation-duration: 1.5s;
                                         animation-timing-function: linear;
                                         animation-fill-mode: forwards;
                                         animation-iteration-count: infinite;
+                                    }
+
+                                    &::before {
+                                        width: 8.4vw;
                                         opacity: 1;
+
                                     }
                                 }
 
                                 >img {
+                                    animation-name: anchorDotFlow;
+                                    animation-duration: 1.5s;
+                                    animation-timing-function: linear;
+                                    animation-fill-mode: forwards;
+                                    animation-iteration-count: infinite;
+                                }
+
+                                .thumbBox>img {
                                     animation-name: anchorDotFlow;
                                     animation-duration: 1.5s;
                                     animation-timing-function: linear;
@@ -143,6 +174,7 @@
                     .construction {
                         &> :nth-child(1) {
                             //新興ai
+                            display: none;
                             left: 20.8vw;
                             top: 11vw;
                         }
@@ -242,6 +274,20 @@
                             //和柯
                             left: 40.2vw;
                             bottom: 41.5vw;
+
+                            .imgBox {
+                                bottom: -6vw;
+                                right: auto;
+                                left: 8vw;
+
+                                &::after {
+                                    display: none;
+                                }
+
+                                &::before {
+                                    display: block;
+                                }
+                            }
                         }
                     }
 
@@ -256,6 +302,15 @@
                             //南勢國小
                             left: 6.6vw;
                             bottom: 17vw;
+
+                            .imgBox {
+                                right: auto;
+                                left: -6vw;
+
+                                &::after {
+                                    left: -2.5vw;
+                                }
+                            }
                         }
 
                         &> :nth-child(3) {
@@ -318,12 +373,40 @@
                             //文林公園
                             left: 31.3vw;
                             bottom: 36.9vw;
+
+                            .imgBox {
+                                bottom: -6vw;
+                                right: auto;
+                                left: 8vw;
+
+                                &::after {
+                                    display: none;
+                                }
+
+                                &::before {
+                                    display: block;
+                                }
+                            }
                         }
 
                         &> :nth-child(6) {
                             //一品公園
                             left: 42.6vw;
                             bottom: 31vw;
+
+                            .imgBox {
+                                bottom: -6vw;
+                                right: auto;
+                                left: 8vw;
+
+                                &::after {
+                                    display: none;
+                                }
+
+                                &::before {
+                                    display: block;
+                                }
+                            }
                         }
 
                         &>:nth-child(7) {
@@ -340,6 +423,7 @@
                     }
 
                     .glow {
+                        z-index: 0;
                         width: 2.5vw;
                         height: 6.5vw;
                         left: 15.2vw;
