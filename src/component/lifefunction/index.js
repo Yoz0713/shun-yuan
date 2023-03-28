@@ -164,14 +164,24 @@ function AnchorSpot() {
             {
                 para.map((item, i) => {
                     return (
+
                         <div className={`anchor-spot anchor-spot${i + 1}`}>
                             <FancyBox>
-                                {item.map((item, i) => {
-                                    return (
-                                        <div className="wrap" key={i} style={{ ...wrapperStyle, opacity: slide == i ? 1 : 0 }}>
-                                            <BasicContent para={item} />
-                                        </div>
-                                    )
+                                {item.map((itemInner, i) => {
+                                    if (item.length >= 2) {
+                                        return (
+                                            <div className="wrap" key={i} style={{ ...wrapperStyle, opacity: slide == i ? 1 : 0 }}>
+                                                <BasicContent para={itemInner} />
+                                            </div>
+                                        )
+                                    } else {
+                                        return (
+                                            <div className="wrap" key={i} style={{ ...wrapperStyle }}>
+                                                <BasicContent para={itemInner} />
+                                            </div>
+                                        )
+                                    }
+
 
                                 })}
 
