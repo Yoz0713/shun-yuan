@@ -15,10 +15,10 @@ export default function Calculate() {
 
 function Calculator() {
     const [inputValues, setInputValues] = useState({
-        loanYear: 30,
-        totalPrice: 1000,
-        interestRatio: 2,
-        allowancePeriod: '',
+        loanYear: "",
+        totalPrice: "",
+        interestRatio: "",
+        allowancePeriod: 0,
     });
     const [resultValues, setResultValues] = useState({
         deposit: "",
@@ -152,13 +152,19 @@ function Calculator() {
                 </div>
             </div>
             <div className="button">
-                <div className="calc" onClick={handleResult}>
+                <div className="calc" onClick={() => {
+                    if (inputValues.totalPrice && inputValues.loanYear && inputValues.interestRatio) {
+                        handleResult()
+                    }
+                }}>
                     <p>試算</p>
                 </div>
                 <div className="delete" onClick={handleClearClick}>
                     <p>清除</p>
                 </div>
-                <div className="print">
+                <div className="print" onClick={() => {
+                    window.print()
+                }}>
                     <p>列印</p>
                 </div>
             </div>

@@ -175,3 +175,138 @@
         }
     }
 }
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+    }
+
+    .header {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 45px;
+
+        img {
+            width: 130px;
+        }
+    }
+
+    .calculate {
+
+        >.imgBox {
+            display: none;
+        }
+
+        .calculator {
+            padding-top: 180px;
+
+            p,
+            span {
+                font-size: 20px;
+                letter-spacing: 0.06em;
+
+            }
+
+            .parameters {
+                flex-wrap: wrap;
+
+                .box {
+                    flex: 0 0 50%;
+                    margin-bottom: 26px;
+
+                    p {
+                        margin-bottom: 10px;
+                    }
+
+                    .unitBox {
+                        flex-wrap: nowrap;
+
+                        span {
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                &> :nth-child(even) {
+                    padding-left: 19.8px;
+                }
+
+                input {
+                    font-size: 20px;
+                    width: 230px;
+                    height: 45px;
+                    margin-right: 10px;
+                    background-color: #e7e7e7;
+                    padding-left: 10px;
+                }
+            }
+
+            .title {
+                display: none;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            .button {
+                display: none;
+            }
+
+            .result {
+                height: 50vh;
+                background-color: #fff;
+                border-top: 1.5px solid #e7e7e7;
+                padding: 0;
+
+                >div {
+                    flex: 0 0 50%;
+
+                    p,
+                    span {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .box {
+                        margin-bottom: 35px !important;
+
+                        span {
+                            border: none;
+                            background-color: #e7e7e7;
+                            width: 160px;
+                        }
+
+                        &> :nth-child(1) {
+                            flex: 0 0 30% !important;
+                        }
+
+                        &> :nth-child(3) {
+                            text-align: center;
+                            flex: 0 0 15% !important;
+                        }
+                    }
+
+                }
+
+                .left {
+                    padding-right: 15px;
+                }
+
+                .right {
+                    padding-left: 15px;
+                }
+            }
+
+        }
+    }
+
+    @page {
+        margin: 1.5cm;
+        margin-top: 0cm;
+        margin-bottom: 0;
+        size: A4 portrait;
+
+    }
+}
