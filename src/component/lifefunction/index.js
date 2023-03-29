@@ -111,18 +111,18 @@ function AnchorSpot() {
 
         }],
         [{
-            img: webp[5].default,
-            title: `MAJOR CONSTRUCTION`,
-            para1: `三井OUTLET-威秀影城`,
-            para2: `林口MITSUI OUTLET PARK威秀影城，為威秀影城以開創性概念打造的全新據點。為了給影迷最佳觀影體驗，本據點將採取全4K影廳規格，讓影像投影畫質大幅提升，並透過優化程度使影像達到最清晰、栩栩如生效果。`,
-        },
-        {
             img: webp[8].default,
             title: `MAJOR CONSTRUCTION`,
             para1: `三井OUTLET`,
             para2: `位在新北市林口區的三井OUTLET PARK，是一座以悠閒渡假風格的「SOUTHERN TREASURE FOREST」概念打造，是北臺灣最大規模的複合式購物休閒設施，遊客旅遊購物休閒的最佳選擇。嚴選人氣美食進駐，款待饕客們的挑剔味蕾，同時設施內設有威秀影城、誠品生活、JASONS超市等等。是多元完整的複合設施規劃，購物、美食、娛樂與生活一次到位，心滿意足。`,
 
-        }],
+        }, {
+            img: webp[5].default,
+            title: `MAJOR CONSTRUCTION`,
+            para1: `三井OUTLET-威秀影城`,
+            para2: `林口MITSUI OUTLET PARK威秀影城，為威秀影城以開創性概念打造的全新據點。為了給影迷最佳觀影體驗，本據點將採取全4K影廳規格，讓影像投影畫質大幅提升，並透過優化程度使影像達到最清晰、栩栩如生效果。`,
+        },
+        ],
         [{
             img: webp[6].default,
             title: `MAJOR CONSTRUCTION`,
@@ -135,7 +135,7 @@ function AnchorSpot() {
             title: `MAJOR CONSTRUCTION`,
             para1: `東森媒體總部`,
             para2: `林口第一新地標！2.16公頃基地規劃地下4層、地上38層樓企業營運總部及6層樓的文創生活與多功能展演中心，並與晶華國際酒店共同成立「Silks X 晶英薈旅」，創造影視娛樂產業生活圈，國際媒體嶄新的示範場域。`,
-            expect: "預計2025年完工開幕"
+            expect: "東森集團營運總部預計2025年開幕\n商務旅館預計於2026年開幕"
         }]
     ]
     const [slide, setSlide] = useState(0)

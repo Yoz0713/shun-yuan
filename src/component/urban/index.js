@@ -4,6 +4,7 @@ import FancyBox from '../config/fancyBox';
 import BasicContent from '../config/basicContent';
 import ScaleDrag from '../config/scaleDrag';
 import Glow from '../config/glow';
+import Arrow from '../config/arrow';
 const requireindexSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const indexSvg = requireindexSvg.keys().map(requireindexSvg);
 const requireSvg = require.context("../../../img/urban/svg", false, /^\.\/.*\.svg$/);
@@ -181,18 +182,35 @@ function AnchorDotTransportation({ showDot }) {
         para2: `四十年來最大國家建設計畫，投資總額超過5000億，特定區:4564.32公頃、區段徵收開發面積:3151公頃，預計增加30 萬個就業機會。`,
 
     },]
-    const linKouPara = {
+    const linKouPara = [{
         img: webp[19].default,
         title: `EXPRESS TRANSPORTATION`,
         para1: `林口轉運站`,
         para2: `新北市交通局為了因應當地居民和未來媒體園區的需求，特別興建了一座占地8,800平方公尺的公車轉運站，站內提供9席公車站區和16席電動公車駐車區，成為林口地區的大眾運輸轉運中心，也是當地居民和未來媒體園區的重要交通樞紐。\n此外，在林口轉運站之外，還有桃園長庚轉運站，這座公車轉運站將引領城市嶄新面貌的到來，打造更便捷、綠色、舒適的城市交通環境。`,
-    }
+    }, {
+        img: webp[49].default,
+        title: `EXPRESS TRANSPORTATION`,
+        para1: `桃園林口轉運站`,
+        para2: `B1&2-5F為停車空間，並設置聯外通道直達長庚醫院。1F為轉運站＆國際會議中心，另外回饋市府605坪空間作為青創基地及長庚圖書分館。`,
+        expect: "已於2022年12月開始啟用"
+    }]
     const interChangePara = {
         img: webp[20].default,
         title: `EXPRESS TRANSPORTATION`,
         para1: `國道1號林口交流道改善工程`,
         para2: `距離台北市區20公里，經國道1號，約25分鐘抵達台北市區。目前雙交流道，但因應林口區人口急速成長，將針對國道1號林口交流道，進行改善工程，預計2027年完工通車。`,
     }
+    const [slide, setSlide] = useState(0);
+    const wrapperStyle = {
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        left: "0",
+        top: "0",
+        transistion: "0.3s",
+        backgroundColor: "#f7f7f7"
+    }
+
     return (
         <div className="transportation" style={{ opacity: showDot == "transportation" ? 1 : 0, pointerEvents: showDot == "transportation" ? "auto" : "none" }}>
             {[...Array(3)].map((item, i) => {
@@ -237,11 +255,29 @@ function AnchorDotTransportation({ showDot }) {
                             </FancyBox>
                         </div>
                     )
+                } else if (i == 1) {
+                    return (
+                        <div className='dot' key={i}>
+                            <FancyBox thumbUrl={svg[3].default} >
+                                {linKouPara.map((item, i) => {
+                                    return (
+                                        <>
+                                            <div className="wrap" key={i} style={{ ...wrapperStyle, opacity: slide == i ? 1 : 0 }}>
+                                                <BasicContent para={item} />
+                                            </div>
+                                            <Arrow slide={slide} setSlide={setSlide} length={item.length} />
+                                        </>
+                                    )
+                                })}
+
+                            </FancyBox>
+                        </div>
+                    )
                 } else {
                     return (
                         <div className='dot' key={i}>
                             <FancyBox thumbUrl={svg[3].default} >
-                                <BasicContent para={i == 1 ? linKouPara : interChangePara} />
+                                <BasicContent para={interChangePara} />
                             </FancyBox>
                         </div>
                     )
@@ -249,6 +285,7 @@ function AnchorDotTransportation({ showDot }) {
 
             }
             )}
+
         </div>
     )
 }
