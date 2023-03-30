@@ -12,7 +12,7 @@
         flex-grow: 1;
         height: 100%;
         padding-top: 5vw;
-
+        position: relative;
 
 
         p,
@@ -164,6 +164,17 @@
 
 
         }
+
+        .keyboard {
+
+            li {
+                &:hover {
+                    background-color: $gold_color;
+                    color: #fff !important;
+                }
+            }
+
+        }
     }
 
     .imgBox {
@@ -302,6 +313,9 @@
                 }
             }
 
+            .keyboard {
+                display: none !important;
+            }
         }
     }
 

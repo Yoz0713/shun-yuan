@@ -43,7 +43,7 @@ function MenuContent({ open, setOpen, playVideo }) {
     }]
     const item = [[{
         id: "/team/coporation/sunland",
-        ch: "森聯建設",
+        ch: "森築開發",
         slide: 1,
     }, {
         id: "/team/coporation/oliv",

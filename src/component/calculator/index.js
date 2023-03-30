@@ -18,7 +18,7 @@ function Calculator() {
         loanYear: "",
         totalPrice: "",
         interestRatio: "",
-        allowancePeriod: 0,
+        allowancePeriod: "0",
     });
     const [resultValues, setResultValues] = useState({
         deposit: "",
@@ -32,15 +32,53 @@ function Calculator() {
         ownMoney: "",
         loanMoney: "",
         monthlyCost: "",
+        interestRepayment: "",
         allowancePeriodCost: "",
-        afterAllowancePeriodCost: ""
+        afterAllowancePeriodCost: "",
     })
+    const [showKyb, setShowKyb] = useState(false)
+
+    const [kybPosition, setKybPosition] = useState({ x: 0, y: 0 })
+    const [kybTarget, setKybTarget] = useState(null)
     const handleInputChange = (event) => {
         setInputValues({
             ...inputValues,
             [event.target.name]: event.target.value,
         });
     };
+    const handleFocus = (e) => {
+        setKybPosition({ x: e.target.offsetLeft + "px", y: e.target.offsetTop + "px" })
+        setKybTarget(e.target.name)
+        setShowKyb(true)
+    }
+    const handleKybInput = (e) => {
+        const regex = /\./
+        let flag = true
+        if (regex.test(inputValues[kybTarget])) {
+            flag = false
+        }
+        if (e.target.outerText !== "Delete" && e.target.outerText != ".") {
+            setInputValues({
+                ...inputValues,
+                [kybTarget]: `${inputValues[kybTarget] + e.target.value}`,
+            });
+
+        } else if (e.target.outerText == "Delete") {
+            setInputValues({
+                ...inputValues,
+                [kybTarget]: `${inputValues[kybTarget].slice(0, -1)}`,
+            });
+        } else {
+            if (flag) {
+                setInputValues({
+                    ...inputValues,
+                    [kybTarget]: `${inputValues[kybTarget] + `.`}`,
+                });
+            }
+
+        }
+
+    }
     const handleClearClick = () => {
         setInputValues({
             loanYear: '',
@@ -70,6 +108,7 @@ function Calculator() {
         let loanMonth;
         let periodMoney;
         let avgMonthRatio;
+        let totalMoney;
         if ((inputValues.allowancePeriod) > 0) {
             //-- 月數= (貸款年限*12)-(寬限年*12) --
             loanMonth = ((inputValues.loanYear) * 12) - ((inputValues.allowancePeriod) * 12);
@@ -79,6 +118,8 @@ function Calculator() {
             //-- 月數= 貸款年限*12 --
             loanMonth = (inputValues.loanYear) * 12;
             avgMonthRatio = ((Math.pow((1 + monthRatio), loanMonth)) * monthRatio) / ((Math.pow(1 + monthRatio, loanMonth)) - 1);
+
+            totalMoney = Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000 * loanMonth)
         }
 
 
@@ -97,13 +138,12 @@ function Calculator() {
             ownMoney: toMoneyStyle(inputValues.totalPrice * 0.25),
             loanMoney: toMoneyStyle((inputValues.totalPrice * 0.75)),
             monthlyCost: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000)),
+            interestRepayment: toMoneyStyle((totalMoney - inputValues.totalPrice * 0.75 * 10000) / loanMonth),
             allowancePeriodCost: toMoneyStyle(Math.floor(periodMoney)),
             afterAllowancePeriodCost: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000))
         });
     };
-    useEffect(() => {
-        console.log(typeof inputValues.allowancePeriod == "number")
-    }, [inputValues])
+
     return (
         <section className="calculator">
             <div className="title">
@@ -114,7 +154,7 @@ function Calculator() {
                     <label>
                         <p>貸款年限</p>
                         <div className="unitBox">
-                            <input type="text" onChange={handleInputChange} name="loanYear" value={inputValues.loanYear} />
+                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="loanYear" value={inputValues.loanYear} />
                             <span>年</span>
                         </div>
 
@@ -124,7 +164,7 @@ function Calculator() {
                     <label>
                         <p>總價</p>
                         <div className="unitBox">
-                            <input type="text" onChange={handleInputChange} name="totalPrice" value={inputValues.totalPrice} />
+                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="totalPrice" value={inputValues.totalPrice} />
                             <span>萬元</span>
                         </div>
 
@@ -134,7 +174,7 @@ function Calculator() {
                     <label>
                         <p>年利率</p>
                         <div className="unitBox">
-                            <input type="text" onChange={handleInputChange} name="interestRatio" value={inputValues.interestRatio} />
+                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="interestRatio" value={inputValues.interestRatio} />
                             <span>%</span>
                         </div>
 
@@ -144,7 +184,7 @@ function Calculator() {
                     <label>
                         <p>寬限期</p>
                         <div className="unitBox">
-                            <input type="text" onChange={handleInputChange} name="allowancePeriod" value={inputValues.allowancePeriod} />
+                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="allowancePeriod" value={inputValues.allowancePeriod} />
                             <span>年</span>
                         </div>
 
@@ -211,9 +251,17 @@ function Calculator() {
                             <div className="box">
                                 <p>寬限期後:</p><span>{resultValues.afterAllowancePeriodCost}</span><p>元</p>
                             </div>
-                        </> : <div className="box">
-                            <p>本金攤還:</p><span>{resultValues.monthlyCost}</span><p>元</p>
-                        </div>
+                        </> :
+                        <>
+                            <div className="box">
+                                <p>本利攤還:</p><span>{resultValues.monthlyCost}</span><p>元</p>
+                            </div>
+                            <div className="box">
+                                <p>還息金額:</p><span>{resultValues.interestRepayment}</span><p>元</p>
+                            </div>
+
+                        </>
+
                     }
 
                     <div className="box">
@@ -226,6 +274,54 @@ function Calculator() {
 
 
             </div>
+            <VirtualKeyboard handleKybInput={handleKybInput} showKyb={showKyb} position={kybPosition} setShowKyb={setShowKyb} />
         </section>
+    )
+}
+
+
+function VirtualKeyboard({ showKyb, position, setShowKyb, handleKybInput }) {
+    const liStyle = {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flex: "0 0 33.3%",
+        height: "25%",
+        border: "1px solid #ccc",
+        cursor: "pointer",
+        pointerEvents: "auto",
+        fontSize: "0.8vw",
+        color: "#1a1a1a",
+        fontWeight: "600"
+    }
+    const closeStyle = {
+
+        position: "absolute",
+        backgroundColor: "#c3a457",
+        width: "100%", height: "1px",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        margin: "auto"
+    }
+    return (
+        <ul className='keyboard' style={{ display: showKyb ? "flex" : "none", flexWrap: "wrap", width: "15vw", height: "15vw", position: "absolute", left: `calc(${position.x} + 8vw)`, top: `calc(${position.y} + 4vw)`, backgroundColor: "#f7f7f7", border: "1px solid #ccc" }}>
+            {[...Array(9)].map((item, i) => {
+                return (
+                    <li value={i + 1} style={liStyle} onClick={handleKybInput} key={i}>{i + 1}</li>
+                )
+
+            })}
+            <li value={0} style={liStyle} onClick={handleKybInput}>0</li>
+            <li value={"."} style={liStyle} onClick={handleKybInput}>.</li>
+            <li value={"delete"} style={liStyle} onClick={handleKybInput}>Delete</li>
+            <div className="close" style={{ position: "absolute", right: "0vw", top: "-2vw", cursor: "pointer", pointerEvents: "auto", width: "1.5vw", height: "1.5vw" }} onClick={() => {
+                setShowKyb(false)
+            }}>
+                <div className="line1" style={{ ...closeStyle, transform: "rotate(45deg)" }}></div>
+                <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>
+            </div>
+        </ul>
     )
 }
