@@ -13,11 +13,13 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
 
 
 
-    const zoomIn = () => {
+    const zoomIn = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
 
-        setScaleRatio(maxRatio);
 
         requestAnimationFrame(() => {
+            setScaleRatio(maxRatio);
             setX(init.x);
             setY(init.y);
         });
@@ -25,7 +27,9 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
 
 
     }
-    const zoomOut = () => {
+    const zoomOut = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
         setScaleRatio(1);
         setX(0);
         setY(0);

@@ -240,7 +240,7 @@ function AnchorDotTransportation({ showDot }) {
                                         <FancyBox text={"台北捷運圖"} >
                                             <div className="mrt">
                                                 <div className="taipei-mrt-route">
-                                                    <ScaleDrag zoomImg1={svg[1]} zoomImg2={svg[2]} init={{ x: "25vw", y: "-40vw" }}>
+                                                    <ScaleDrag maxRatio={2} zoomImg1={svg[1]} zoomImg2={svg[2]} >
                                                         <img src={webp[12].default} />
                                                     </ScaleDrag>
 
