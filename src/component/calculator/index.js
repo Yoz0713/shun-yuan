@@ -47,6 +47,7 @@ function Calculator() {
         });
     };
     const handleFocus = (e) => {
+        console.log(e.target.blur())
         setKybPosition({ x: e.target.offsetLeft + "px", y: e.target.offsetTop + "px" })
         setKybTarget(e.target.name)
         setShowKyb(true)

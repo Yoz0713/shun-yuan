@@ -93,7 +93,7 @@ function AnchorSpot() {
         [{
             img: webp[2].default,
             title: `MAJOR CONSTRUCTION`,
-            para1: `新興AI科技園`,
+            para1: `新興AI科技園區`,
             para2: `數位媒體、OTT影音串流虛擬實境、AI新創、尖端醫療…全球趨勢產業匯聚，世界半導體霸主ASML艾司摩爾投資規模達300億為史上最大在台投資案，吸引跨國科技人才，融合工作、生活、休閒、創富，林口一路領先全國。`,
 
         }],

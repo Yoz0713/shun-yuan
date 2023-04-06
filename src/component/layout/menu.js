@@ -62,7 +62,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "都市計畫",
         slide: 2,
     }], [{
-        id: 1,
+        id: "/product",
         ch: "樓層規劃",
         slide: 4,
     }], [{

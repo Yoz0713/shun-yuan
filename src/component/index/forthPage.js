@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef, useState, useLayoutEffect, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 // Import animation libary
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -72,9 +73,12 @@ function ForthPagePara() {
             </div>
             <div className="paraBox">
                 <p>現代簡約造型風格，講究沈穩優雅品味，深淺色系建材運用及垂直線條分割，增加立面高聳感，適度調和深淺色調搭配，產生層次感。</p>
-                <div className="more">
-                    <p>MORE</p>
-                </div>
+                <Link to="/product">
+                    <div className="more">
+                        <p>MORE</p>
+                    </div>
+                </Link>
+
             </div>
         </div>
     )
