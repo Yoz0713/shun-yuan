@@ -58,7 +58,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "實景空拍",
         slide: 2,
     }, {
-        id: "/urbanPlanning",
+        id: "/urban",
         ch: "都市計畫",
         slide: 2,
     }], [{

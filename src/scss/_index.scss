@@ -695,7 +695,6 @@
                 p {
                     @include para-ch();
                     font-family: "Microsoft JhengHei", serif;
-
                 }
 
                 .more {
@@ -802,6 +801,7 @@
                     width: 150%;
                     height: 150%;
                     object-fit: cover;
+                    filter: brightness(0.8) grayscale(1);
                     transition: filter 0.5s;
                     object-position: 0% center;
                 }
@@ -817,7 +817,7 @@
 
                 &:hover {
                     img {
-                        filter: brightness(0.3);
+                        filter: brightness(1) grayscale(0);
                     }
                 }
             }

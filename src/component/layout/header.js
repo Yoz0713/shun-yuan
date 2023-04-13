@@ -15,7 +15,7 @@ function Headers({ reduxState }) {
             <Link to={"/"} onClick={() => {
                 dispatch(closeVideo())
             }}>
-                <img src={svg[0].default} style={{ opacity: location.pathname == "/lifefunction" ? "0" : location.pathname != "/" ? "1" : reduxState == 0 ? "0" : "1", transition: "0.5s" }} />
+                <img src={svg[0].default} style={{ opacity: location.pathname !== "/" ? "0" : reduxState == 0 ? "0" : "1", transition: "0.5s" }} />
             </Link>
 
 

@@ -18,7 +18,7 @@ function Calculator() {
         loanYear: "",
         totalPrice: "",
         interestRatio: "",
-        allowancePeriod: "0",
+        allowancePeriod: "",
     });
     const [resultValues, setResultValues] = useState({
         deposit: "",

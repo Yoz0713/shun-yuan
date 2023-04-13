@@ -219,19 +219,21 @@ function LanscapeDesigner({ height, right }) {
         title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
         svgPara: svg[10].default,
         img: webp[9].default
-    }, {
-        title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[11].default,
-        img: webp[10].default
-    }, {
-        title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[12].default,
-        img: webp[11].default
-    }, {
-        title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[13].default,
-        img: webp[12].default
     }]
+    // , {
+    //     title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
+    //     svgPara: svg[11].default,
+    //     img: webp[10].default
+    // }
+    // , {
+    //     title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
+    //     svgPara: svg[12].default,
+    //     img: webp[11].default
+    // }, {
+    //     title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
+    //     svgPara: svg[13].default,
+    //     img: webp[12].default
+    // }
     return (
         <>
 
