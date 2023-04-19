@@ -86,7 +86,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "輕質隔間",
         slide: 4,
     }], [{
-        id: 1,
+        id: "/news",
         ch: "最新消息",
         slide: 5,
     }, {

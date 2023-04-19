@@ -98,11 +98,11 @@ function FifthPageBg() {
     return (
         <div className="fifth-page-bg">
             <ImgBox img={webp[0].default} text={"樓板養護"} style={{ opacity: "0", pointerEvents: "none" }} />
-            <ImgBox img={webp[14].default} text={"樓板養護"} />
+            <ImgBox img={webp[14].default} text={"樓板厚度"} />
             <ImgBox img={webp[0].default} text={"樓板養護"} style={{ opacity: "0", pointerEvents: "none" }} />
             <ImgBox img={webp[15].default} text={"車道坡度"} style2={{ objectPosition: "30% center" }} />
             <ImgBox img={webp[16].default} text={"樓高3米4"} />
-            <ImgBox img={webp[17].default} text={"輕質隔間 "} style2={{ objectPosition: "30% center" }} />
+            <ImgBox img={webp[17].default} text={"隔間牆 "} style2={{ objectPosition: "30% center" }} />
             <ImgBox img={webp[18].default} text={null} style={{ transform: "scale(1.2) translate(-2.05vw,2.05vw)" }} style2={{ objectPosition: "-60% center" }} />
             <ImgBox img={webp[19].default} text={"水泥磅數"} style2={{ objectPosition: "30% center" }} />
             <ImgBox img={webp[0].default} text={"樓板養護"} style={{ opacity: "0", pointerEvents: "none" }} />
