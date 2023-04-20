@@ -71,7 +71,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         slide: 4,
     }, {
         id: 2,
-        ch: "樓高4米4",
+        ch: "樓高3米4",
         slide: 4,
     }, {
         id: 3,
@@ -79,11 +79,11 @@ function MenuContent({ open, setOpen, playVideo }) {
         slide: 4,
     }, {
         id: 4,
-        ch: "樓板養護",
+        ch: "樓板厚度",
         slide: 4,
     }, {
         id: 5,
-        ch: "輕質隔間",
+        ch: "隔間牆",
         slide: 4,
     }], [{
         id: "/news",
