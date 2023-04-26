@@ -94,22 +94,19 @@ function PlanetView({ type, setType, fadeOut }) {
         let nextType;
         if (prevType < 3) {
             nextType = prevType + 1
-        } else {
-            nextType = prevType
+            fadeOut(nextType)
         }
 
-        fadeOut(nextType)
+
     }
     const handlePrev = () => {
         const prevType = type;
         let nextType;
         if (prevType > 1) {
             nextType = prevType - 1
-        } else {
-            nextType = prevType
+            fadeOut(nextType)
         }
 
-        fadeOut(nextType)
     }
     const navStyle = {
         width: "1.5vw",

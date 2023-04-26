@@ -692,66 +692,16 @@
                 line-height: 2.2;
                 margin-left: 4vw;
 
-                p {
+                >p {
                     @include para-ch();
                     font-family: "Microsoft JhengHei", serif;
                 }
 
-                .more {
-                    position: relative;
-                    border: 1px solid $gold_color;
-                    padding: 0 2.2vw 0 0.9vw;
-                    width: fit-content;
-                    line-height: 1.8;
-                    margin-top: 2.2vw;
-                    cursor: pointer;
-
-                    p {
-                        color: $gold_color;
-                    }
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        margin: auto 0;
-                        right: 0.7vw;
-                        width: 18%;
-                        height: 1px;
-                        background-color: $gold_color;
-                    }
-
-                    &::before {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        margin: auto 0;
-                        right: 0.7vw;
-                        width: 5%;
-                        height: 1px;
-                        background-color: $gold_color;
-                        transform-origin: right center;
-                        transform: rotate(35deg);
-                    }
-
-                    &:hover::after {
-                        animation-name: more;
-                        animation-duration: 1.5s;
-                        animation-fill-mode: forwards;
-                        animation-timing-function: linear;
-                        animation-iteration-count: infinite;
-                    }
-
-                    &:hover::before {
-                        animation-name: more2;
-                        animation-duration: 1.5s;
-                        animation-fill-mode: forwards;
-                        animation-timing-function: linear;
-                        animation-iteration-count: infinite;
+                ul {
+                    li {
+                        p {
+                            line-height: 1.7;
+                        }
                     }
                 }
             }
