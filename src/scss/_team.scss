@@ -844,6 +844,49 @@
                     top: 10.7vw;
                 }
 
+                .box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: pxConvertor(87);
+                    height: pxConvertor(45);
+                    background-color: $gold_color;
+                    left: 14.8vw;
+                    top: 3.2vw;
+                    pointer-events: auto;
+
+                    p {
+                        position: static;
+                        color: #fff;
+                        letter-spacing: 0.1em;
+                        padding: 0;
+                        pointer-events: none;
+                    }
+
+                    .thumbBox {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .en {
+                        font-family: 'Cormorant Garamond', serif;
+                        font-size: pxConvertor(8);
+                        font-weight: 300;
+                        line-height: 0;
+                        margin-bottom: 0.4vw;
+                    }
+
+                    .ch {
+                        font-size: pxConvertor(14);
+                        font-weight: 600;
+                        line-height: 0;
+                        margin-top: 0.4vw;
+                    }
+                }
             }
         }
 

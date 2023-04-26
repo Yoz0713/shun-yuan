@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef } from 'react';
 // Import animation libary
 import { gsap } from "gsap";
+import { Link } from 'react-router-dom';
 const requireSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 const requireWebp = require.context("../../../img/index/webp", false, /^\.\/.*\.webp$/);
@@ -97,23 +98,26 @@ function FifthPagePara() {
 function FifthPageBg() {
     return (
         <div className="fifth-page-bg">
-            <ImgBox img={webp[0].default} text={"樓板養護"} style={{ opacity: "0", pointerEvents: "none" }} />
-            <ImgBox img={webp[14].default} text={"樓板厚度"} />
-            <ImgBox img={webp[0].default} text={"樓板養護"} style={{ opacity: "0", pointerEvents: "none" }} />
-            <ImgBox img={webp[15].default} text={"車道坡度"} style2={{ objectPosition: "30% center" }} />
-            <ImgBox img={webp[16].default} text={"樓高3米4"} />
-            <ImgBox img={webp[17].default} text={"隔間牆 "} style2={{ objectPosition: "30% center" }} />
+            <ImgBox img={webp[0].default} text={"0"} style={{ opacity: "0", pointerEvents: "none" }} />
+            <ImgBox img={webp[14].default} text={"樓板厚度"} url={"/equipment/floorThick"} />
+            <ImgBox img={webp[0].default} text={"0"} style={{ opacity: "0", pointerEvents: "none" }} />
+            <ImgBox img={webp[15].default} text={"車道坡度"} style2={{ objectPosition: "30% center" }} url={"/equipment/parking"} />
+            <ImgBox img={webp[16].default} text={"樓高3米4"} url={"/equipment/floorHeight"} />
+            <ImgBox img={webp[17].default} text={"隔間牆 "} style2={{ objectPosition: "30% center" }} url={"/equipment/brick"} />
             <ImgBox img={webp[18].default} text={null} style={{ transform: "scale(1.2) translate(-2.05vw,2.05vw)" }} style2={{ objectPosition: "-60% center" }} />
-            <ImgBox img={webp[19].default} text={"水泥磅數"} style2={{ objectPosition: "30% center" }} />
-            <ImgBox img={webp[0].default} text={"樓板養護"} style={{ opacity: "0", pointerEvents: "none" }} />
+            <ImgBox img={webp[19].default} text={"水泥磅數"} style2={{ objectPosition: "30% center" }} url={"/equipment/cement"} />
+            <ImgBox img={webp[0].default} text={"0"} style={{ opacity: "0", pointerEvents: "none" }} />
         </div>
     )
 }
-function ImgBox({ img, text, style, style2 }) {
+function ImgBox({ img, text, style, style2, url }) {
     return (
         <div className="imgBox" style={style}>
             <img src={img} style={style2} />
             <span>{text}</span>
+            <Link to={url} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%" }} />
         </div>
     )
 }
+
+

@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect, useRef } from 'react'
-
+import FancyBox from "../config/fancyBox"
 import gsap from 'gsap';
 import RunNumber from '../config/runNumber';
 import { taoyuanData, linkouData, taipeiData, newTaipeiData } from './portfolioData';
@@ -84,11 +84,6 @@ export default function Portfolio() {
                     setType(city)
                 })
             }
-
-
-
-
-
         }, [animateRef])
     }
     return (
@@ -139,6 +134,14 @@ export default function Portfolio() {
                         <p className='taoyuan' onClick={() => {
                             fadeOut("taoyuan")
                         }} style={{ pointerEvents: isAnimate ? "none" : type == "taoyuan" ? "none" : "auto" }}>桃園<RunNumber target={21} speed={65} delay={2100} />案</p>
+                        <div className="box" style={{ position: "absolute" }}>
+                            <p className='en'>PROJECTS</p>
+                            <p className='ch'>經典之作</p>
+                            <FancyBox>
+                                <img src={webp[5].default} style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100%", width: "auto", margin: "0 auto" }} />
+                            </FancyBox>
+                        </div>
+
                     </div>
                 </div>
                 <div className="total">

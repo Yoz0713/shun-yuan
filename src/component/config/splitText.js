@@ -28,7 +28,7 @@ export default function SpliText({ text }) {
                 if (item != "\n") {
                     return <span key={i} style={{ display: "inline-block" }}>{item}</span>
                 } else {
-                    return "\n"
+                    return <br />
                 }
             })}
         </>

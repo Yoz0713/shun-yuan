@@ -12,6 +12,7 @@ import Urban from './component/urban';
 import Calculate from './component/calculator';
 import Product from './component/product';
 import News from './component/news';
+import Equipment from './component/equipment';
 export default function App() {
 
     return (
@@ -81,8 +82,9 @@ function Content() {
                 <Route path="/team/*" element={<Team />} />
                 <Route path="/urban" element={<Urban />} />
                 <Route path="/calculator" element={<Calculate />} />
-                <Route path="/product" element={<Product />} />
+                <Route path="/product/*" element={<Product />} />
                 <Route path="/news" element={<News />} />
+                <Route path="/equipment/*" element={<Equipment />} />
                 <Route path="*" element={<><h1 style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>目前頁面正在製作中，請點選空白處回首頁</h1><MoveBack /></>} />
             </Routes>
         </div>

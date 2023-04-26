@@ -24,7 +24,6 @@ function Menu({ playVideo }) {
 }
 
 function MenuContent({ open, setOpen, playVideo }) {
-
     const title = [{
         ch: "森聯機構",
         en: "TOP"
@@ -62,27 +61,43 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "都市計畫",
         slide: 2,
     }], [{
-        id: "/product",
+        id: "/product/exterior",
+        ch: "建築外觀",
+        slide: 3,
+    }, {
+        id: "/product/floor",
         ch: "樓層規劃",
-        slide: 4,
+        slide: 3,
+    }, {
+        id: "/product/firstFloor",
+        ch: "全區平面圖",
+        slide: 3,
+    }, {
+        id: "/product/planet",
+        ch: "植栽規劃",
+        slide: 3,
+    }, {
+        id: "/product/cafe",
+        ch: "森Mori Café",
+        slide: 3,
     }], [{
-        id: 1,
+        id: "/equipment/parking",
         ch: "車道坡度",
         slide: 4,
     }, {
-        id: 2,
+        id: "/equipment/floorHeight",
         ch: "樓高3米4",
         slide: 4,
     }, {
-        id: 3,
+        id: "/equipment/cement",
         ch: "水泥磅數",
         slide: 4,
     }, {
-        id: 4,
+        id: "/equipment/floorThick",
         ch: "樓板厚度",
         slide: 4,
     }, {
-        id: 5,
+        id: "/equipment/brick",
         ch: "隔間牆",
         slide: 4,
     }], [{
@@ -139,6 +154,7 @@ function Option({ title, item, setOpen }) {
                     {item.map((item, i) => {
                         return <li key={item.id} onClick={() => {
                             dispatch({ type: slideChange, payload: item.slide })
+                            dispatch({ type: "videoStop", payload: false })
                             if (item.id == null) {
                                 dispatch(moveToBuildingTeam("team3"))
                             }
