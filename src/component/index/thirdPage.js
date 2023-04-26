@@ -107,6 +107,7 @@ export default connect((state) => {
     }
 
 }, null)(ThirdPage)
+
 function SectionNav({ handleClick }) {
     let item = [{
         id: 1,

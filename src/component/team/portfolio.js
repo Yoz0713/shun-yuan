@@ -138,7 +138,10 @@ export default function Portfolio() {
                             <p className='en'>PROJECTS</p>
                             <p className='ch'>經典之作</p>
                             <FancyBox>
-                                <img src={webp[5].default} style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100%", width: "auto", margin: "0 auto" }} />
+                                <div className="imgBox" style={{ width: "100%", height: "100%", backgroundColor: "#EEF0F2" }}>
+                                    <img src={webp[5].default} style={{ position: "absolute", top: 0, left: 0, right: 0, height: "100%", width: "auto", margin: "0 auto" }} />
+                                </div>
+
                             </FancyBox>
                         </div>
 
