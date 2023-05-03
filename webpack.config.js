@@ -48,6 +48,9 @@ module.exports = {
                     {
                         loader: 'svg-url-loader',
                         options: {
+                            name: '[name].[ext]',
+                            outputPath: 'images/svg',
+                            quality: 100,
                             limit: 10000,
                         },
                     },
@@ -66,7 +69,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: 'images/',
+                            outputPath: 'images/webp',
                             quality: 100
                         },
                     },

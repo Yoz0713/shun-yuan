@@ -105,7 +105,7 @@ function FifthPageBg() {
             <ImgBox img={webp[0].default} text={"0"} style={{ opacity: "0", pointerEvents: "none" }} />
             <ImgBox img={webp[15].default} text={"車道坡度"} style2={{ objectPosition: "30% center" }} url={"13"} />
             <ImgBox img={webp[16].default} text={"樓高3米4"} url={"/equipment/floorHeight"} />
-            <ImgBox img={webp[17].default} text={"隔間牆 "} style2={{ objectPosition: "30% center" }} url={"14"} />
+            <ImgBox img={webp[17].default} text={"隔間牆 "} style2={{ objectPosition: "30% center" }} url={"/equipment/brick"} />
             <ImgBox img={webp[18].default} text={null} style={{ transform: "scale(1.2) translate(-2.05vw,2.05vw)" }} style2={{ objectPosition: "-60% center" }} />
             <ImgBox img={webp[19].default} text={"水泥磅數"} style2={{ objectPosition: "30% center" }} url={"/equipment/cement"} />
             <ImgBox img={webp[0].default} text={"0"} style={{ opacity: "0", pointerEvents: "none" }} />

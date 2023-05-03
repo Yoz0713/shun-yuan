@@ -97,7 +97,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "樓板厚度",
         slide: 4,
     }, {
-        id: "10",///equipment/brick
+        id: "/equipment/brick",
         ch: "隔間牆",
         slide: 4,
     }], [{
