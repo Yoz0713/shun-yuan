@@ -88,7 +88,7 @@ function SectionNav({ handleClick }) {
         id: 2,
         ch: "樓層規劃",
         en: "FLOOR PLAN",
-        url: "12"
+        url: "/123"//"/product/floor"
     }, {
         id: 3,
         ch: "全區平面圖",
