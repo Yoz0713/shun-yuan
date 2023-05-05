@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const requireSvg = require.context("../../../../img/product/floor/chooseBuilding/svg", false, /^\.\/.*\.svg$/);
@@ -22,8 +22,7 @@ export default function ChooseBuilding() {
 
 function RotatingBox() {
     const [type, setType] = useState(1)
-    const location = useLocation()
-    console.log(location.pathname)
+    const [disableAnchor, setDisableAnchor] = useState(true)
     const data = [{
         type: 1,
         img: webp[0].default,
@@ -122,10 +121,10 @@ function RotatingBox() {
                         <div key={item.type} className="imgBox" style={{ ...buildingStyle }}>
                             <img src={item.img} />
                             <div className="left">
-                                <Link style={{ position: "absolute", width: "100%", height: "100%", left: 0, top: 0, }} to={`/product/floor/choosefloor?building=${item.anchor.left}`} />
+                                <Link onClick={() => setDisableAnchor(false)} style={{ position: "absolute", width: "100%", height: "100%", left: 0, top: 0, pointerEvents: disableAnchor ? "auto" : "none" }} to={`/product/floor/choosefloor?building=${item.anchor.left}`} />
                             </div>
                             <div className="right">
-                                <Link style={{ position: "absolute", width: "100%", height: "100%", left: 0, top: 0, }} to={`/product/floor/choosefloor?building=${item.anchor.right}`} />
+                                <Link onClick={() => setDisableAnchor(false)} style={{ position: "absolute", width: "100%", height: "100%", left: 0, top: 0, pointerEvents: disableAnchor ? "auto" : "none" }} to={`/product/floor/choosefloor?building=${item.anchor.right}`} />
                             </div>
                         </div>
                     )

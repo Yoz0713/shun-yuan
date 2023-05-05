@@ -11,7 +11,7 @@ function Headers({ reduxState }) {
     const location = useLocation();
     const dispatch = useDispatch()
     return (
-        <div className="header">
+        <div className="header" style={{ pointerEvents: location.pathname != "/" && "none" }}>
             <Link to={"/"} onClick={() => {
                 dispatch(closeVideo())
             }}>
