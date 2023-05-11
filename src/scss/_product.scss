@@ -385,19 +385,80 @@
 
         .chooseFloor {
             display: flex;
+            justify-content: center;
             align-items: center;
             width: 100%;
             height: 100%;
+
+            .buildingBox {
+                position: relative;
+                height: 90%;
+                pointer-events: auto;
+                cursor: pointer;
+
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+
+                .building-svg {
+                    position: absolute;
+                }
+
+            }
+
+            .buildingBox-A,
+            .buildingBox-B {
+                margin-left: 14vw;
+
+                .building-svg {
+                    left: 12vw;
+                    height: 95.8%;
+                    bottom: 0.5vw;
+                }
+            }
+
+            .buildingBox-C {
+                .building-svg {
+                    left: 2.2vw;
+                    height: 97%;
+                    bottom: 0.28vw;
+                }
+            }
+
+            .buildingBox-B {
+                margin-left: 0;
+                margin-right: 20vw;
+                transform: rotateY(180deg);
+            }
+
+            .titleBox {
+                position: absolute;
+                left: 67vw;
+
+                h1 {
+                    font-size: pxConvertor(72);
+                    font-weight: 600;
+                    color: $gold_color;
+                    letter-spacing: 0.1em;
+
+                    span {
+                        font-size: pxConvertor(27);
+
+                    }
+                }
+            }
         }
 
         .floorNav {
-            position: relative;
-            width: fit-content;
+            width: pxConvertor(317.5);
+            height: pxConvertor(774.2);
+            z-index: 15;
 
             .floorBox {
                 position: relative;
-                width: pxConvertor(317.5);
-                height: pxConvertor(774.2);
+                width: 100%;
+                height: 100%;
                 overflow-y: scroll;
                 pointer-events: auto;
                 padding: 0 pxConvertor(100);
@@ -463,6 +524,22 @@
             }
 
 
+        }
+
+    }
+}
+
+
+
+
+
+.building-svg {
+    .building-cls {
+        fill: transparent;
+        opacity: 0.5;
+
+        &:hover {
+            fill: #c2a357;
         }
     }
 }

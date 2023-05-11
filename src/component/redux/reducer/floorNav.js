@@ -1,10 +1,10 @@
 import { chooseFloor } from "../type";
 
 const initialState = {
-    floor: 1
+    floor: null
 }
 // 這部分和useReducer hook是一樣的
-export const teamReducer = (state = initialState, action) => {
+export const floorReducer = (state = initialState, action) => {
     switch (action.type) {
         case chooseFloor:
             return {

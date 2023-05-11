@@ -1,4 +1,20 @@
-export const floorData = [
+const data = [
+    {
+        type: "b4",
+        text: "B4"
+    },
+    {
+        type: "b3",
+        text: "B3"
+    },
+    {
+        type: "b2",
+        text: "B2"
+    },
+    {
+        type: "b1",
+        text: "B1"
+    },
     {
         type: "1f",
         text: "1F"
@@ -100,22 +116,6 @@ export const floorData = [
         text: "24F"
     },
     {
-        type: "b1",
-        text: "B1"
-    },
-    {
-        type: "b2",
-        text: "B2"
-    },
-    {
-        type: "b3",
-        text: "B3"
-    },
-    {
-        type: "b4",
-        text: "B4"
-    },
-    {
         type: "r1",
         text: "R1"
     },
@@ -128,3 +128,6 @@ export const floorData = [
         text: "R3"
     }
 ]
+
+
+export const floorData = data.reverse()

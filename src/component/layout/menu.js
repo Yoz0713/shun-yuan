@@ -65,7 +65,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "建築外觀",
         slide: 3,
     }, {
-        id: "/123",//"/product/floor"
+        id: "/product/floor",//"/product/floor"
         ch: "樓層規劃",
         slide: 3,
     }, {
