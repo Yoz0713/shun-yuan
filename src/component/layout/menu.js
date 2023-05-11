@@ -81,7 +81,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "森Mori Café",
         slide: 3,
     }], [{
-        id: "12",///equipment/parking
+        id: "/equipment/parking",///equipment/parking
         ch: "車道坡度",
         slide: 4,
     }, {

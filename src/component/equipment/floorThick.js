@@ -40,7 +40,7 @@ export default function FloorThick() {
                 <p>樓地板隔音效果和厚度有直接關,一般樓板都是15公分厚度，樓上跑動、甚至走路重一點，樓下往往聽得一清二楚。秉持建築安全的理念，樓地板都改為18分厚度，對降低震動、隔絕噪音效果提升不少，讓居住品質更提升!</p>
             </div>
             <div className="right">
-                <img src={require("../../../img/equipment/webp/001-floorThick-bg.webp").default} style={{ width: "90%", height: "auto" }} />
+                <img src={require("../../../img/equipment/webp/001-floorThick-bg.webp").default} style={{ width: "90%", height: "auto", margin: "0 0 3vw 0" }} />
             </div>
         </section>
     )

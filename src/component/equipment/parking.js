@@ -39,6 +39,10 @@ export default function Parking() {
                 <h4>車道坡度1:8</h4>
                 <p>樓地板隔音效果和厚度有直接關,一般樓板都是15公分厚度，樓上跑動、甚至走路重一點，樓下往往聽得一清二楚。秉持建築安全的理念，樓地板都改為18分厚度，對降低震動、隔絕噪音效果提升不少，讓居住品質更提升!</p>
             </div>
+            <div className="right" style={{ height: "100%", alignItems: "center" }}>
+                <img src={require("../../../img/equipment/webp/003-car-bg.webp").default} style={{ height: "70%", width: "auto" }} />
+
+            </div>
         </section>
     )
 }
