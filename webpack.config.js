@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: path.join(path.join(__dirname, 'src'), "index.js"),
     output: {
@@ -95,6 +96,16 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './src/index.html',
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'public',
+                    globOptions: {
+                        ignore: ['**/index.html', "./portfolio.pdf"], // 忽略 public 目录下的 index.html 文件
+                    },
+                },
+            ],
+        }),
     ],
 };

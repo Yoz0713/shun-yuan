@@ -957,14 +957,14 @@ export function BuildingA({ nav, dispatch }) {
 
             <g id="_圖層_6" data-name="圖層 6">
                 <g>
-                    <rect className="building-cls" x={0} y="895.25" width="269.55" height="32.2" style={{ fill: nav == "1f" ? "#c2a357" : "transparent" }} onMouseEnter={() => dispatch("1f")} onMouseLeave={() => dispatch(null)} />
+                    <rect className="building-cls" x={0} y="895.25" width="269.55" height="32.2" style={{ fill: nav == "1f" ? "#c2a45773" : "transparent" }} onMouseEnter={() => dispatch("1f")} onMouseLeave={() => dispatch(null)} />
                     <rect
                         className="building-cls"
                         x="1.07"
                         y="826.7"
                         width="269.55"
                         height="32.2"
-                        style={{ fill: nav == "2f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "2f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("2f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -974,7 +974,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="790.17"
                         width="269.55"
                         height="36.53"
-                        style={{ fill: nav == "3f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "3f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("3f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -984,7 +984,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="754.35"
                         width="269.55"
                         height="35.82"
-                        style={{ fill: nav == "4f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "4f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("4f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -994,7 +994,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="858.9"
                         width="269.55"
                         height="36.35"
-                        style={{ fill: nav == "1.5f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "1.5f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("1.5f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1004,7 +1004,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="314.69"
                         width="269.55"
                         height="291.84"
-                        style={{ fill: nav == "9~16f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "9~16f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("9~16f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1014,7 +1014,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="278.34"
                         width="270.16"
                         height="36.35"
-                        style={{ fill: nav == "17f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "17f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("17f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1024,7 +1024,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="606.52"
                         width="269.55"
                         height="147.65"
-                        style={{ fill: nav == "5~8f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "5~8f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("5~8f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1034,7 +1034,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="132.94"
                         width="268.48"
                         height="145.4"
-                        style={{ fill: nav == "18~21f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "18~21f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("18~21f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1044,7 +1044,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="95.55"
                         width="268.48"
                         height="37.39"
-                        style={{ fill: nav == "22f" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "22f" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("22f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1054,7 +1054,7 @@ export function BuildingA({ nav, dispatch }) {
                         y="29.08"
                         width="185.79"
                         height="36.35"
-                        style={{ fill: nav == "r2" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "r2" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("r2")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1064,11 +1064,11 @@ export function BuildingA({ nav, dispatch }) {
                         y="66.47"
                         width="268.48"
                         height="29.08"
-                        style={{ fill: nav == "r1" ? "#c2a357" : "transparent" }}
+                        style={{ fill: nav == "r1" ? "#c2a45773" : "transparent" }}
                         onMouseEnter={() => dispatch("r1")}
                         onMouseLeave={() => dispatch(null)}
                     />
-                    <rect className="building-cls" x="44.57" width="184.71" height="29.08" style={{ fill: nav == "r3" ? "#c2a357" : "transparent" }} onMouseEnter={() => dispatch("r3")} onMouseLeave={() => dispatch(null)} />
+                    <rect className="building-cls" x="44.57" width="184.71" height="29.08" style={{ fill: nav == "r3" ? "#c2a45773" : "transparent" }} onMouseEnter={() => dispatch("r3")} onMouseLeave={() => dispatch(null)} />
                 </g>
             </g>
         </svg>
@@ -1086,7 +1086,7 @@ export function BuildingC({ nav, dispatch }) {
             <g id="_圖層_8" data-name="圖層 8">
                 <g>
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "1f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "1f" ? "#c2a45773" : "transparent" }}
                         y="899.08"
                         width="355.29"
                         height="32.2"
@@ -1094,7 +1094,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "2f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "2f" ? "#c2a45773" : "transparent" }}
                         x="1.25"
                         y="830.53"
                         width="313.13"
@@ -1103,7 +1103,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "3f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "3f" ? "#c2a45773" : "transparent" }}
                         x="1.87"
                         y="794.18"
                         width="313.13"
@@ -1112,7 +1112,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "4f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "4f" ? "#c2a45773" : "transparent" }}
                         x="2.87"
                         y="764.18"
                         width="313.13"
@@ -1121,7 +1121,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "1.5f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "1.5f" ? "#c2a45773" : "transparent" }}
                         x=".71"
                         y="862.73"
                         width="355.29"
@@ -1130,7 +1130,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "9~16f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "9~16f" ? "#c2a45773" : "transparent" }}
                         x="2.33"
                         y={364}
                         width="313.13"
@@ -1138,7 +1138,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseEnter={() => dispatch("9~16f")}
                         onMouseLeave={() => dispatch(null)}
                     />
-                    <rect style={{ opacity: 0.5, fill: nav == "17f" ? "#c2a357" : "transparent" }}
+                    <rect style={{ opacity: 0.5, fill: nav == "17f" ? "#c2a45773" : "transparent" }}
                         x="1.87"
                         y={325}
                         width="313.13"
@@ -1147,7 +1147,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "5~8f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "5~8f" ? "#c2a45773" : "transparent" }}
                         x="1.87"
                         y={629}
                         width="313.13"
@@ -1156,7 +1156,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "18~21f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "18~21f" ? "#c2a45773" : "transparent" }}
                         x="3.12"
                         y={190}
                         width="311.88"
@@ -1165,7 +1165,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "23f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "23f" ? "#c2a45773" : "transparent" }}
                         x="2.87"
                         y={123}
                         width="311.88"
@@ -1174,7 +1174,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "24f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "24f" ? "#c2a45773" : "transparent" }}
                         x="2.87"
                         y={98}
                         width="311.88"
@@ -1183,7 +1183,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "22f" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "22f" ? "#c2a45773" : "transparent" }}
                         x="2.87"
                         y={155}
                         width="311.88"
@@ -1192,7 +1192,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "r2" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "r2" ? "#c2a45773" : "transparent" }}
                         x={86}
                         y="32.91"
                         width={162}
@@ -1201,7 +1201,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "r1" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "r1" ? "#c2a45773" : "transparent" }}
                         x="2.12"
                         y="69.3"
                         width="311.88"
@@ -1210,7 +1210,7 @@ export function BuildingC({ nav, dispatch }) {
                         onMouseLeave={() => dispatch(null)}
                     />
                     <rect
-                        style={{ opacity: 0.5, fill: nav == "r3" ? "#c2a357" : "transparent" }}
+                        style={{ opacity: 0.5, fill: nav == "r3" ? "#c2a45773" : "transparent" }}
                         x="86.94"
                         width="161.06"
                         height="32.91"

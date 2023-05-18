@@ -2,6 +2,7 @@ import React, { useRef, useLayoutEffect } from 'react'
 import { Population, Image } from './newsElement';
 import FancyBox from '../config/fancyBox';
 import { gsap } from 'gsap';
+import Pdf from "../pdf/Pdf"
 const requireSvg = require.context("../../../img/news/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 const requireWebp = require.context("../../../img/news/webp", false, /^\.\/.*\.webp$/);
@@ -40,13 +41,11 @@ export default function News() {
                         <h1>NEWS</h1>
                     </div>
                     <div className="list">
-                        <ListBox num={"01."} text={"貸款限制"} />
-                        <ListBox num={"02."} text={"重購退稅"} />
-                        <ListBox num={"03."} text={"房地合一稅"} />
-                        <ListBox num={"04."} text={"大社區優點"} />
-                        <ListBox num={"05."} text={"預計通行捷運"} />
-                        <ListBox num={"06."} text={"最強人口結構"} element={<Population />} />
-                        <ListBox num={"07."} text={"林口學區設籍"} element={<Image url={newsWebp[2].default} />} />
+                        <ListBox num={"01."} text={"法規"} element={<Law />} />
+                        <ListBox num={"02."} text={"大社區優點"} />
+                        <ListBox num={"03."} text={"預計通行捷運"} />
+                        <ListBox num={"04."} text={"最強人口結構"} element={<Population />} />
+                        <ListBox num={"05."} text={"林口學區設籍"} element={<Image url={newsWebp[2].default} />} />
                     </div>
                 </div>
                 <div className="right">
@@ -86,5 +85,12 @@ function ListBox({ num, text, element }) {
                 {element}
             </FancyBox>
         </div>
+    )
+}
+
+
+function Law() {
+    return (
+        <Pdf url={"/public/law.pdf"} />
     )
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-export default function Pdf({ url, active, setActive }) {
+export default function Pdf({ url, active = true, setActive = () => { } }) {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [pdfLoaded, setPdfLoaded] = useState(false);

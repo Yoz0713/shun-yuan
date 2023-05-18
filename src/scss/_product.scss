@@ -537,6 +537,7 @@
     .building-cls {
         fill: transparent;
         opacity: 0.5;
+        transition: 0.6s;
 
         &:hover {
             fill: #c2a357;

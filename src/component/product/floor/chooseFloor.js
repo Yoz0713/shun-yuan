@@ -55,8 +55,8 @@ function FloorNav({ building }) {
                 <div className="boxContainer" >
                     {reverseData.map((item, i) => {
                         return (
-                            <div className="box" style={{ backgroundColor: nav == item.type ? "#c2a357" : "transparent" }} key={item.text} onMouseEnter={() => dispatch(selectFloor(item.type))} >
-                                <p style={{ color: nav == item.type ? "#fff" : "#000" }}>{item.text}</p>
+                            <div className="box" style={{ backgroundColor: nav == item.type ? "#c2a4571a" : "transparent" }} key={item.text} onMouseEnter={() => dispatch(selectFloor(item.type))} >
+                                <p style={{ color: nav == item.type ? "#000" : "#000" }}>{item.text}</p>
                             </div>
                         )
                     })}
