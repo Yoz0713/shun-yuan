@@ -37,7 +37,7 @@ export default function Parking() {
             <div className="left">
                 <EquipmentTitle />
                 <h4>車道坡度1:8</h4>
-                <p>Classy home全方位思考每位住戶的需求，並精心設計每個細節。由於超跑的底盤較低，在陡峭的坡道上易受損或無法通過。因此在車道坡度的設計上，我們特別採用了1:8的平緩坡度，讓愛車輕鬆通過，同時減少底盤刮傷的風險，提供更順暢的行駛體驗。這樣的設計可讓您輕鬆掌控車輛，享受便捷舒適的進出車道體驗。</p>
+                <p>Classy home全方位思考每位住戶的需求，並精心設計每個細節。然而由於跑車的底盤較低，在陡峭的坡道上易受損或無法通過。因此在車道坡度的設計上，我們採用了1:8的平緩坡度，讓低底盤的車輕鬆通過，同時減少底盤刮傷的風險，提供更順暢的行駛體驗。</p>
             </div>
             <div className="right" style={{ height: "100%", alignItems: "center" }}>
                 <img src={require("../../../img/equipment/webp/003-car-bg.webp").default} style={{ height: "70%", width: "auto" }} />
