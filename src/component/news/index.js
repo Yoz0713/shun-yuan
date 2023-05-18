@@ -91,6 +91,6 @@ function ListBox({ num, text, element }) {
 
 function Law() {
     return (
-        <Pdf url={"/public/law.pdf"} />
+        <Pdf url={"/law.pdf"} />
     )
 }
