@@ -39,7 +39,7 @@ export default function Exterior() {
         }
     }, {
         type: "constructor",
-        img: webp[3].default,
+        img: webp[4].default,
         period: {
             icon: svg[2],
             text: "建築巧思"

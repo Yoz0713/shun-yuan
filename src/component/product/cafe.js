@@ -71,19 +71,20 @@ export default function Cafe() {
             </div>
             <div className="right">
                 <div className="imgBox">
-                    {[...Array(3)].map((item, i) => {
+                    <img src={require("../../../img/team/design/webp/007-postulate-fancyImg3-preload.webp").default} />
+                    {/* {[...Array(3)].map((item, i) => {
                         return (
                             <img src={webp[i].default} style={{ opacity: type == i + 1 ? 1 : 0, transition: "opacity 0.3s" }} />
                         )
-                    })}
-                    <div className="navBox" style={{ display: "flex", justifyContent: "space-between", position: "absolute", zIndex: 30, top: 0, bottom: 0, margin: "auto 0", width: "100%", height: 0, padding: "0 0vw" }}>
+                    })} */}
+                    {/* <div className="navBox" style={{ display: "flex", justifyContent: "space-between", position: "absolute", zIndex: 30, top: 0, bottom: 0, margin: "auto 0", width: "100%", height: 0, padding: "0 0vw" }}>
                         <div className="prev" onClick={handlePrev} style={{ padding: "1.5vw 2vw 3vw", pointerEvents: "auto", cursor: "pointer" }}>
                             <div style={{ ...navStyle, borderRight: "none", transform: "rotate(-45deg)", }}></div>
                         </div>
                         <div className="next" onClick={handleNext} style={{ padding: "1.5vw 2vw 3vw", pointerEvents: "auto", cursor: "pointer" }}>
                             <div style={{ ...navStyle, borderLeft: "none", transform: "rotate(45deg)" }}></div>
                         </div>
-                    </div >
+                    </div > */}
                 </div>
                 <div className="bg">
                     <img src={require("../../../img/product/cafe/svg/001-gray-bg.svg")} />

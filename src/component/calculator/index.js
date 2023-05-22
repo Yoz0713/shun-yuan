@@ -265,9 +265,7 @@ function Calculator() {
 
                     }
 
-                    <div className="box">
-                        <p>暫收款:</p><span></span><p>萬元</p>
-                    </div>
+
                 </div>
 
 

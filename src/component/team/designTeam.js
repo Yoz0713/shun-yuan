@@ -80,7 +80,7 @@ function ArchitecturalDesigner({ height, right }) {
     const fancyPara = [{
         title: `ARCHITECTURAL DESIGN\nDESIGN CONCEPT`,
         svgPara: svg[5].default,
-        img: webp[4].default
+        img: require("../../../img/product/exterior/webp/004-idea.webp").default
     }]
     return (
         <>
@@ -88,7 +88,7 @@ function ArchitecturalDesigner({ height, right }) {
 
             <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"}>
                 <div className="nav">
-                    <TextNav title={"景觀大師"} para={fancyPara} />
+                    <TextNav title={"建築大師"} para={fancyPara} />
                 </div>
             </ParaBox>
             <ImgBox>
@@ -142,7 +142,7 @@ function PostylateDesigner({ height, right }) {
 
             <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"}>
                 <div className="nav">
-                    <TextNav title={"景觀大師"} para={fancyPara} />
+                    <TextNav title={"公設大師"} para={fancyPara} />
                 </div>
             </ParaBox>
             <ImgBox>
@@ -184,7 +184,7 @@ function LightingDesigner({ height, right }) {
 
             <ParaBox title={para1.title} para={para1.paragraph} linePosition={{ top: "-1vw" }} mb={"0.5vw"}>
                 <div className="nav">
-                    <TextNav title={"景觀大師"} para={fancyPara} />
+                    <TextNav title={"燈光大師"} para={fancyPara} />
                 </div>
             </ParaBox>
             <ImgBox>
