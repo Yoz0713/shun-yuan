@@ -2551,6 +2551,46 @@
 .calculate .calculator .result > div .box:not(:last-child) {
   margin-bottom: 1.5vw;
 }
+.calculate .calculator .printBox {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  left: 35px;
+  width: 92.5%;
+}
+.calculate .calculator .printBox .temporary-payment {
+  position: absolute;
+  right: 24px;
+  top: -222px;
+  font-weight: 600;
+}
+.calculate .calculator .printBox p {
+  font-size: 18px !important;
+  text-align: justify;
+}
+.calculate .calculator .printBox .ps {
+  font-size: 16px !important;
+  line-height: 2;
+}
+.calculate .calculator .printBox .writeBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+}
+.calculate .calculator .printBox .writeBox .box {
+  display: flex;
+  align-items: flex-end;
+}
+.calculate .calculator .printBox .writeBox .box p {
+  font-size: 16px !important;
+  margin-right: 10px;
+}
+.calculate .calculator .printBox .writeBox .box .write-line {
+  width: 150px;
+  height: 1.5px;
+  background-color: #000;
+}
 .calculate .calculator .keyboard li:hover {
   background-color: #c2a357;
   color: #fff !important;
@@ -2574,17 +2614,17 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: 45px;
+    top: 10px;
   }
   .header img {
-    width: 130px;
+    width: 100px;
     opacity: 1 !important;
   }
   .calculate > .imgBox {
     display: none;
   }
   .calculate .calculator {
-    padding-top: 180px;
+    padding-top: 90px;
   }
   .calculate .calculator p,
   .calculate .calculator span {
@@ -2596,10 +2636,10 @@
   }
   .calculate .calculator .parameters .box {
     flex: 0 0 50%;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
   }
   .calculate .calculator .parameters .box p {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .calculate .calculator .parameters .box .unitBox {
     flex-wrap: nowrap;
@@ -2628,7 +2668,7 @@
     display: none;
   }
   .calculate .calculator .result {
-    height: 50vh;
+    height: 30vh;
     background-color: #fff;
     border-top: 1.5px solid #e7e7e7;
     padding: 0;
@@ -2642,12 +2682,14 @@
     font-weight: 600;
   }
   .calculate .calculator .result > div .box {
-    margin-bottom: 35px !important;
+    margin-bottom: 30px !important;
+    align-items: center;
   }
   .calculate .calculator .result > div .box span {
     border: none;
     background-color: #e7e7e7;
     width: 160px;
+    padding: 3px 0;
   }
   .calculate .calculator .result > div .box > :nth-child(1) {
     flex: 0 0 30% !important;
@@ -2662,11 +2704,14 @@
   .calculate .calculator .result .right {
     padding-left: 15px;
   }
+  .calculate .calculator .printBox {
+    display: block;
+  }
   .calculate .calculator .keyboard {
     display: none !important;
   }
   @page {
-    margin: 1.5cm;
+    margin: 1cm;
     margin-top: 0cm;
     margin-bottom: 0;
     size: A4 portrait;
@@ -2993,6 +3038,130 @@
 .product .floor-container .chooseBuilding .right .nav-btn .right {
   transform: rotateY(180deg);
   margin-left: 1vw;
+}
+.product .floor-container .chooseFloor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.product .floor-container .chooseFloor .buildingBox {
+  position: relative;
+  height: 90%;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.product .floor-container .chooseFloor .buildingBox img {
+  height: 100%;
+  width: auto;
+}
+.product .floor-container .chooseFloor .buildingBox .building-svg {
+  position: absolute;
+}
+.product .floor-container .chooseFloor .buildingBox-A,
+.product .floor-container .chooseFloor .buildingBox-B {
+  margin-left: 14vw;
+}
+.product .floor-container .chooseFloor .buildingBox-A .building-svg,
+.product .floor-container .chooseFloor .buildingBox-B .building-svg {
+  left: 12vw;
+  height: 95.8%;
+  bottom: 0.5vw;
+}
+.product .floor-container .chooseFloor .buildingBox-C .building-svg {
+  left: 2.2vw;
+  height: 97%;
+  bottom: 0.28vw;
+}
+.product .floor-container .chooseFloor .buildingBox-B {
+  margin-left: 0;
+  margin-right: 20vw;
+  transform: rotateY(180deg);
+}
+.product .floor-container .chooseFloor .titleBox {
+  position: absolute;
+  left: 67vw;
+}
+.product .floor-container .chooseFloor .titleBox h1 {
+  font-size: 3.75vw;
+  font-weight: 600;
+  color: #c2a357;
+  letter-spacing: 0.1em;
+}
+.product .floor-container .chooseFloor .titleBox h1 span {
+  font-size: 1.40625vw;
+}
+.product .floor-container .floorNav {
+  width: 16.5364583333vw;
+  height: 40.3229166667vw;
+  z-index: 15;
+}
+.product .floor-container .floorNav .floorBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  pointer-events: auto;
+  padding: 0 5.2083333333vw;
+}
+.product .floor-container .floorNav .floorBox::-webkit-scrollbar {
+  display: none;
+}
+.product .floor-container .floorNav .floorBox .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2.9166666667vw;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.product .floor-container .floorNav .floorBox .box p {
+  font-size: 1.25vw;
+  color: #1a1a1a;
+  font-weight: 700;
+  transition: 0.15s;
+}
+.product .floor-container .floorNav .floorBox .box:not(:last-child) {
+  margin-bottom: 0.78125vw;
+}
+.product .floor-container .floorNav .floorBox .box:hover {
+  background-color: #c2a357;
+}
+.product .floor-container .floorNav .floorBox .box:hover p {
+  color: #fff;
+}
+.product .floor-container .floorNav .top,
+.product .floor-container .floorNav .bottom {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 4vw;
+  left: 0;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.product .floor-container .floorNav .top img,
+.product .floor-container .floorNav .bottom img {
+  width: 1.6145833333vw;
+}
+.product .floor-container .floorNav .top {
+  top: -4vw;
+}
+.product .floor-container .floorNav .bottom {
+  bottom: -4vw;
+}
+
+.building-svg .building-cls {
+  fill: transparent;
+  opacity: 0.5;
+  transition: 0.6s;
+}
+.building-svg .building-cls:hover {
+  fill: #c2a357;
 }
 
 .news {

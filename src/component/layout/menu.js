@@ -109,7 +109,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         ch: "房貸試算",
         slide: 5,
     }, {
-        id: 3,
+        id: "/information",
         ch: "市場個案",
         slide: 5,
     }]]

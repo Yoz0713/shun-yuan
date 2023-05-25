@@ -93,7 +93,7 @@ function SixthPageCard() {
         <div className="sixth-page-card">
             <Card img={webp[20].default} url={"/news"} num={"01."} text={"NEWS"} style={{ marginTop: "6.5vw" }} style2={{ objectPosition: "center 0%" }} />
             <Card img={webp[21].default} url={"/calculator"} num={"02."} text={"CALCULATION"} style2={{ objectPosition: "85% center" }} />
-            <Card img={webp[22].default} num={"03."} text={"INFORMATION"} style={{ marginTop: "-6.5vw" }} />
+            <Card img={webp[22].default} url={"/information"} num={"03."} text={"INFORMATION"} style={{ marginTop: "-6.5vw" }} />
         </div>
     )
 }

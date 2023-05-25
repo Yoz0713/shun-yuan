@@ -37,7 +37,6 @@ function Calculator() {
         afterAllowancePeriodCost: "",
     })
     const [showKyb, setShowKyb] = useState(false)
-
     const [kybPosition, setKybPosition] = useState({ x: 0, y: 0 })
     const [kybTarget, setKybTarget] = useState(null)
     const handleInputChange = (event) => {
@@ -272,6 +271,23 @@ function Calculator() {
 
 
 
+            </div>
+            <div className="printBox">
+                <p className='temporary-payment'>暫收款2房10萬其餘15萬(多退少補)</p>
+                <p className='ps'>備註:<br />
+                    1.本付款表之坪數、價格需以正式訂購單為主。<br />
+                    2.買方應於簽約時繳納暫收款，暫收款內容包含：所有權移轉登記規費、印花稅、代書費、代辦手續費、貸款保險費、每戶新台幣貳萬元管理基金、預繳社區管理費六個月..等(多退少補)。<br />
+                    3.本付款表銀行貸款之成數、利率，需視客戶當時信用狀況而定。</p>
+                <div className="writeBox">
+                    <div className="box">
+                        <p>日期:</p>
+                        <div className="write-line"></div>
+                    </div>
+                    <div className="box">
+                        <p>業務員:</p>
+                        <div className="write-line"></div>
+                    </div>
+                </div>
             </div>
             <VirtualKeyboard handleKybInput={handleKybInput} showKyb={showKyb} position={kybPosition} setShowKyb={setShowKyb} />
         </section>
