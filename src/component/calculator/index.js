@@ -121,28 +121,45 @@ function Calculator() {
 
             totalMoney = Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000 * loanMonth)
         }
+        let licenseCorrect = 0;
+        if (inputValues.totalPrice * 0.05 != Math.floor(inputValues.totalPrice * 0.05)) {
+            licenseCorrect = licenseCorrect + inputValues.totalPrice * 0.05 - Math.floor(inputValues.totalPrice * 0.05)
 
-
+        }
+        if (inputValues.totalPrice * 0.1 - 10 != Math.ceil(inputValues.totalPrice * 0.1 - 10)) {
+            licenseCorrect = licenseCorrect - (Math.ceil(inputValues.totalPrice * 0.1 - 10) - (inputValues.totalPrice * 0.1 - 10))
+        }
+        if (inputValues.totalPrice * 0.02 != Math.floor(inputValues.totalPrice * 0.02)) {
+            if (Math.ceil(inputValues.totalPrice * 0.02) - inputValues.totalPrice * 0.02 >= 0.5) {
+                licenseCorrect = licenseCorrect + (inputValues.totalPrice * 0.02 - Math.floor(inputValues.totalPrice * 0.02)) * 4
+            } else {
+                licenseCorrect = licenseCorrect - (Math.ceil(inputValues.totalPrice * 0.02) - inputValues.totalPrice * 0.02) * 4
+            }
+        }
+        console.log(licenseCorrect)
         const toMoneyStyle = (num) => {
             return num.toLocaleString('zh-TW', { minimumFractionDigits: 0, maximumFractionDigits: 0 })
         }
         setResultValues({
             deposit: 10,
-            sign: toMoneyStyle(inputValues.totalPrice * 0.1 - 10),
+            sign: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.1 - 10)),
             firstFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
             eighthFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
             sixteenThFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
             construction: toMoneyStyle(inputValues.totalPrice * 0.02),
-            license: toMoneyStyle(inputValues.totalPrice * 0.02),
-            delivery: toMoneyStyle(inputValues.totalPrice * 0.05),
+            license: toMoneyStyle(inputValues.totalPrice * 0.02 + licenseCorrect),
+            delivery: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.05)),
             ownMoney: toMoneyStyle(inputValues.totalPrice * 0.25),
-            loanMoney: toMoneyStyle((inputValues.totalPrice * 0.75)),
+            loanMoney: toMoneyStyle(Math.floor((inputValues.totalPrice * 0.75))),
             monthlyCost: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000)),
             interestRepayment: toMoneyStyle((totalMoney - inputValues.totalPrice * 0.75 * 10000) / loanMonth),
             allowancePeriodCost: toMoneyStyle(Math.floor(periodMoney)),
             afterAllowancePeriodCost: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000))
         });
     };
+    const year = new Date().getFullYear();
+    const month = new Date().getMonth() + 1;
+    const date = new Date().getDate()
 
     return (
         <section className="calculator">
@@ -281,7 +298,7 @@ function Calculator() {
                 <div className="writeBox">
                     <div className="box">
                         <p>日期:</p>
-                        <div className="write-line"></div>
+                        <div className="date">{`${year}年${month}月${date}日`}</div>
                     </div>
                     <div className="box">
                         <p>業務員:</p>

@@ -80,7 +80,7 @@ function ArchitecturalDesigner({ height, right }) {
     const fancyPara = [{
         title: `ARCHITECTURAL DESIGN\nDESIGN CONCEPT`,
         svgPara: svg[5].default,
-        img: require("../../../img/product/exterior/webp/004-idea.webp").default
+        img: webp[4].default
     }]
     return (
         <>
@@ -121,20 +121,8 @@ function PostylateDesigner({ height, right }) {
     }
     const fancyPara = [{
         title: `POSTULATE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[6].default,
-        img: webp[5].default
-    }, {
-        title: `POSTULATE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[7].default,
-        img: webp[6].default
-    }, {
-        title: `POSTULATE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[8].default,
-        img: webp[7].default
-    }, {
-        title: `POSTULATE DESIGN\nDESIGN CONCEPT`,
-        svgPara: svg[9].default,
-        img: webp[8].default
+        svgPara: svg[17].default,
+        img: webp[14].default
     }]
     return (
         <>
@@ -218,7 +206,7 @@ function LanscapeDesigner({ height, right }) {
     const fancyPara = [{
         title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,
         svgPara: svg[10].default,
-        img: webp[9].default
+        img: require("../../../img/product/exterior/webp/004-idea.webp").default
     }]
     // , {
     //     title: `LANDSCAPE DESIGN\nDESIGN CONCEPT`,

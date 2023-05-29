@@ -19,6 +19,7 @@ function Menu({ playVideo }) {
             <ToggleButton open={open} setOpen={setOpen} />
             <ToggleButton2 open={open} setOpen={setOpen} />
             <MenuContent open={open} setOpen={setOpen} playVideo={playVideo} />
+            <p style={{ position: "absolute", width: "fit-content", left: 0, right: 0, margin: "0 auto", bottom: "1vw", fontSize: "0.6vw", letterSpacing: "0.05em", color: "rgb(182 147 81)" }}>聯創數位製作</p>
         </div>
     )
 }
@@ -164,7 +165,6 @@ function Option({ title, item, setOpen }) {
                                 <img src={svg[2]} />
                                 <p style={{ color: item.id == null ? "#000" : location.pathname == item.id ? "#ccc" : "#000" }} >{item.ch}</p>
                             </Link>
-
                         </li>
                     })}
                 </ul>
