@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { floorData } from "./data/floorData";
 import { BuildingA, BuildingC } from '../../config/svgCollection';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,7 +8,8 @@ import { selectFloor } from "../../redux/action/floorNav"
 const requireSvg = require.context("../../../../img/product/floor/chooseFloor/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 
-function FloorNav({ building }) {
+export function FloorNav({ building, flag = true }) {
+
     const reverseData = floorData.filter((item) => {
         if (building !== "C") {
             return item.text !== "24F" && item.text !== "23F";
@@ -16,9 +17,12 @@ function FloorNav({ building }) {
             return true;
         }
     });
+    console.log(reverseData)
     const scrollRef = useRef(null)
     const dispatch = useDispatch(null)
+    const navigate = useNavigate(null)
     const nav = useSelector(state => state.floorReducer.floor)
+
     const handleTop = () => {
         let currentScrollTop = scrollRef.current.scrollTop;
         const scrollToTop = currentScrollTop - 250;
@@ -34,6 +38,7 @@ function FloorNav({ building }) {
 
         animate();
     };
+
     const handleBottom = () => {
         let currentScrollTop = scrollRef.current.scrollTop;
         const scrollToTop = currentScrollTop + 250;
@@ -49,13 +54,28 @@ function FloorNav({ building }) {
 
         animate();
     }
+
     return (
-        <section className="floorNav" style={{ position: "absolute", top: 0, bottom: 0, margin: "auto 0", left: "22vw" }}>
-            <div className="floorBox" ref={scrollRef} onMouseLeave={() => dispatch(selectFloor(null))}>
+        <section className="floorNav" >
+            <div className="floorBox" ref={scrollRef} onMouseLeave={() => {
+                if (flag) {
+                    dispatch(selectFloor(null))
+                }
+            }}>
                 <div className="boxContainer" >
                     {reverseData.map((item, i) => {
                         return (
-                            <div className="box" style={{ backgroundColor: nav == item.type ? "#c2a4571a" : "transparent" }} key={item.text} onMouseEnter={() => dispatch(selectFloor(item.type))} >
+                            <div className="box" onClick={() => {
+                                if (flag) {
+                                    navigate(`/product/floorPlan?building=${building}`)
+                                } else {
+                                    dispatch(selectFloor(item.type))
+                                }
+                            }} style={{ backgroundColor: nav == item.type ? "#c2a4571a" : "transparent" }} key={item.text} onMouseEnter={() => {
+                                if (flag) {
+                                    dispatch(selectFloor(item.type))
+                                }
+                            }} >
                                 <p style={{ color: nav == item.type ? "#000" : "#000" }}>{item.text}</p>
                             </div>
                         )
@@ -80,15 +100,15 @@ function BuildingBox({ type }) {
     const building = [{
         type: "A",
         img: svg[2].default,
-        svg: <BuildingA nav={nav} dispatch={(target) => dispatch(selectFloor(target))} />
+        svg: <BuildingA buildingType={type} nav={nav} dispatch={(target) => dispatch(selectFloor(target))} />
     }, {
         type: "B",
         img: svg[2].default,
-        svg: <BuildingA nav={nav} dispatch={(target) => dispatch(selectFloor(target))} />
+        svg: <BuildingA buildingType={type} nav={nav} dispatch={(target) => dispatch(selectFloor(target))} />
     }, {
         type: "C",
         img: svg[4].default,
-        svg: <BuildingC nav={nav} dispatch={(target) => dispatch(selectFloor(target))} />
+        svg: <BuildingC buildingType={type} nav={nav} dispatch={(target) => dispatch(selectFloor(target))} />
     }]
     return (
         <div className={`buildingBox buildingBox-${type}`}>
@@ -118,6 +138,7 @@ export default function ChooseFloor() {
     const urlParams = new URLSearchParams(queryString);
     const building = urlParams.get('building');
     const [type, setType] = useState(building);
+
     let nav = useSelector(state => state.floorReducer.floor);
     if (typeof nav == "string") {
         if (nav == "1.5f") {

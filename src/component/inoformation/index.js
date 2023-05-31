@@ -1,11 +1,11 @@
 import React from 'react'
 import Pdf from '../pdf/Pdf'
-import MoveBack from '../config/moveBack'
+import { useNavigate } from 'react-router-dom';
 export default function Information() {
+    const navigate = useNavigate();
     return (
-        <section className="information" style={{ pointerEvents: "none" }}>
+        <section className="information" onClick={() => navigate(-1)}>
             <Pdf url={"/linkouCase.pdf"} />
-            <MoveBack z={15} />
         </section>
     )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 export function HomeSecondPageSvgTree(props) {
     return (
         <svg className='tree'
@@ -947,7 +948,11 @@ export function PopulationChart() {
     )
 }
 
-export function BuildingA({ nav, dispatch }) {
+export function BuildingA({ nav, dispatch, buildingType }) {
+    const navigate = useNavigate(null)
+    const handleClick = () => {
+        navigate(`/product/floorPlan?building=${buildingType}`)
+    }
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -965,6 +970,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="269.55"
                         height="32.2"
                         style={{ fill: nav == "2f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("2f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -975,6 +981,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="269.55"
                         height="36.53"
                         style={{ fill: nav == "3f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("3f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -985,6 +992,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="269.55"
                         height="35.82"
                         style={{ fill: nav == "4f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("4f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -995,6 +1003,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="269.55"
                         height="36.35"
                         style={{ fill: nav == "1.5f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("1.5f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1005,6 +1014,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="269.55"
                         height="291.84"
                         style={{ fill: nav == "9~16f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("9~16f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1015,6 +1025,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="270.16"
                         height="36.35"
                         style={{ fill: nav == "17f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("17f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1025,6 +1036,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="269.55"
                         height="147.65"
                         style={{ fill: nav == "5~8f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("5~8f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1035,6 +1047,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="268.48"
                         height="145.4"
                         style={{ fill: nav == "18~21f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("18~21f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1045,6 +1058,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="268.48"
                         height="37.39"
                         style={{ fill: nav == "22f" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("22f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1055,6 +1069,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="185.79"
                         height="36.35"
                         style={{ fill: nav == "r2" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("r2")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1065,6 +1080,7 @@ export function BuildingA({ nav, dispatch }) {
                         width="268.48"
                         height="29.08"
                         style={{ fill: nav == "r1" ? "#c2a45773" : "transparent" }}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("r1")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1075,7 +1091,11 @@ export function BuildingA({ nav, dispatch }) {
     )
 }
 
-export function BuildingC({ nav, dispatch }) {
+export function BuildingC({ nav, dispatch, buildingType }) {
+    const navigate = useNavigate(null)
+    const handleClick = () => {
+        navigate(`/product/floorPlan?building=${buildingType}`)
+    }
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1090,6 +1110,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="899.08"
                         width="355.29"
                         height="32.2"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("1f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1099,6 +1120,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="830.53"
                         width="313.13"
                         height="32.2"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("2f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1108,6 +1130,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="794.18"
                         width="313.13"
                         height="36.35"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("3f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1117,6 +1140,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="764.18"
                         width="313.13"
                         height="29.82"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("4f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1126,6 +1150,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="862.73"
                         width="355.29"
                         height="36.35"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("1.5f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1135,6 +1160,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={364}
                         width="313.13"
                         height={264}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("9~16f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1143,6 +1169,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={325}
                         width="313.13"
                         height={39}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("17f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1152,6 +1179,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={629}
                         width="313.13"
                         height={135}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("5~8f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1161,6 +1189,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={190}
                         width="311.88"
                         height={135}
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("18~21f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1170,6 +1199,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={123}
                         width="311.88"
                         height="32.77"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("23f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1179,6 +1209,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={98}
                         width="311.88"
                         height="25.77"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("24f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1188,6 +1219,7 @@ export function BuildingC({ nav, dispatch }) {
                         y={155}
                         width="311.88"
                         height="34.77"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("22f")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1197,6 +1229,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="32.91"
                         width={162}
                         height="36.35"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("r2")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1206,6 +1239,7 @@ export function BuildingC({ nav, dispatch }) {
                         y="69.3"
                         width="311.88"
                         height="29.08"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("r1")}
                         onMouseLeave={() => dispatch(null)}
                     />
@@ -1214,6 +1248,7 @@ export function BuildingC({ nav, dispatch }) {
                         x="86.94"
                         width="161.06"
                         height="32.91"
+                        onClick={handleClick}
                         onMouseEnter={() => dispatch("r3")}
                         onMouseLeave={() => dispatch(null)}
                     />

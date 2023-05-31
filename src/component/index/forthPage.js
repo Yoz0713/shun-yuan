@@ -89,12 +89,14 @@ function SectionNav({ handleClick }) {
         ch: "樓層規劃",
         en: "FLOOR PLAN",
         url: "/product/floor"//"/product/floor"
-    }, {
-        id: 3,
-        ch: "全區平面圖",
-        en: "MASTER PLAN",
-        url: "12"
-    }, {
+    },
+    // {
+    //     id: 3,
+    //     ch: "全區平面圖",
+    //     en: "MASTER PLAN",
+    //     url: "12"
+    // },
+    {
         id: 4,
         ch: "植栽規劃",
         en: "LANDSCAPE DESIGN",

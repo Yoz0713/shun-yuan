@@ -450,82 +450,279 @@
             }
         }
 
-        .floorNav {
-            width: pxConvertor(317.5);
-            height: pxConvertor(774.2);
-            z-index: 15;
 
-            .floorBox {
-                position: relative;
+
+    }
+
+    .floorNav {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        left: 22vw;
+        width: pxConvertor(317.5);
+        height: pxConvertor(774.2);
+        z-index: 15;
+
+        .floorBox {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            pointer-events: auto;
+            padding: 0 pxConvertor(100);
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 100%;
-                height: 100%;
-                overflow-y: scroll;
-                pointer-events: auto;
-                padding: 0 pxConvertor(100);
+                height: pxConvertor(56);
+                background-color: #f2f2f2;
+                cursor: pointer;
+                transition: 0.15s;
 
-                &::-webkit-scrollbar {
-                    display: none;
+                p {
+                    font-size: pxConvertor(24);
+                    color: #1a1a1a;
+                    font-weight: 700;
+                    transition: 0.15s;
                 }
 
-                .box {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: pxConvertor(56);
-                    background-color: #f2f2f2;
-                    cursor: pointer;
-                    transition: 0.15s;
+                &:not(:last-child) {
+                    margin-bottom: pxConvertor(15);
+                }
+
+                &:hover {
+                    background-color: $gold_color;
 
                     p {
-                        font-size: pxConvertor(24);
-                        color: #1a1a1a;
-                        font-weight: 700;
-                        transition: 0.15s;
+                        color: #fff;
                     }
+                }
 
-                    &:not(:last-child) {
-                        margin-bottom: pxConvertor(15);
-                    }
+            }
+        }
 
-                    &:hover {
-                        background-color: $gold_color;
+        .top,
+        .bottom {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            height: 4vw;
+            left: 0;
+            pointer-events: auto;
+            cursor: pointer;
 
-                        p {
-                            color: #fff;
+            img {
+                width: pxConvertor(31);
+            }
+        }
+
+        .top {
+            top: -4vw;
+        }
+
+        .bottom {
+            bottom: -4vw;
+        }
+
+
+    }
+
+    .floor-plan {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 87.5%;
+        height: 100%;
+        margin: 0 auto;
+
+        >div {
+            height: pxConvertor(870);
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+
+            .floor-plan-title {
+                position: relative;
+                width: 100%;
+                margin-bottom: 3.5vw;
+
+
+
+                h2 {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    top: 0;
+                    color: $gold_color;
+                    font-size: pxConvertor(21);
+                    letter-spacing: 0.1em;
+                    width: fit-content;
+
+                    .building {
+                        display: inline-block;
+
+
+                        .dong {
+                            font-size: pxConvertor(21);
+                            font-weight: 400;
                         }
                     }
 
+                    &::after,
+                    &::before {
+                        display: block;
+                        content: "";
+                        position: absolute;
+                        bottom: 1vw;
+                        right: -0.7vw;
+                        width: 1px;
+                        height: 1vw;
+                        background-color: $gold_color;
+                    }
+
+                    &::before {
+                        right: auto;
+                        left: -0.7vw;
+                    }
                 }
-            }
 
-            .top,
-            .bottom {
-                display: flex;
-                justify-content: center;
-                position: absolute;
-                width: 100%;
-                height: 4vw;
-                left: 0;
-                pointer-events: auto;
-                cursor: pointer;
 
-                img {
-                    width: pxConvertor(31);
+                span {
+                    font-size: pxConvertor(72);
+                    font-weight: 600;
+                    letter-spacing: 0.1em;
                 }
+
+
             }
 
-            .top {
-                top: -4vw;
+            .floorNav {
+                position: relative;
+                left: auto;
+                top: auto;
+                bottom: auto;
+                right: auto;
+                height: pxConvertor(550);
             }
-
-            .bottom {
-                bottom: -4vw;
-            }
-
-
         }
 
+        .right {
+            position: relative;
+            width: pxConvertor(1150);
+            height: pxConvertor(812);
+
+            .floor-plan-img {
+                width: 100%;
+                height: 100%;
+
+                .imgBox {
+                    width: 100%;
+                    height: 100%;
+
+                    .box {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+
+                        .container {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+
+                            .anchor-area {
+                                width: 100%;
+                                height: 100%;
+
+                                img {
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+
+                                }
+                            }
+                        }
+
+
+
+                        p {
+                            position: absolute;
+                            width: fit-content;
+                            height: 3vw;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            margin: auto;
+                            text-align: center;
+                            font-size: 1.5vw;
+                            font-weight: 600;
+                            z-index: 10;
+                        }
+                    }
+                }
+
+
+
+
+
+                .zoom {
+                    position: absolute;
+                    right: -3vw;
+                    flex-direction: column;
+                    bottom: 1.5vw;
+
+                    img {
+                        display: block;
+
+                        &:nth-child(1) {
+                            margin-bottom: 0.8vw;
+                        }
+                    }
+                }
+            }
+        }
+
+        //react transition group 套件
+        .fade-enter {
+            opacity: 0;
+            transform: translateX(-20px);
+            /* 退场动画效果，根据需要进行调整 */
+        }
+
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateX(0);
+            /* 入场动画效果，根据需要进行调整 */
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .fade-exit {
+            opacity: 1;
+            transform: translateX(0);
+            /* 退场动画效果，根据需要进行调整 */
+        }
+
+        .fade-exit-active {
+            opacity: 0;
+            transform: translateX(20px);
+            /* 入场动画效果，根据需要进行调整 */
+            transition: opacity 0.5s, transform 0.5s;
+        }
     }
 }
 

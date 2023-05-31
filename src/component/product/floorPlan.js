@@ -1,0 +1,102 @@
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { FloorNav } from './floor/chooseFloor'
+import { useSelector } from 'react-redux'
+import { sortData } from './floor/data/floorData'
+import FancyBox from "@/src/component/config/fancyBox"
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import ScaleDrag from "@/src/component/config/scaleDrag"
+export default function FloorPlan() {
+    //獲取棟別
+    const location = useLocation()
+    const queryString = location.search
+    const urlParams = new URLSearchParams(queryString);
+    const building = urlParams.get('building');
+    const [type, setType] = useState(building);
+    //獲取樓別
+    const selector = useSelector(state => state.floorReducer.floor)
+    const floor = selector ? selector.toUpperCase() : "1F"
+    return (
+        <section className="floor-plan">
+            <div className="left">
+                <FloorPlanTitle floor={floor} type={type} />
+                <FloorNav building={type} flag={false} />
+            </div>
+            <div className="right">
+                <FloorPlanImg floor={floor} type={type} />
+            </div>
+        </section>
+    )
+}
+
+
+function FloorPlanTitle({ floor, type }) {
+    const concactFloor = ["1F", "1.5F", "2F", "B1", "B2", "B3", "B4"]
+
+    return (
+        <div className="floor-plan-title">
+            <TransitionGroup>
+                <CSSTransition
+                    key={floor}
+                    timeout={500}
+                    classNames="fade"
+                >
+                    {!concactFloor.find((item) => item == floor) ? (
+                        <h2>
+                            <span className='building'>
+                                {type}
+                                <span className='dong'>棟</span>
+                            </span>
+                            <span className='floor'>{floor}</span>全區平面圖
+                        </h2>
+                    ) : (
+                        <h2>
+                            <span className='floor'>{floor}</span>全區平面圖
+                        </h2>
+                    )}
+                </CSSTransition>
+            </TransitionGroup>
+
+        </div>
+    )
+}
+
+function FloorPlanImg({ floor, type }) {
+    return (
+        <div className="floor-plan-img">
+
+            <ScaleDrag maxRatio={2.5} zoomImg1={require("../../../img/urban/svg/001-plus-button.svg")} zoomImg2={require("../../../img/urban/svg/002-minus-button.svg")}>
+                <TransitionGroup>
+                    <CSSTransition
+                        key={`${floor}2`}
+                        timeout={1000}
+                        classNames="fade"
+                    >
+                        <div className="container">
+                            {sortData.map((item, i) => {
+                                if (floor == item.type) {
+                                    if (item.img) {
+                                        const imgURL = typeof item.img == "string" ? item.img : item.img[type]
+                                        return (
+                                            <div className="anchor-area">
+                                                <img src={imgURL} />
+                                            </div>
+
+                                        )
+                                    } else {
+                                        return (
+                                            <p>即將公開</p>
+                                        )
+                                    }
+                                }
+                            })}
+                        </div>
+                    </CSSTransition>
+                </TransitionGroup>
+
+
+            </ScaleDrag>
+
+        </div>
+    )
+}

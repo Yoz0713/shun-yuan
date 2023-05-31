@@ -9,7 +9,7 @@ const MoveBack = ({ z }) => {
     const location = useLocation()
     const path = location.pathname;
     const [url, setUrl] = useState(path)
-    const innerPage = ["/team/portfolio", "/product/floor/choosefloor"]
+    const innerPage = ["/team/portfolio", "/product/floor/choosefloor", "/product/floorPlan"]
 
     const handleClick = function () {
         dispatch(closeVideo())

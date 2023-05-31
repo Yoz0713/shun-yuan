@@ -69,11 +69,13 @@ function MenuContent({ open, setOpen, playVideo }) {
         id: "/product/floor",//"/product/floor"
         ch: "樓層規劃",
         slide: 3,
-    }, {
-        id: "/product/firstFloor",
-        ch: "全區平面圖",
-        slide: 3,
-    }, {
+    },
+    //  {
+    //     id: "/product/firstFloor",
+    //     ch: "全區平面圖",
+    //     slide: 3,
+    // },
+    {
         id: "/product/planet",
         ch: "植栽規劃",
         slide: 3,
