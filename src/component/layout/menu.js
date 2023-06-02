@@ -81,7 +81,7 @@ function MenuContent({ open, setOpen, playVideo }) {
         slide: 3,
     }, {
         id: "/product/cafe",
-        ch: "森Mori Café",
+        ch: "Mori Café森",
         slide: 3,
     }], [{
         id: "/equipment/parking",///equipment/parking

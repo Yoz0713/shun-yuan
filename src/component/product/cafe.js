@@ -63,10 +63,10 @@ export default function Cafe() {
             <div className="left">
                 <img src={require("../../../img/product/cafe/svg/000-cafe-logo.svg")} />
                 <div className="paraBox">
-                    <h4>森Mori Café 花園秘境中的特調咖啡</h4>
+                    <h4>Mori Café森 花園秘境中的特調咖啡</h4>
                     <p>融入林口AI科技元宇宙新基因，獨棟圓形「森Mori Café」水晶玻璃屋，整個蛋型平面配置獨樹一格，透明帷幕外牆當陽光透過玻璃閃爍著秘境中的珠寶，五感交織在充滿綠色植感花園秘境之中讓人心情愉悅，等一個人的咖啡，工作中場醒腦、二樓平台吹風…滿滿的咖啡因讓美好上癮！</p>
-                    <p>森MORI CAFÉ 具備功能</p>
-                    <p>• 專屬社區咖啡風味<br />• 營業時間：8:00AM~22:00PM<br />• 提供社區餐點服務<br />• Party包場</p>
+                    <p>MORI CAFÉ森 具備功能:</p>
+                    <p>• 專屬社區咖啡風味<br />• 服務時間：8:00AM~22:00PM<br />• 提供社區餐點服務<br />• Party包場</p>
                 </div>
             </div>
             <div className="right">

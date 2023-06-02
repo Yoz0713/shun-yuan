@@ -40,13 +40,13 @@ export default function Cement() {
                 <p>結構體使用高品質混凝土，<br />
                     <span style={{ fontWeight: 800, fontFamily: `"Microsoft JhengHei", serif` }}>
                         地下層6000磅<br />
-                        4~10層5000磅<br />
+                        1~10層5000磅<br />
                         10~屋突層4000磅，<br />
                     </span>
                     穩定基本結構安全，保障建築最根本的安全堡壘!</p>
             </div>
             <div className="right" style={{ width: "60%", height: "90%" }}>
-                <img src={require("../../../img/equipment/svg/001-cement-bg.svg").default} style={{ height: "100%", width: "auto" }} />
+                <img src={require("../../../img/equipment/webp/004-cement-bg.webp").default} style={{ height: "100%", width: "auto" }} />
             </div>
         </section>
     )

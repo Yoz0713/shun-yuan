@@ -17,7 +17,6 @@ export function FloorNav({ building, flag = true }) {
             return true;
         }
     });
-    console.log(reverseData)
     const scrollRef = useRef(null)
     const dispatch = useDispatch(null)
     const navigate = useNavigate(null)
@@ -67,6 +66,7 @@ export function FloorNav({ building, flag = true }) {
                         return (
                             <div className="box" onClick={() => {
                                 if (flag) {
+                                    dispatch(selectFloor(item.type))
                                     navigate(`/product/floorPlan?building=${building}`)
                                 } else {
                                     dispatch(selectFloor(item.type))

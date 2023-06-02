@@ -123,7 +123,7 @@ function Calculator() {
         }
         let licenseCorrect = 0;
         if (inputValues.totalPrice * 0.05 != Math.floor(inputValues.totalPrice * 0.05)) {
-            licenseCorrect = licenseCorrect + inputValues.totalPrice * 0.05 - Math.floor(inputValues.totalPrice * 0.05)
+            licenseCorrect = licenseCorrect - (Math.ceil(inputValues.totalPrice * 0.05) - inputValues.totalPrice * 0.05)
 
         }
         if (inputValues.totalPrice * 0.1 - 10 != Math.ceil(inputValues.totalPrice * 0.1 - 10)) {
@@ -148,7 +148,7 @@ function Calculator() {
             sixteenThFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
             construction: toMoneyStyle(inputValues.totalPrice * 0.02),
             license: toMoneyStyle(inputValues.totalPrice * 0.02 + licenseCorrect),
-            delivery: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.05)),
+            delivery: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.05)),
             ownMoney: toMoneyStyle(inputValues.totalPrice * 0.25),
             loanMoney: toMoneyStyle(Math.floor((inputValues.totalPrice * 0.75))),
             monthlyCost: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000)),

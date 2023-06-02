@@ -103,7 +103,7 @@ function SectionNav({ handleClick }) {
         url: "/product/planet"
     }, {
         id: 5,
-        ch: "森Mori Café",
+        ch: "Mori Café森",
         en: "MORI CAFE",
         url: "/product/cafe"
     },]

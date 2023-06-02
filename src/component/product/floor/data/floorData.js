@@ -18,6 +18,7 @@ const data = [
     {
         type: "1f",
         text: "1F",
+
     },
     {
         type: "1.5f",
@@ -133,17 +134,17 @@ const data = [
 export const sortData = [
     {
         type: "B4",
-        img: require("@/img/product/floor/floorPlan/webp/B4.webp").default
+        img: require("@/img/product/floor/floorPlan/svg/B4.svg").default
     },
     {
         type: "B3",
 
-        img: require("@/img/product/floor/floorPlan/webp/B3.webp").default
+        img: require("@/img/product/floor/floorPlan/svg/B3.svg").default
     },
     {
         type: "B2",
 
-        img: require("@/img/product/floor/floorPlan/webp/B2.webp").default
+        img: require("@/img/product/floor/floorPlan/svg/B2.svg").default
     },
     {
         type: "B1",
@@ -152,16 +153,105 @@ export const sortData = [
     },
     {
         type: "1F",
-
-        img: require("@/img/product/floor/floorPlan/webp/1F.webp").default
+        img: require("@/img/product/floor/floorPlan/webp/1F.webp").default,
+        anchor: [
+            {
+                class: "entry-gate",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/entry-gate.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "社區入口"
+            },
+            {
+                class: "lobby",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/lobby.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "月光珠寶盒大廳"
+            },
+            {
+                class: "elevator-first-floor",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/elevator-firstfloor.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "一樓梯廳"
+            },
+            {
+                class: "mail-area",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/mail-area.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "收信區"
+            },
+            {
+                class: "meeting-room",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/meeting-room.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "會議室"
+            },
+            {
+                class: "art1",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/art1.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "旋轉的風景"
+            },
+            {
+                class: "art2",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/art2.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "月圓"
+            },
+            {
+                class: "gym",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/gym1.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/gym2.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/gym3.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "綠草如茵健身房"
+            },
+            {
+                class: "children-game",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/children-game1.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/children-game2.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/children-game3.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "親子遊戲美術屋"
+            },
+            {
+                class: "office",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/office.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "共享辦公室"
+            }
+        ]
     },
     {
         type: "1.5F",
-        img: require("@/img/product/floor/floorPlan/webp/1.5F.webp").default
+        img: require("@/img/product/floor/floorPlan/svg/1.5F.svg").default,
+        anchor: [
+            {
+                class: "cafe",
+                fancyImg: [require("@/img/team/design/webp/007-postulate-fancyImg3-preload.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "Mori Café森"
+            },
+            {
+                class: "pool",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/pool-light.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/pool-night.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "戶外游泳池"
+            },
+            {
+                class: "pool-chat",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/pool-chat.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "泳池交誼廳"
+            }
+        ]
     },
     {
         type: "2F",
-        img: require("@/img/product/floor/floorPlan/webp/2F.webp").default
+        img: require("@/img/product/floor/floorPlan/webp/2F.webp").default,
+        anchor: [
+            {
+                class: "chat-banquet",
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/chatting-room.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room1.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room2.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room3.webp").default],
+                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                title: "交誼宴會廳"
+            }
+        ]
     },
     {
         type: "3F",

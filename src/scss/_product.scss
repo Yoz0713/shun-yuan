@@ -648,11 +648,128 @@
                                 width: 100%;
                                 height: 100%;
 
-                                img {
+                                >img {
                                     display: block;
                                     width: 100%;
                                     height: 100%;
+                                }
 
+                                >div {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 3.1vw;
+                                    height: 3.1vw;
+
+                                    .thumbBox {
+                                        position: relative;
+                                        z-index: 1;
+                                        padding: 1vw;
+                                    }
+
+                                    .radiation {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 1vw;
+                                        right: 0;
+                                        margin: 0 auto;
+                                        width: 1vw;
+                                        height: 1vw;
+                                        z-index: 0;
+
+                                        .circle {
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            border-radius: 50%;
+                                            background-color: #4168717c;
+                                            animation-name: radiation;
+                                            animation-duration: 1.35s;
+                                            animation-iteration-count: infinite;
+                                            animation-timing-function: linear;
+
+
+                                            &:nth-child(2) {
+                                                animation-delay: 0.25s;
+                                            }
+
+                                            &:nth-child(3) {
+                                                animation-delay: 0.5s;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .entry-gate {
+                                    left: 37.2vw;
+                                    top: 9vw;
+                                }
+
+                                .lobby {
+                                    left: 37.2vw;
+                                    top: 13vw;
+                                }
+
+                                .elevator-first-floor {
+                                    left: 45.8vw;
+                                    top: 24.2vw;
+                                }
+
+                                .mail-area {
+                                    left: 33.65vw;
+                                    top: 13.7vw;
+                                }
+
+                                .meeting-room {
+                                    left: 43.7vw;
+                                    top: 17.7vw;
+                                }
+
+                                .art1 {
+                                    left: 21.5vw;
+                                    top: 35vw;
+                                }
+
+                                .art2 {
+                                    left: 39.6vw;
+                                    top: 7vw;
+                                }
+
+                                .gym {
+                                    left: 28.5vw;
+                                    top: 29.5vw;
+                                }
+
+                                .children-game {
+                                    left: 42.2vw;
+                                    top: 29vw;
+                                }
+
+                                .office {
+                                    left: 21vw;
+                                    top: 16.5vw;
+                                }
+
+                                .cafe {
+                                    left: 11vw;
+                                    top: 23vw;
+                                }
+
+                                .pool {
+                                    left: 26vw;
+                                    top: 30vw;
+                                }
+
+                                .pool-chat {
+                                    left: 38.7vw;
+                                    top: 25.8vw;
+                                }
+
+                                .chat-banquet {
+                                    left: 40.7vw;
+                                    top: 7.5vw;
                                 }
                             }
                         }
@@ -700,7 +817,7 @@
         //react transition group 套件
         .fade-enter {
             opacity: 0;
-            transform: translateX(-20px);
+            transform: translateX(-10%);
             /* 退场动画效果，根据需要进行调整 */
         }
 
@@ -719,7 +836,7 @@
 
         .fade-exit-active {
             opacity: 0;
-            transform: translateX(20px);
+            transform: translateX(10%);
             /* 入场动画效果，根据需要进行调整 */
             transition: opacity 0.5s, transform 0.5s;
         }
@@ -738,6 +855,75 @@
 
         &:hover {
             fill: #c2a357;
+        }
+    }
+}
+
+.fancyBox {
+    .floorPlan-fancy {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+
+        >img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .title {
+            position: absolute;
+            right: 0;
+            bottom: 2vw;
+            width: 18vw;
+            padding: 1vw 0;
+            background-color: #000000af;
+            border-radius: 10px 0 0 10px;
+
+            p {
+                width: 100%;
+                text-align: center;
+                font-size: var(--ch_s_text);
+                color: #fff;
+                letter-spacing: 0.1em;
+            }
+        }
+
+        .navBox {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            padding: 0 1.5vw;
+            pointer-events: auto;
+
+            >div {
+                pointer-events: auto;
+                cursor: pointer;
+                padding: 1.5vw;
+
+                img {
+                    pointer-events: none;
+                    width: 2.5vw;
+                    height: auto;
+                    filter: drop-shadow(0 0 2.5px #000);
+                }
+
+
+            }
+
+
+            .prev {
+                transform: rotateY(180deg);
+
+            }
         }
     }
 }

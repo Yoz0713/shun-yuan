@@ -962,7 +962,7 @@ export function BuildingA({ nav, dispatch, buildingType }) {
 
             <g id="_圖層_6" data-name="圖層 6">
                 <g>
-                    <rect className="building-cls" x={0} y="895.25" width="269.55" height="32.2" style={{ fill: nav == "1f" ? "#c2a45773" : "transparent" }} onMouseEnter={() => dispatch("1f")} onMouseLeave={() => dispatch(null)} />
+                    <rect className="building-cls" x={0} y="895.25" width="269.55" height="32.2" style={{ fill: nav == "1f" ? "#c2a45773" : "transparent" }} onClick={handleClick} onMouseEnter={() => dispatch("1f")} onMouseLeave={() => dispatch(null)} />
                     <rect
                         className="building-cls"
                         x="1.07"

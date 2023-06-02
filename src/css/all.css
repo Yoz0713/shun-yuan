@@ -3092,12 +3092,17 @@
 .product .floor-container .chooseFloor .titleBox h1 span {
   font-size: 1.40625vw;
 }
-.product .floor-container .floorNav {
+.product .floorNav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  left: 22vw;
   width: 16.5364583333vw;
   height: 40.3229166667vw;
   z-index: 15;
 }
-.product .floor-container .floorNav .floorBox {
+.product .floorNav .floorBox {
   position: relative;
   width: 100%;
   height: 100%;
@@ -3105,10 +3110,10 @@
   pointer-events: auto;
   padding: 0 5.2083333333vw;
 }
-.product .floor-container .floorNav .floorBox::-webkit-scrollbar {
+.product .floorNav .floorBox::-webkit-scrollbar {
   display: none;
 }
-.product .floor-container .floorNav .floorBox .box {
+.product .floorNav .floorBox .box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3118,23 +3123,23 @@
   cursor: pointer;
   transition: 0.15s;
 }
-.product .floor-container .floorNav .floorBox .box p {
+.product .floorNav .floorBox .box p {
   font-size: 1.25vw;
   color: #1a1a1a;
   font-weight: 700;
   transition: 0.15s;
 }
-.product .floor-container .floorNav .floorBox .box:not(:last-child) {
+.product .floorNav .floorBox .box:not(:last-child) {
   margin-bottom: 0.78125vw;
 }
-.product .floor-container .floorNav .floorBox .box:hover {
+.product .floorNav .floorBox .box:hover {
   background-color: #c2a357;
 }
-.product .floor-container .floorNav .floorBox .box:hover p {
+.product .floorNav .floorBox .box:hover p {
   color: #fff;
 }
-.product .floor-container .floorNav .top,
-.product .floor-container .floorNav .bottom {
+.product .floorNav .top,
+.product .floorNav .bottom {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -3144,15 +3149,193 @@
   pointer-events: auto;
   cursor: pointer;
 }
-.product .floor-container .floorNav .top img,
-.product .floor-container .floorNav .bottom img {
+.product .floorNav .top img,
+.product .floorNav .bottom img {
   width: 1.6145833333vw;
 }
-.product .floor-container .floorNav .top {
+.product .floorNav .top {
   top: -4vw;
 }
-.product .floor-container .floorNav .bottom {
+.product .floorNav .bottom {
   bottom: -4vw;
+}
+.product .floor-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 87.5%;
+  height: 100%;
+  margin: 0 auto;
+}
+.product .floor-plan > div {
+  height: 45.3125vw;
+}
+.product .floor-plan .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+.product .floor-plan .left .floor-plan-title {
+  position: relative;
+  width: 100%;
+  margin-bottom: 3.5vw;
+}
+.product .floor-plan .left .floor-plan-title h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  color: #c2a357;
+  font-size: 1.09375vw;
+  letter-spacing: 0.1em;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.product .floor-plan .left .floor-plan-title h2 .building {
+  display: inline-block;
+}
+.product .floor-plan .left .floor-plan-title h2 .building .dong {
+  font-size: 1.09375vw;
+  font-weight: 400;
+}
+.product .floor-plan .left .floor-plan-title h2::after, .product .floor-plan .left .floor-plan-title h2::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 1vw;
+  right: -0.7vw;
+  width: 1px;
+  height: 1vw;
+  background-color: #c2a357;
+}
+.product .floor-plan .left .floor-plan-title h2::before {
+  right: auto;
+  left: -0.7vw;
+}
+.product .floor-plan .left .floor-plan-title span {
+  font-size: 3.75vw;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.product .floor-plan .left .floorNav {
+  position: relative;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  height: 28.6458333333vw;
+}
+.product .floor-plan .right {
+  position: relative;
+  width: 59.8958333333vw;
+  height: 42.2916666667vw;
+}
+.product .floor-plan .right .floor-plan-img {
+  width: 100%;
+  height: 100%;
+}
+.product .floor-plan .right .floor-plan-img .imgBox {
+  width: 100%;
+  height: 100%;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area {
+  width: 100%;
+  height: 100%;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.1vw;
+  height: 1.1vw;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area .entry-gate {
+  left: 38.4vw;
+  top: 10vw;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area .lobby {
+  left: 38.4vw;
+  top: 14vw;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area .elevator-first-floor {
+  left: 46.7vw;
+  top: 25vw;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area .mail-area {
+  left: 34.6vw;
+  top: 14.5vw;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box .container .anchor-area .meeting-room {
+  left: 44.8vw;
+  top: 18.7vw;
+}
+.product .floor-plan .right .floor-plan-img .imgBox .box p {
+  position: absolute;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 3vw;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 600;
+  z-index: 10;
+}
+.product .floor-plan .right .floor-plan-img .zoom {
+  position: absolute;
+  right: -3vw;
+  flex-direction: column;
+  bottom: 1.5vw;
+}
+.product .floor-plan .right .floor-plan-img .zoom img {
+  display: block;
+}
+.product .floor-plan .right .floor-plan-img .zoom img:nth-child(1) {
+  margin-bottom: 0.8vw;
+}
+.product .floor-plan .fade-enter {
+  opacity: 0;
+  transform: translateX(-10%);
+  /* 退场动画效果，根据需要进行调整 */
+}
+.product .floor-plan .fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  /* 入场动画效果，根据需要进行调整 */
+  transition: opacity 0.5s, transform 0.5s;
+}
+.product .floor-plan .fade-exit {
+  opacity: 1;
+  transform: translateX(0);
+  /* 退场动画效果，根据需要进行调整 */
+}
+.product .floor-plan .fade-exit-active {
+  opacity: 0;
+  transform: translateX(10%);
+  /* 入场动画效果，根据需要进行调整 */
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .building-svg .building-cls {
@@ -3162,6 +3345,17 @@
 }
 .building-svg .building-cls:hover {
   fill: #c2a357;
+}
+
+.fancyBox .floorPlan-fancy {
+  width: 100%;
+  height: 100%;
+}
+.fancyBox .floorPlan-fancy img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .news {
@@ -3518,5 +3712,11 @@ body {
   100% {
     transform: translateX(0) rotate(35deg);
     opacity: 1;
+  }
+}
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

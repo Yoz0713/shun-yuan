@@ -62,6 +62,8 @@ function FloorPlanTitle({ floor, type }) {
 }
 
 function FloorPlanImg({ floor, type }) {
+    const [carousel, setCarousel] = useState(0)
+
     return (
         <div className="floor-plan-img">
 
@@ -78,8 +80,34 @@ function FloorPlanImg({ floor, type }) {
                                     if (item.img) {
                                         const imgURL = typeof item.img == "string" ? item.img : item.img[type]
                                         return (
-                                            <div className="anchor-area">
+                                            <div className="anchor-area" >
                                                 <img src={imgURL} />
+                                                {item.anchor && item.anchor.map((item) => {
+                                                    return (
+                                                        <div className={`${item.class}`} >
+                                                            <FancyBox thumbUrl={item.thumb}>
+                                                                <div className="floorPlan-fancy">
+                                                                    {item.fancyImg.map((item, i) => {
+                                                                        return (
+                                                                            <img src={item} key={i} style={{ opacity: carousel == i ? 1 : 0 }} />
+                                                                        )
+                                                                    })}
+                                                                    <div className="title">
+                                                                        <p>{`${item.title}-3D示意圖`}</p>
+                                                                    </div>
+                                                                    {item.fancyImg.length > 1 &&
+                                                                        <NavBox carousel={carousel} setCarousel={setCarousel} limit={{ min: 0, max: item.fancyImg.length - 1 }} />
+                                                                    }
+                                                                </div>
+                                                            </FancyBox>
+                                                            <div className="radiation">
+                                                                <div className="circle"></div>
+                                                                <div className="circle"></div>
+                                                                <div className="circle"></div>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                })}
                                             </div>
 
                                         )
@@ -97,6 +125,37 @@ function FloorPlanImg({ floor, type }) {
 
             </ScaleDrag>
 
+        </div>
+    )
+}
+
+
+function NavBox({ carousel, setCarousel, limit }) {
+    const handleClick = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        let prevValue = carousel
+        if (e.target.className == "prev") {
+            if (!(limit.min == prevValue)) {
+                prevValue = prevValue - 1;
+            }
+
+        } else {
+            if (!(limit.max == prevValue)) {
+                prevValue = prevValue + 1;
+            }
+
+        }
+        setCarousel(prevValue)
+    }
+    return (
+        <div className="navBox" onClick={() => setCarousel(0)}>
+            <div className="prev" onClick={handleClick}>
+                <img src={require("@/img/equipment/svg/003-arrow.svg")} />
+            </div>
+            <div className="next" onClick={handleClick}>
+                <img src={require("@/img/equipment/svg/003-arrow.svg")} />
+            </div>
         </div>
     )
 }
