@@ -191,12 +191,12 @@ export const sortData = [
                 thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                 title: "旋轉的風景"
             },
-            {
-                class: "art2",
-                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/art2.webp").default],
-                thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                title: "月圓"
-            },
+            // {
+            //     class: "art2",
+            //     fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/art2.webp").default],
+            //     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+            //     title: "月圓"
+            // },
             {
                 class: "gym",
                 fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/gym1.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/gym2.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/gym3.webp").default],
