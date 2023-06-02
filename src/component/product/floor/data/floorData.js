@@ -247,7 +247,7 @@ export const sortData = [
         anchor: [
             {
                 class: "chat-banquet",
-                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/chatting-room.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room1.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room2.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room3.webp").default],
+                fancyImg: [require("@/img/product/floor/floorPlan/webp/anchor/banquet-room1.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room2.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/banquet-room3.webp").default, require("@/img/product/floor/floorPlan/webp/anchor/chatting-room.webp").default],
                 thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                 title: "交誼宴會廳"
             }
