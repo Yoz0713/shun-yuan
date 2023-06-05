@@ -15,6 +15,23 @@ import News from './component/news';
 import Equipment from './component/equipment';
 import Information from './component/inoformation';
 export default function App() {
+    const body = {
+        type: "admin"
+    }
+    fetch("https://board.srl.tw/sys/login_ajax.php", {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            'Authorization': `Bearer ${sessionStorage['token']}`,
+            'Refresh-Token': localStorage['refresh_token']
+        }
+    }).then((res) => {
+        console.log(res)
+        if (!res.sucess) {
+            location.href("https://board.srl.tw")
+        }
+    })
+
 
     return (
         <>

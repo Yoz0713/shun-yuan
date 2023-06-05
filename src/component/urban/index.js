@@ -265,7 +265,7 @@ function AnchorDotTransportation({ showDot }) {
                                             <div className="wrap" key={i} style={{ ...wrapperStyle, opacity: slide == i ? 1 : 0 }}>
                                                 <BasicContent para={item} />
                                             </div>
-                                            <Arrow slide={slide} setSlide={setSlide} length={item.length} />
+                                            <Arrow slide={slide} setSlide={setSlide} length={linKouPara.length} />
                                         </>
                                     )
                                 })}

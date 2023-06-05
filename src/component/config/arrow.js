@@ -26,8 +26,10 @@ export default function Arrow({ slide, setSlide, length }) {
                 let newIndex = slide
                 if (newIndex == length - 1) {
                     return
+                } else {
+                    setSlide(++newIndex)
                 }
-                setSlide(++newIndex)
+
             }} style={{ ...arrowStyle, right: "3vw", pointerEvents: "auto" }}>
                 <img src={require("../../../img/team/design/svg/014-arrow-right.svg")} style={{ width: "1.5vw", height: "1.5vw", pointerEvents: "none" }} />
             </div>
