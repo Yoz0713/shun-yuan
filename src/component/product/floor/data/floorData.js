@@ -215,7 +215,8 @@ export const sortData = [
                 thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                 title: "共享辦公室"
             }
-        ]
+        ],
+        text: "全區平面圖"
     },
     {
         type: "1.5F",

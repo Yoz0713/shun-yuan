@@ -771,6 +771,25 @@
                                     left: 40.7vw;
                                     top: 7.5vw;
                                 }
+
+                                >.thumbBox {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    position: absolute;
+                                    left: 12vw;
+                                    bottom: 1.5vw;
+                                    top: auto;
+                                    border: 1px solid $gold_color;
+                                    width: 7vw;
+
+                                    p {
+                                        font-size: var(--ch_s_text);
+                                        height: 1.5vw;
+                                        text-align: start;
+                                        color: $gold_color;
+                                    }
+                                }
                             }
                         }
 

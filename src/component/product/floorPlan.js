@@ -63,7 +63,6 @@ function FloorPlanTitle({ floor, type }) {
 
 function FloorPlanImg({ floor, type }) {
     const [carousel, setCarousel] = useState(0)
-
     return (
         <div className="floor-plan-img">
 
@@ -108,6 +107,11 @@ function FloorPlanImg({ floor, type }) {
                                                         </div>
                                                     )
                                                 })}
+                                                {item.text &&
+                                                    <FancyBox text={item.text}>
+                                                        <img style={{ position: "absolute", right: 0, left: 0, top: 0, bottom: 0, margin: "auto", width: "auto", height: "100%" }} src={require("@/img/product/floor/floorPlan/webp/1f-colored.webp").default} />
+                                                    </FancyBox>
+                                                }
                                             </div>
 
                                         )
@@ -121,8 +125,6 @@ function FloorPlanImg({ floor, type }) {
                         </div>
                     </CSSTransition>
                 </TransitionGroup>
-
-
             </ScaleDrag>
 
         </div>
