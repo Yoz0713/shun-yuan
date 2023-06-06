@@ -14,23 +14,28 @@ import Product from './component/product';
 import News from './component/news';
 import Equipment from './component/equipment';
 import Information from './component/inoformation';
+import { Analytics } from '@vercel/analytics/react';
 export default function App() {
-    const body = {
-        type: "admin"
-    }
+    let formData = new FormData();
+    formData.append('type', 'admin');
     fetch("https://board.srl.tw/sys/login_ajax.php", {
         method: "POST",
-        body: JSON.stringify(body),
+        body: formData,
         headers: {
             'Authorization': `Bearer ${sessionStorage['token']}`,
             'Refresh-Token': localStorage['refresh_token']
         }
     }).then((res) => {
-        console.log(res)
-        if (!res.sucess) {
-            location.href("https://board.srl.tw")
-        }
-    })
+
+        res.json().then((data) => {
+            console.log(data, data.success)
+            if (!data.success) {
+                alert(data.msg)
+                location.href = "https://board.srl.tw";
+            }
+        })
+
+    });
 
 
     return (
@@ -41,7 +46,7 @@ export default function App() {
                 <Content />
 
             </Router>
-
+            <Analytics />
         </>
 
 
