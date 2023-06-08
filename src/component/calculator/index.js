@@ -130,11 +130,10 @@ function Calculator() {
             licenseCorrect = licenseCorrect - (Math.ceil(inputValues.totalPrice * 0.1 - 10) - (inputValues.totalPrice * 0.1 - 10))
         }
         if (inputValues.totalPrice * 0.02 != Math.floor(inputValues.totalPrice * 0.02)) {
-            if (Math.ceil(inputValues.totalPrice * 0.02) - inputValues.totalPrice * 0.02 >= 0.5) {
-                licenseCorrect = licenseCorrect + (inputValues.totalPrice * 0.02 - Math.floor(inputValues.totalPrice * 0.02)) * 4
-            } else {
-                licenseCorrect = licenseCorrect - (Math.ceil(inputValues.totalPrice * 0.02) - inputValues.totalPrice * 0.02) * 4
-            }
+            licenseCorrect = licenseCorrect - (Math.ceil(inputValues.totalPrice * 0.02) - inputValues.totalPrice * 0.02) * 4
+        }
+        if (inputValues.totalPrice * 0.75 != Math.floor(inputValues.totalPrice * 0.75)) {
+            licenseCorrect = licenseCorrect + (inputValues.totalPrice * 0.75 - Math.floor(inputValues.totalPrice * 0.75))
         }
         console.log(licenseCorrect)
         const toMoneyStyle = (num) => {
@@ -143,13 +142,13 @@ function Calculator() {
         setResultValues({
             deposit: 10,
             sign: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.1 - 10)),
-            firstFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
-            eighthFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
-            sixteenThFloor: toMoneyStyle(inputValues.totalPrice * 0.02),
-            construction: toMoneyStyle(inputValues.totalPrice * 0.02),
+            firstFloor: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.02)),
+            eighthFloor: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.02)),
+            sixteenThFloor: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.02)),
+            construction: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.02)),
             license: toMoneyStyle(inputValues.totalPrice * 0.02 + licenseCorrect),
             delivery: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.05)),
-            ownMoney: toMoneyStyle(inputValues.totalPrice * 0.25),
+            ownMoney: toMoneyStyle(Math.ceil(inputValues.totalPrice * 0.25)),
             loanMoney: toMoneyStyle(Math.floor((inputValues.totalPrice * 0.75))),
             monthlyCost: toMoneyStyle(Math.floor(inputValues.totalPrice * 0.75 * avgMonthRatio * 10000)),
             interestRepayment: toMoneyStyle((totalMoney - inputValues.totalPrice * 0.75 * 10000) / loanMonth),
