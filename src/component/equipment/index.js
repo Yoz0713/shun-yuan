@@ -5,6 +5,9 @@ import Parking from './parking'
 import FloorThick from './floorThick'
 import Cement from './cement'
 import Brick from './brick'
+import WaterPurifier from './waterPurifier'
+import Dehumidifier from './dehumidifier'
+import Garbage from './garbage'
 import SplitText from "../config/splitText"
 export default function Equipment() {
     return (
@@ -15,6 +18,9 @@ export default function Equipment() {
                 <Route path="/cement" element={<Cement />} />
                 <Route path="/floorThick" element={<FloorThick />} />
                 <Route path="/brick" element={<Brick />} />
+                <Route path="/waterPurifier" element={<WaterPurifier />} />
+                <Route path="/dehumidifier" element={<Dehumidifier />} />
+                <Route path="/garbage" element={<Garbage />} />
             </Routes>
         </EquipmentContainer>
     )

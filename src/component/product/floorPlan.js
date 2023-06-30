@@ -81,7 +81,7 @@ function FloorPlanImg({ floor, type }) {
                                         return (
                                             <div className="anchor-area" >
                                                 <img src={imgURL} />
-                                                {item.anchor && item.anchor.map((item) => {
+                                                {Array.isArray(item.anchor) > 0 ? item.anchor.map((item) => {
                                                     return (
                                                         <div className={`${item.class}`} >
                                                             <FancyBox thumbUrl={item.thumb}>
@@ -106,7 +106,37 @@ function FloorPlanImg({ floor, type }) {
                                                             </div>
                                                         </div>
                                                     )
-                                                })}
+                                                })
+                                                    :
+                                                    item.anchor ? item.anchor[type].map((item) => {
+                                                        return (
+                                                            <div className={`${item.class}`} >
+                                                                <FancyBox thumbUrl={item.thumb}>
+                                                                    <div className="floorPlan-fancy">
+                                                                        {item.fancyImg.map((item, i) => {
+                                                                            return (
+                                                                                <img src={item} key={i} style={{ opacity: carousel == i ? 1 : 0 }} />
+                                                                            )
+                                                                        })}
+                                                                        <div className="title">
+                                                                            <p>{`${item.title}-3D示意圖`}</p>
+                                                                        </div>
+                                                                        {item.fancyImg.length > 1 &&
+                                                                            <NavBox carousel={carousel} setCarousel={setCarousel} limit={{ min: 0, max: item.fancyImg.length - 1 }} />
+                                                                        }
+                                                                    </div>
+                                                                </FancyBox>
+                                                                <div className="radiation">
+                                                                    <div className="circle"></div>
+                                                                    <div className="circle"></div>
+                                                                    <div className="circle"></div>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    })
+                                                        : null
+
+                                                }
                                                 {item.text &&
                                                     <FancyBox text={item.text}>
                                                         <img style={{ position: "absolute", right: 0, left: 0, top: 0, bottom: 0, margin: "auto", width: "auto", height: "100%" }} src={require("@/img/product/floor/floorPlan/webp/1f-colored.webp").default} />

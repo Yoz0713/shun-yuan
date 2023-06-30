@@ -10,7 +10,8 @@ const anchorBuildingTeam = "anchor to buildingteam"
 //floor nav 
 const chooseFloor = "select a floor"
 
-
+//改變首頁建材與設備的內容切換
+const toggleEquipment = "toggle equipment"
 
 
 // 這裡採node的方式做export/import
@@ -19,5 +20,6 @@ module.exports = {
     videoStart,
     videoStop,
     anchorBuildingTeam,
-    chooseFloor
+    chooseFloor,
+    toggleEquipment
 };

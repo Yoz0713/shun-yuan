@@ -11,6 +11,7 @@ export default function Pdf({ url, active = true, setActive = () => { } }) {
         setNumPages(numPages);
 
     }
+
     useEffect(() => {
         // 當頁面載入後1秒後，設置Pdf元件已經載入完成
         let count = 0

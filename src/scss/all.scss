@@ -36,6 +36,11 @@ body {
     }
 }
 
+.information .react-pdf__Page__canvas {
+    width: 88% !important;
+    margin: 0 auto;
+}
+
 .fadeIn {
     opacity: 0;
 

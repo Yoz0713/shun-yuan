@@ -41,9 +41,9 @@ export default function News() {
                         <h1>NEWS</h1>
                     </div>
                     <div className="list">
-                        <ListBox num={"01."} text={"法規"} element={<NewsElement pdf={"/law.pdf"} />} />
-                        <ListBox num={"02."} text={"大社區優點"} element={<NewsElement pdf={"/community.pdf"} />} />
-                        <ListBox num={"03."} text={"預計通行捷運"} element={<NewsElement pdf={"/mrt.pdf"} />} />
+                        <ListBox num={"01."} text={"法規"} element={<NewsElement pdf={"../../../ClassyHome_law.pdf"} />} />
+                        <ListBox num={"02."} text={"大社區優點"} element={<NewsElement pdf={"../../../ClassyHome_community.pdf"} />} />
+                        <ListBox num={"03."} text={"預計通行捷運"} element={<NewsElement pdf={"../../../ClassyHome_mrt.pdf"} />} />
                         <ListBox num={"04."} text={"最強人口結構"} element={<Population />} />
                         <ListBox num={"05."} text={"林口學區設籍"} element={<Image url={newsWebp[2].default} />} />
                     </div>

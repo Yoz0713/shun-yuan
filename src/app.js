@@ -16,27 +16,26 @@ import Equipment from './component/equipment';
 import Information from './component/inoformation';
 import { Analytics } from '@vercel/analytics/react';
 export default function App() {
-    let formData = new FormData();
-    formData.append('type', 'admin');
-    fetch("https://board.srl.tw/sys/login_ajax.php", {
-        method: "POST",
-        body: formData,
-        headers: {
-            'Authorization': `Bearer ${sessionStorage['token']}`,
-            'Refresh-Token': localStorage['refresh_token']
-        }
-    }).then((res) => {
+    // let formData = new FormData();
+    // formData.append('type', 'admin');
+    // fetch("https://web-board.tw/sys/login_ajax.php", {
+    //     method: "POST",
+    //     body: formData,
+    //     headers: {
+    //         'Authorization': `Bearer ${sessionStorage['token']}`,
+    //         'Refresh-Token': localStorage['refresh_token']
+    //     }
+    // }).then((res) => {
 
-        res.json().then((data) => {
-            console.log(data, data.success)
-            if (!data.success) {
-                alert(data.msg)
-                location.href = "https://board.srl.tw";
-            }
-        })
+    //     res.json().then((data) => {
+    //         console.log(data, data.success)
+    //         if (!data.success) {
+    //             alert(data.msg)
+    //             location.href = "https://web-board.tw";
+    //         }
+    //     })
 
-    });
-
+    // });
 
     return (
         <>

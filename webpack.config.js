@@ -89,7 +89,18 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            // {
+            //     test: /\.pdf$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: '[name].[ext]'
+            //             }
+            //         }
+            //     ]
+            // }
         ],
     },
     plugins: [
@@ -97,15 +108,15 @@ module.exports = {
             template: './src/index.html',
         }),
         new MiniCssExtractPlugin(),
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: 'public',
-                    globOptions: {
-                        ignore: ['**/index.html', "./portfolio.pdf"], // 忽略 public 目录下的 index.html 文件
-                    },
-                },
-            ],
-        }),
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         {
+        //             from: 'pdf',
+        //             globOptions: {
+        //                 ignore: ['**/index.html', "./portfolio.pdf"], // 忽略 public 目录下的 index.html 文件
+        //             },
+        //         },
+        //     ],
+        // }),
     ],
 };

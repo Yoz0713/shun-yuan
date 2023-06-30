@@ -712,9 +712,29 @@
                                     top: 13vw;
                                 }
 
-                                .elevator-first-floor {
+                                .ab-center {
                                     left: 45.8vw;
-                                    top: 24.2vw;
+                                    top: 24.6vw;
+                                }
+
+                                .elevator-first-floor-A {
+                                    left: 45.8vw;
+                                    top: 29.5vw;
+                                }
+
+                                .elevator-first-floor-B {
+                                    left: 45.8vw;
+                                    top: 19.5vw;
+                                }
+
+                                .elevator-first-floor-C {
+                                    left: 26.2vw;
+                                    top: 13vw;
+                                }
+
+                                .cafe-1f {
+                                    left: 22.8vw;
+                                    top: 25vw;
                                 }
 
                                 .mail-area {
@@ -752,6 +772,11 @@
                                     top: 16.5vw;
                                 }
 
+                                .corridor {
+                                    left: 42vw;
+                                    top: 21vw;
+                                }
+
                                 .cafe {
                                     left: 11vw;
                                     top: 23vw;
@@ -767,9 +792,44 @@
                                     top: 25.8vw;
                                 }
 
+                                .pool-seat {
+                                    left: 20vw;
+                                    top: 27.5vw;
+                                }
+
                                 .chat-banquet {
                                     left: 40.7vw;
                                     top: 7.5vw;
+                                }
+
+                                .elevator-base-floor-A {
+                                    left: 46.5vw;
+                                    top: 26.2vw;
+                                }
+
+                                .elevator-base-floor-B {
+                                    left: 46.5vw;
+                                    top: 21vw;
+                                }
+
+                                .elevator-base-floor-C {
+                                    left: 14vw;
+                                    top: 11vw;
+                                }
+
+                                .elevator-standard-floor-B {
+                                    left: 47.2VW;
+                                    top: 16vw;
+                                }
+
+                                .sky-garden {
+                                    left: 30.7vw;
+                                    top: 8vw;
+                                }
+
+                                .sky-garden2 {
+                                    left: 10vw;
+                                    top: 23vw;
                                 }
 
                                 >.thumbBox {
@@ -789,6 +849,36 @@
                                         text-align: start;
                                         color: $gold_color;
                                     }
+                                }
+
+                                .sky-bar-A {
+                                    left: 29vw;
+                                    top: 17vw;
+                                }
+
+                                .ktv-A {
+                                    left: 33.8vw;
+                                    top: 25vw;
+                                }
+
+                                .sky-bar-B {
+                                    left: 28.5vw;
+                                    top: 21vw;
+                                }
+
+                                .ktv-B {
+                                    left: 34.5vw;
+                                    top: 12.5vw;
+                                }
+
+                                .sky-bar-C {
+                                    left: 28.5vw;
+                                    top: 22.5vw;
+                                }
+
+                                .ktv-C {
+                                    left: 31.8vw;
+                                    top: 11vw;
                                 }
                             }
                         }
@@ -833,37 +923,37 @@
             }
         }
 
-        //react transition group 套件
-        .fade-enter {
-            opacity: 0;
-            transform: translateX(-10%);
-            /* 退场动画效果，根据需要进行调整 */
-        }
 
-        .fade-enter-active {
-            opacity: 1;
-            transform: translateX(0);
-            /* 入场动画效果，根据需要进行调整 */
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        .fade-exit {
-            opacity: 1;
-            transform: translateX(0);
-            /* 退场动画效果，根据需要进行调整 */
-        }
-
-        .fade-exit-active {
-            opacity: 0;
-            transform: translateX(10%);
-            /* 入场动画效果，根据需要进行调整 */
-            transition: opacity 0.5s, transform 0.5s;
-        }
     }
 }
 
 
+//react transition group 套件
+.fade-enter {
+    opacity: 0;
+    transform: translateX(-10%);
+    /* 退场动画效果，根据需要进行调整 */
+}
 
+.fade-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    /* 入场动画效果，根据需要进行调整 */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.fade-exit {
+    opacity: 1;
+    transform: translateX(0);
+    /* 退场动画效果，根据需要进行调整 */
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transform: translateX(10%);
+    /* 入场动画效果，根据需要进行调整 */
+    transition: opacity 0.5s, transform 0.5s;
+}
 
 
 .building-svg {

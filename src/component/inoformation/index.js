@@ -5,7 +5,7 @@ export default function Information() {
     const navigate = useNavigate();
     return (
         <section className="information" onClick={() => navigate(-1)}>
-            <Pdf url={"/linkouCase.pdf"} />
+            <Pdf url={"../../../ClassyHome_linkouCase.pdf"} />
         </section>
     )
 }

@@ -3,9 +3,20 @@ import React, { useEffect, useRef, useState } from 'react'
 const requireWebp = require.context("../../../img/calculator/webp", false, /^\.\/.*\.webp$/);
 const webp = requireWebp.keys().map(requireWebp);
 export default function Calculate() {
+    const [inputValues, setInputValues] = useState({
+        loanYear: "",
+        totalPrice: "",
+        interestRatio: "",
+        allowancePeriod: "",
+        houseType: "",
+        ping: ""
+    });
     return (
         <section className='calculate'>
-            <Calculator />
+            <VirtualKeyboard inputValues={inputValues} setInputValues={setInputValues}>
+                <Calculator inputValues={inputValues} setInputValues={setInputValues} />
+            </VirtualKeyboard>
+
             <div className="imgBox">
                 <img src={webp[0].default} />
             </div>
@@ -13,13 +24,7 @@ export default function Calculate() {
     )
 }
 
-function Calculator() {
-    const [inputValues, setInputValues] = useState({
-        loanYear: "",
-        totalPrice: "",
-        interestRatio: "",
-        allowancePeriod: "",
-    });
+function Calculator({ onFocus, inputValues, setInputValues }) {
     const [resultValues, setResultValues] = useState({
         deposit: "",
         sign: "",
@@ -36,55 +41,15 @@ function Calculator() {
         allowancePeriodCost: "",
         afterAllowancePeriodCost: "",
     })
-    const [showKyb, setShowKyb] = useState(false)
-    const [kybPosition, setKybPosition] = useState({ x: 0, y: 0 })
-    const [kybTarget, setKybTarget] = useState(null)
-    const handleInputChange = (event) => {
-        setInputValues({
-            ...inputValues,
-            [event.target.name]: event.target.value,
-        });
-    };
-    const handleFocus = (e) => {
-        console.log(e.target.blur())
-        setKybPosition({ x: e.target.offsetLeft + "px", y: e.target.offsetTop + "px" })
-        setKybTarget(e.target.name)
-        setShowKyb(true)
-    }
-    const handleKybInput = (e) => {
-        const regex = /\./
-        let flag = true
-        if (regex.test(inputValues[kybTarget])) {
-            flag = false
-        }
-        if (e.target.outerText !== "Delete" && e.target.outerText != ".") {
-            setInputValues({
-                ...inputValues,
-                [kybTarget]: `${inputValues[kybTarget] + e.target.value}`,
-            });
 
-        } else if (e.target.outerText == "Delete") {
-            setInputValues({
-                ...inputValues,
-                [kybTarget]: `${inputValues[kybTarget].slice(0, -1)}`,
-            });
-        } else {
-            if (flag) {
-                setInputValues({
-                    ...inputValues,
-                    [kybTarget]: `${inputValues[kybTarget] + `.`}`,
-                });
-            }
-
-        }
-
-    }
     const handleClearClick = () => {
         setInputValues({
             loanYear: '',
             totalPrice: '',
             interestRatio: '',
             allowancePeriod: '',
+            houseType: "",
+            ping: ""
         });
         setResultValues({
             deposit: "",
@@ -135,7 +100,6 @@ function Calculator() {
         if (inputValues.totalPrice * 0.75 != Math.floor(inputValues.totalPrice * 0.75)) {
             licenseCorrect = licenseCorrect + (inputValues.totalPrice * 0.75 - Math.floor(inputValues.totalPrice * 0.75))
         }
-        console.log(licenseCorrect)
         const toMoneyStyle = (num) => {
             return num.toLocaleString('zh-TW', { minimumFractionDigits: 0, maximumFractionDigits: 0 })
         }
@@ -159,9 +123,19 @@ function Calculator() {
     const year = new Date().getFullYear();
     const month = new Date().getMonth() + 1;
     const date = new Date().getDate()
-
     return (
         <section className="calculator">
+            <div className="tobe">
+                <div className="box">
+                    <label>戶別:</label>
+                    <input type="text" autoComplete="off" onClick={onFocus} readOnly value={inputValues.houseType} name="houseType" />
+                </div>
+                <div className="box">
+                    <label>權狀坪數:</label>
+                    <input type="text" autoComplete="off" onClick={onFocus} readOnly value={inputValues.ping} name="ping" />
+                    <label>坪</label>
+                </div>
+            </div>
             <div className="title">
                 <h2>CALCULATION</h2>
             </div>
@@ -170,7 +144,7 @@ function Calculator() {
                     <label>
                         <p>貸款年限</p>
                         <div className="unitBox">
-                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="loanYear" value={inputValues.loanYear} />
+                            <input type="text" autoComplete="off" onClick={onFocus} readOnly name="loanYear" value={inputValues.loanYear} />
                             <span>年</span>
                         </div>
 
@@ -180,7 +154,7 @@ function Calculator() {
                     <label>
                         <p>總價</p>
                         <div className="unitBox">
-                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="totalPrice" value={inputValues.totalPrice} />
+                            <input type="text" autoComplete="off" onClick={onFocus} readOnly name="totalPrice" value={inputValues.totalPrice} />
                             <span>萬元</span>
                         </div>
 
@@ -190,7 +164,7 @@ function Calculator() {
                     <label>
                         <p>年利率</p>
                         <div className="unitBox">
-                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="interestRatio" value={inputValues.interestRatio} />
+                            <input type="text" autoComplete="off" onClick={onFocus} readOnly name="interestRatio" value={inputValues.interestRatio} />
                             <span>%</span>
                         </div>
 
@@ -200,7 +174,7 @@ function Calculator() {
                     <label>
                         <p>寬限期</p>
                         <div className="unitBox">
-                            <input type="text" autoComplete="off" onFocus={handleFocus} onChange={handleInputChange} name="allowancePeriod" value={inputValues.allowancePeriod} />
+                            <input type="text" autoComplete="off" onClick={onFocus} readOnly name="allowancePeriod" value={inputValues.allowancePeriod} />
                             <span>年</span>
                         </div>
 
@@ -282,17 +256,12 @@ function Calculator() {
 
 
                 </div>
-
-
-
-
-
             </div>
             <div className="printBox">
                 <p className='temporary-payment'>暫收款2房10萬其餘15萬(多退少補)</p>
                 <p className='ps'>備註:<br />
                     1.本付款表之坪數、價格需以正式訂購單為主。<br />
-                    2.買方應於簽約時繳納暫收款，暫收款內容包含：所有權移轉登記規費、印花稅、代書費、代辦手續費、貸款保險費、每戶新台幣貳萬元管理基金、預繳社區管理費六個月..等(多退少補)。<br />
+                    2.買房應於對保時繳納暫收款，暫收款內容包含：所有權移轉登記規費、印花稅、代書費、代辦手續費、貸款保險費、預繳社區管理費六個月..等(多退少補)。<br />
                     3.本付款表銀行貸款之成數、利率，需視客戶當時信用狀況而定。</p>
                 <div className="writeBox">
                     <div className="box">
@@ -305,25 +274,74 @@ function Calculator() {
                     </div>
                 </div>
             </div>
-            <VirtualKeyboard handleKybInput={handleKybInput} showKyb={showKyb} position={kybPosition} setShowKyb={setShowKyb} />
+
+
         </section>
     )
 }
 
 
-function VirtualKeyboard({ showKyb, position, setShowKyb, handleKybInput }) {
+// function VirtualKeyboard({ showKyb, position, setShowKyb, handleKybInput }) {
+//     const liStyle = {
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center",
+//         flex: "0 0 33.3%",
+//         height: "25%",
+//         border: "1px solid #ccc",
+//         cursor: "pointer",
+//         pointerEvents: "auto",
+//         fontSize: "0.8vw",
+//         color: "#1a1a1a",
+//         fontWeight: "600"
+//     }
+//     const closeStyle = {
+
+//         position: "absolute",
+//         backgroundColor: "#c3a457",
+//         width: "100%", height: "1px",
+//         top: 0,
+//         right: 0,
+//         bottom: 0,
+//         left: 0,
+//         margin: "auto"
+//     }
+//     return (
+//         <ul className='keyboard' style={{ display: showKyb ? "flex" : "none", flexWrap: "wrap", width: "15vw", height: "15vw", position: "absolute", left: `calc(${position.x} + 8vw)`, top: `calc(${position.y} + 4vw)`, backgroundColor: "#f7f7f7", border: "1px solid #ccc" }}>
+//             {[...Array(9)].map((item, i) => {
+//                 return (
+//                     <li value={i + 1} style={liStyle} onClick={handleKybInput} key={i}>{i + 1}</li>
+//                 )
+
+//             })}
+//             <li value={0} style={liStyle} onClick={handleKybInput}>0</li>
+//             <li value={"."} style={liStyle} onClick={handleKybInput}>.</li>
+//             <li value={"delete"} style={liStyle} onClick={handleKybInput}>Delete</li>
+//             <div className="close" style={{ position: "absolute", right: "0vw", top: "-2vw", cursor: "pointer", pointerEvents: "auto", width: "1.5vw", height: "1.5vw" }} onClick={() => {
+//                 setShowKyb(false)
+//             }}>
+//                 <div className="line1" style={{ ...closeStyle, transform: "rotate(45deg)" }}></div>
+//                 <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>
+//             </div>
+//         </ul>
+//     )
+// }
+
+
+function VirtualKeyboard({ children, setInputValues, inputValues }) {
     const liStyle = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flex: "0 0 33.3%",
-        height: "25%",
+        flex: "1 1 33.3%",
+        padding: "1vw 0",
         border: "1px solid #ccc",
         cursor: "pointer",
         pointerEvents: "auto",
         fontSize: "0.8vw",
         color: "#1a1a1a",
-        fontWeight: "600"
+        fontWeight: "600",
+
     }
     const closeStyle = {
 
@@ -336,23 +354,105 @@ function VirtualKeyboard({ showKyb, position, setShowKyb, handleKybInput }) {
         left: 0,
         margin: "auto"
     }
-    return (
-        <ul className='keyboard' style={{ display: showKyb ? "flex" : "none", flexWrap: "wrap", width: "15vw", height: "15vw", position: "absolute", left: `calc(${position.x} + 8vw)`, top: `calc(${position.y} + 4vw)`, backgroundColor: "#f7f7f7", border: "1px solid #ccc" }}>
-            {[...Array(9)].map((item, i) => {
-                return (
-                    <li value={i + 1} style={liStyle} onClick={handleKybInput} key={i}>{i + 1}</li>
-                )
+    const [showKyb, setShowKyb] = useState(false)
+    const [kybPosition, setKybPosition] = useState({
+        x: 0,
+        y: 0
+    })
 
-            })}
-            <li value={0} style={liStyle} onClick={handleKybInput}>0</li>
-            <li value={"."} style={liStyle} onClick={handleKybInput}>.</li>
-            <li value={"delete"} style={liStyle} onClick={handleKybInput}>Delete</li>
-            <div className="close" style={{ position: "absolute", right: "0vw", top: "-2vw", cursor: "pointer", pointerEvents: "auto", width: "1.5vw", height: "1.5vw" }} onClick={() => {
-                setShowKyb(false)
-            }}>
-                <div className="line1" style={{ ...closeStyle, transform: "rotate(45deg)" }}></div>
-                <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>
-            </div>
-        </ul>
+    const [toggleEng, setToggleEng] = useState(false)
+    const [targetInput, setTargetInput] = useState(null)
+
+
+    const onFocus = (e) => {
+        console.log(e.pageX)
+        setTargetInput(e.target)
+        setShowKyb(true)
+        setKybPosition({
+            x: e.pageX + "px",
+            y: e.pageY + "px",
+        })
+
+    }
+
+    const handleKybInput = (e) => {
+        const regex = /\./
+        let alreadyHaveDecimal = false
+        if (regex.test(targetInput.value)) {
+            alreadyHaveDecimal = true
+        }
+
+        if (alreadyHaveDecimal) {
+            if (e.target.innerText !== ".") {
+                if (e.target.innerText) {
+                    setInputValues({
+                        ...inputValues,
+                        [targetInput.name]: inputValues[targetInput.name] + e.target.innerText
+                    })
+                }
+
+            }
+        } else {
+            if (e.target.innerText) {
+                setInputValues({
+                    ...inputValues,
+                    [targetInput.name]: inputValues[targetInput.name] + e.target.innerText
+                })
+            }
+        }
+
+    }
+    const deleteKybInput = () => {
+        setInputValues({
+            ...inputValues,
+            [targetInput.name]: inputValues[targetInput.name].slice(0, -1)
+        })
+    }
+    // 将方法和变量作为props传递给组件B
+    const modifiedChildren = React.Children.map(children, (child) => {
+        return React.cloneElement(child, {
+            onFocus: onFocus,
+        });
+    });
+    return (
+        <>
+            <ul className='keyboard' style={{ display: showKyb ? "block" : "none", width: "12vw", position: "absolute", zIndex: "25", padding: "2vw 0.5vw 0.5vw", borderRadius: "15px 15px 0 0", left: `calc(${kybPosition.x} + 2.5vw)`, top: `calc(${kybPosition.y} + 3vw)`, backgroundColor: "#f7f7f7", border: "1px solid #ccc", pointerEvents: "auto" }}>
+                {/* 中文鍵盤 */}
+                <div className="number" style={{ display: !toggleEng ? "flex" : "none", flexWrap: "wrap", width: "100%" }}>
+                    {[...Array(9)].map((item, i) => {
+                        return (
+                            <li value={i + 1} style={liStyle} onClick={handleKybInput} key={i}>{i + 1}</li>
+                        )
+                    })}
+
+
+                </div>
+                {/* english鍵盤 */}
+                <div className="english" style={{ display: toggleEng ? "flex" : "none", flexWrap: "wrap", width: "100%" }}>
+                    {["A", "B", "C", "D", "E", "F", "G", "H", "I"].map((item, i) => {
+                        return (
+                            <li value={item} style={{ ...liStyle }} onClick={handleKybInput} key={i}>{item}</li>
+                        )
+                    })}
+
+                </div>
+                {/* tool area */}
+                <div className="toolBox" style={{ display: "flex", flexWrap: "wrap" }}>
+                    <li value={toggleEng ? "-" : 0} style={liStyle} onClick={handleKybInput}>{toggleEng ? "-" : 0}</li>
+                    <li value={"."} style={liStyle} onClick={handleKybInput}>.</li>
+                    <li value={"delete"} style={liStyle} onClick={deleteKybInput}>Delete</li>
+                    <li style={liStyle} onClick={() => setToggleEng(!toggleEng)}>{toggleEng ? "123" : "ABC"}</li>
+                </div>
+                {/* close area */}
+                <div className="close" style={{ position: "absolute", right: "0.4vw", top: "0.25vw", cursor: "pointer", pointerEvents: "auto", width: "1.5vw", height: "1.5vw" }} onClick={() => {
+                    setShowKyb(false)
+                }}>
+                    <div className="line1" style={{ ...closeStyle, transform: "rotate(45deg)" }}></div>
+                    <div className="line2" style={{ ...closeStyle, transform: "rotate(-45deg)" }}></div>
+                </div>
+            </ul >
+            {modifiedChildren}
+        </>
+
     )
 }

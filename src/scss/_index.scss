@@ -772,7 +772,62 @@
                 }
             }
 
+            ul {
+                display: flex;
+                position: absolute;
+                left: 23vw;
+                bottom: -8vw;
+                transform: rotate(-45deg);
+                cursor: pointer;
+
+                li {
+                    font-size: var(--ch_m_text);
+                    font-weight: 500;
+                    letter-spacing: 0.1em;
+                    color: #000000;
+                    transition: 0.2s;
+                    padding: 0.5vw;
+
+                    &:hover {
+                        color: #fff;
+                        background-color: $gold_color;
+                    }
+                }
+            }
         }
+
+        //react transition group 套件
+        .fifth-page-toggle-enter {
+            opacity: 0;
+
+            /* 退场动画效果，根据需要进行调整 */
+            .imgBox {
+                transform: rotateY(90deg) scale(0.95);
+            }
+        }
+
+        .fifth-page-toggle-enter-active {
+            opacity: 1;
+            /* 入场动画效果，根据需要进行调整 */
+            transition: opacity 0.5s, transform 0.5s;
+
+            .imgBox {
+                transform: rotateY(0) scale(0.95);
+                transition: transform 0.8s;
+            }
+        }
+
+        .fifth-page-toggle-exit {
+            opacity: 1;
+            /* 退场动画效果，根据需要进行调整 */
+        }
+
+        .fifth-page-toggle-exit-active {
+            opacity: 0;
+            /* 入场动画效果，根据需要进行调整 */
+            transition: opacity 0.8s;
+        }
+
     }
 
     .sixth-page {

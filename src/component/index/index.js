@@ -48,7 +48,6 @@ function Home({ slideChangeAction, myState, teamState }) {
             });
             swiper1.slideTo(myState, 0)
         }
-
         allWebp.forEach((item, i) => {
             preloadImage(item.default)
         });
