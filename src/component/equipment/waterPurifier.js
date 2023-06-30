@@ -38,7 +38,7 @@ export default function WaterPurifier() {
             <div className="left" style={{ flex: "0 0 36%" }}>
                 <EquipmentTitle />
                 <h4>櫻花廚下雙溫淨熱飲</h4>
-                <p>首創整合「水器與「加器於一機，自來水經過淨化後可直接飲用，或經過加熱提供飲用熱水。安裝簡單更搭配整合式觸控龍頭，冷熱水一觸即得。</p>
+                <p>首創整合「淨水器」與「廚下加熱器」於一機，自來水經過淨化後可直接飲用，或經過加熱提供飲用熱水。安裝簡單更搭配整合式觸控龍頭，冷熱水一觸即得。</p>
                 <img src={require("../../../img/equipment/svg/005-purifier-text.svg").default} style={{ width: "100%", height: "auto", marginTop: "2vw" }} />
             </div>
             <div className="right" style={{ order: -1, flex: "0 0 62%", alignSelf: "flex-end", marginBottom: "4.5vw" }}>
