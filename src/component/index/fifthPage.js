@@ -109,6 +109,7 @@ function Equipment() {
 
 function SectionNav() {
     const dispatch = useDispatch();
+    const toggleIndex = useSelector(state => state.fifthPageReducer.index)
     let item = [{
         id: 1,
         ch: "匠心精工",
@@ -125,8 +126,8 @@ function SectionNav() {
             <ul className="nav" style={{ width: "100%", margin: "1.2vw 0 0" }}>
                 {item.map((item, i) => {
                     return (
-                        <li onClick={() => dispatch(toggleEquipmentAction(i))} className={`team${i + 1}`}>
-                            <p>{item.ch}</p><p>{item.en}</p>
+                        <li onClick={() => dispatch(toggleEquipmentAction(i))} className={`team${i + 1}`} >
+                            <p style={{ color: toggleIndex == i && "#c2a357" }}>{item.ch}</p><p style={{ color: toggleIndex == i && "#c2a357" }}>{item.en}</p>
                         </li>
                     )
                 })}
