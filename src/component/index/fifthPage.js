@@ -31,11 +31,12 @@ export default function FifthPage() {
 
 function FifthPagePara() {
     return (
-        <div className="fifth-page-para">
+        <div className="fifth-page-para" style={{ pointerEvents: "auto", position: "relative", zIndex: "25" }}>
             <div className="title-box" >
                 <img src={svg[3]} />
                 <h3>CENTURY<br />CRAFT</h3>
             </div>
+            <SectionNav />
         </div>
     )
 
@@ -44,11 +45,6 @@ function FifthPagePara() {
 function FifthPageBg() {
     const arrType = [<Method />, <Equipment />]
     const toggleIndex = useSelector(state => state.fifthPageReducer.index)
-    const dispatch = useDispatch();
-    const arrBtn = [
-        "工法",
-        "設備"
-    ]
 
     return (
         <TransitionGroup>
@@ -60,20 +56,8 @@ function FifthPageBg() {
 
             >
                 <div className="fifth-page-bg">
-
                     {arrType[toggleIndex]}
-
-
                     <ImgBox img={webp[0].default} text={"0"} style={{ opacity: "0", pointerEvents: "none" }} />
-                    <ul className="toggleBtn">
-                        {arrBtn.map((item, i) => {
-                            return (
-                                <li onClick={() => {
-                                    dispatch(toggleEquipmentAction(i))
-                                }} style={{ backgroundColor: toggleIndex == i && "#c2a357", color: toggleIndex == i && "#fff" }}>{item}</li>
-                            )
-                        })}
-                    </ul>
                 </div>
             </CSSTransition>
         </TransitionGroup>
@@ -123,3 +107,31 @@ function Equipment() {
 
 
 
+function SectionNav() {
+    const dispatch = useDispatch();
+    let item = [{
+        id: 1,
+        ch: "匠心精工",
+        en: "METICULOUS CRAFT",
+
+    }, {
+        id: 2,
+        ch: "質選建材",
+        en: "LUXURY MATERIALS",
+
+    },]
+    return (
+        <div className="section-nav">
+            <ul className="nav" style={{ width: "100%", margin: "1.2vw 0 0" }}>
+                {item.map((item, i) => {
+                    return (
+                        <li onClick={() => dispatch(toggleEquipmentAction(i))} className={`team${i + 1}`}>
+                            <p>{item.ch}</p><p>{item.en}</p>
+                        </li>
+                    )
+                })}
+            </ul>
+
+        </div>
+    )
+}

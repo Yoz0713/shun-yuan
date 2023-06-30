@@ -103,6 +103,18 @@ function MenuContent({ open, setOpen, playVideo }) {
         id: "/equipment/brick",
         ch: "隔間牆",
         slide: 4,
+    }, {
+        id: "/equipment/waterPurifier",
+        ch: "櫻花廚下雙溫淨熱飲",
+        slide: 4,
+    }, {
+        id: "/equipment/garbage",
+        ch: "垃圾冷藏",
+        slide: 4,
+    }, {
+        id: "/equipment/dehumidifier",
+        ch: "吊隱式除濕機",
+        slide: 4,
     }], [{
         id: "/news",
         ch: "最新消息",
