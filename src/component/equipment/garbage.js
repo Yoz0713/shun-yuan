@@ -25,7 +25,7 @@ export default function Garbage() {
             }, "<").from(".content .left .more", {
                 opacity: 0,
                 x: 30
-            }, "<+0.3").from(".content .right img", {
+            }, "<+0.3").from(".content .right", {
                 opacity: 0,
                 y: 30,
                 duration: 1.5
@@ -45,8 +45,9 @@ export default function Garbage() {
                 </p>
 
             </div>
-            <div className="right" style={{ order: -1, flex: "0 0 60%" }}>
+            <div className="right" style={{ position: "relative", order: -1, flex: "0 0 60%" }}>
                 <img src={require("../../../img/equipment/webp/007-garbage-bg.webp").default} style={{ width: "80%", height: "auto" }} />
+                <span style={{ position: "absolute", right: "5.5vw", bottom: "0.5vw", letterSpacing: "0.1em", fontSize: "0.7vw", color: "#fff" }}>垃圾冷藏示意圖</span>
             </div>
         </section>
     )

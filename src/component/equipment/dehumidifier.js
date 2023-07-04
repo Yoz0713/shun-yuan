@@ -24,7 +24,7 @@ export default function Dehumidifier() {
             }, "<").from(".content .left .more", {
                 opacity: 0,
                 x: 30
-            }, "<+0.3").from(".content .right img", {
+            }, "<+0.3").from(".content .right", {
                 opacity: 0,
                 y: 30,
                 duration: 1.5
@@ -40,8 +40,10 @@ export default function Dehumidifier() {
                 <p>搭載業界獨家無動力熱管循環系統，不須電力輸入，即可有效增加蒸發器效能，發揮更好的除濕效果，節能、省電，又環保。</p>
                 <img src={require("../../../img/equipment/webp/005-dehumidifier-text-bg.webp").default} style={{ width: "92%", height: "auto", marginTop: "2vw" }} />
             </div>
-            <div className="right" style={{ order: -1, flex: "0 0 55%" }}>
+            <div className="right" style={{ position: "relative", order: -1, flex: "0 0 55%" }}>
                 <img src={require("../../../img/equipment/webp/006-dehumidifier-bg.webp").default} style={{ width: "60%", height: "auto" }} />
+                <span style={{ position: "absolute", right: "5.5vw", bottom: "-3vw", letterSpacing: "0.1em", fontSize: "0.7vw", color: "#000" }}>垃圾冷藏示意圖</span>
+
             </div>
         </section>
     )

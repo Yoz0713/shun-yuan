@@ -43,6 +43,7 @@ export default function WaterPurifier() {
             </div>
             <div className="right" style={{ order: -1, flex: "0 0 62%", alignSelf: "flex-end", marginBottom: "4.5vw" }}>
                 <img src={require("../../../img/equipment/webp/008-purifier-bg.webp").default} style={{ width: "75%", height: "auto", marginLeft: "-8vw" }} />
+
             </div>
             <img src={require("../../../img/equipment/svg/006-sakura.svg")} style={{ position: "absolute", right: "2vw", top: "2vw", width: "8vw", height: "auto" }} />
         </section>
