@@ -9,6 +9,8 @@ import WaterPurifier from './waterPurifier'
 import Dehumidifier from './dehumidifier'
 import Garbage from './garbage'
 import SplitText from "../config/splitText"
+import Sewage from './sewage'
+import WindowProtect from './window'
 export default function Equipment() {
     return (
         <EquipmentContainer>
@@ -21,6 +23,8 @@ export default function Equipment() {
                 <Route path="/waterPurifier" element={<WaterPurifier />} />
                 <Route path="/dehumidifier" element={<Dehumidifier />} />
                 <Route path="/garbage" element={<Garbage />} />
+                <Route path="/sewage" element={<Sewage />} />
+                <Route path="/window" element={<WindowProtect />} />
             </Routes>
         </EquipmentContainer>
     )

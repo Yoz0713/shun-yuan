@@ -115,6 +115,14 @@ function MenuContent({ open, setOpen, playVideo }) {
         id: "/equipment/dehumidifier",
         ch: "吊隱式除濕機",
         slide: 4,
+    }, {
+        id: "/equipment/sewage",
+        ch: "諧振活化水處理器",
+        slide: 4,
+    }, {
+        id: "/equipment/window",
+        ch: "防霾紗窗",
+        slide: 4,
     }], [{
         id: "/news",
         ch: "最新消息",
