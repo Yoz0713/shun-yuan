@@ -42,7 +42,7 @@ export default function Dehumidifier() {
             </div>
             <div className="right" style={{ position: "relative", order: -1, flex: "0 0 55%" }}>
                 <img src={require("../../../img/equipment/webp/006-dehumidifier-bg.webp").default} style={{ width: "60%", height: "auto" }} />
-                <span style={{ position: "absolute", right: "5.5vw", bottom: "-3vw", letterSpacing: "0.1em", fontSize: "0.7vw", color: "#000" }}>垃圾冷藏示意圖</span>
+                <span style={{ position: "absolute", right: "5.5vw", bottom: "-3vw", letterSpacing: "0.1em", fontSize: "0.7vw", color: "#000" }}>吊隱式除濕機示意圖</span>
 
             </div>
         </section>
