@@ -703,53 +703,53 @@
                                 }
 
                                 .entry-gate {
-                                    left: 37.2vw;
+                                    left: 32.9vw;
                                     top: 9vw;
                                 }
 
                                 .lobby {
-                                    left: 37.2vw;
+                                    left: 32.9vw;
                                     top: 13vw;
                                 }
 
                                 .ab-center {
-                                    left: 45.8vw;
-                                    top: 24.6vw;
+                                    left: 43vw;
+                                    top: 24vw;
                                 }
 
                                 .elevator-first-floor-A {
-                                    left: 45.8vw;
-                                    top: 29.5vw;
+                                    left: 43vw;
+                                    top: 28vw;
                                 }
 
                                 .elevator-first-floor-B {
-                                    left: 45.8vw;
-                                    top: 19.5vw;
+                                    left: 43vw;
+                                    top: 20.5vw;
                                 }
 
                                 .elevator-first-floor-C {
-                                    left: 26.2vw;
-                                    top: 13vw;
+                                    left: 19.2vw;
+                                    top: 13.8vw;
                                 }
 
                                 .cafe-1f {
-                                    left: 22.8vw;
+                                    left: 15vw;
                                     top: 25vw;
                                 }
 
                                 .mail-area {
-                                    left: 33.65vw;
+                                    left: 28.2vw;
                                     top: 13.7vw;
                                 }
 
                                 .meeting-room {
-                                    left: 43.7vw;
-                                    top: 17.7vw;
+                                    left: 41.8vw;
+                                    top: 16.5vw;
                                 }
 
                                 .art1 {
-                                    left: 21.5vw;
-                                    top: 35vw;
+                                    left: 14vw;
+                                    top: 34.5vw;
                                 }
 
                                 .art2 {
@@ -763,17 +763,17 @@
                                 }
 
                                 .children-game {
-                                    left: 42.2vw;
-                                    top: 29vw;
+                                    left: 37vw;
+                                    top: 29.5vw;
                                 }
 
                                 .office {
-                                    left: 21vw;
+                                    left: 14vw;
                                     top: 16.5vw;
                                 }
 
                                 .corridor {
-                                    left: 42vw;
+                                    left: 38.6vw;
                                     top: 21vw;
                                 }
 
@@ -837,7 +837,7 @@
                                     justify-content: center;
                                     align-items: center;
                                     position: absolute;
-                                    left: 12vw;
+                                    left: 0vw;
                                     bottom: 1.5vw;
                                     top: auto;
                                     border: 1px solid $gold_color;
@@ -879,6 +879,156 @@
                                 .ktv-C {
                                     left: 31.8vw;
                                     top: 11vw;
+                                }
+
+
+                                //家配圖
+                                .a1-standard {
+                                    left: 40vw;
+                                    top: 10vw;
+                                }
+
+                                .a2-standard {
+                                    left: 45.5vw;
+                                    top: 20vw;
+                                }
+
+                                .a3-standard {
+                                    left: 45.5vw;
+                                    top: 27vw;
+                                }
+
+                                .a5-standard {
+                                    left: 35vw;
+                                    top: 28vw;
+                                }
+
+                                .a6-standard {
+                                    left: 22.5vw;
+                                    top: 28vw;
+                                }
+
+                                .a7-standard {
+                                    left: 10vw;
+                                    top: 26vw;
+                                }
+
+                                .a8-standard {
+                                    left: 14vw;
+                                    top: 22vw;
+                                }
+
+                                .a9-standard {
+                                    left: 14vw;
+                                    top: 10vw;
+                                }
+
+                                //B棟
+                                .b1-standard {
+                                    left: 47vw;
+                                    top: 27.5vw;
+                                }
+
+
+                                .b2-standard {
+                                    left: 46vw;
+                                    top: 17vw;
+                                }
+
+
+                                .b3-standard {
+                                    left: 43.5vw;
+                                    top: 11.5vw;
+                                }
+
+                                .b5-standard {
+                                    left: 36vw;
+                                    top: 11vw;
+                                }
+
+                                .b6-standard {
+                                    left: 22.5vw;
+                                    top: 11vw;
+                                }
+
+                                .b7-standard {
+                                    left: 15vw;
+                                    top: 9vw;
+                                }
+
+
+                                .b8-standard {
+                                    left: 14vw;
+                                    top: 17vw;
+                                }
+
+                                .b9-standard {
+                                    left: 15vw;
+                                    top: 27.5vw;
+                                }
+
+                                //C棟
+                                .c1-standard {
+                                    left: 14.6vw;
+                                    top: 3vw;
+                                }
+
+
+                                .c2-standard {
+                                    left: 21.9vw;
+                                    top: 8.5vw;
+                                }
+
+
+                                .c3-standard {
+                                    left: 33.5vw;
+                                    top: 8.5vw;
+                                }
+
+                                .c5-standard {
+                                    left: 43vw;
+                                    top: 8.5vw;
+                                }
+
+                                .c6-standard {
+                                    left: 42.2vw;
+                                    top: 35vw;
+                                }
+
+                                .c7-standard {
+                                    left: 33vw;
+                                    top: 35vw;
+                                }
+
+
+                                .c8-standard {
+                                    left: 21.8vw;
+                                    top: 35vw;
+                                }
+
+                                .c9-standard {
+                                    left: 12.3vw;
+                                    top: 31vw;
+                                }
+
+                                .c1-18-21 {
+                                    left: 25vw;
+                                    top: 6vw;
+                                }
+
+                                .c2-18-21 {
+                                    left: 32vw;
+                                    top: 6vw;
+                                }
+
+                                .c5-18-21 {
+                                    left: 25vw;
+                                    top: 33vw;
+                                }
+
+                                .c3-18-21 {
+                                    left: 32vw;
+                                    top: 33vw;
                                 }
                             }
                         }
@@ -1033,6 +1183,115 @@
                 transform: rotateY(180deg);
 
             }
+        }
+    }
+
+    .funiture-fancy {
+        width: 85%;
+        height: 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+            width: 20%;
+
+            .titleBox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                margin-bottom: 5vw;
+                border: 1px solid $gold_color;
+                border-top: none;
+                border-bottom: none;
+
+                h2,
+                h4 {
+                    color: $gold_color;
+
+                    font-weight: 400;
+                    letter-spacing: 0.1em;
+                }
+
+                h2 {
+                    font-size: pxConvertor(36);
+                    line-height: 1;
+                    margin-bottom: 0.6vw;
+
+                    span {
+                        font-size: pxConvertor(60);
+                        font-weight: 300;
+                        margin-right: 0.6vw;
+                        line-height: 0;
+                    }
+                }
+
+                h4 {
+                    font-size: pxConvertor(21);
+                }
+            }
+
+            svg {
+                width: 100%;
+            }
+
+            p {
+                font-size: pxConvertor(20);
+                color: $gold_color;
+                letter-spacing: 0.1em;
+                width: fit-content;
+                margin: 2.5vw auto 0;
+            }
+        }
+
+        .right {
+            position: relative;
+            width: pxConvertor(1087.8);
+            height: pxConvertor(766);
+
+            .imgBox {
+                width: 100%;
+                height: 100%;
+
+                .box {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+
+                    img {
+
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+
+            .zoom {
+                position: absolute;
+                flex-direction: column;
+                right: -3.5vw;
+                bottom: 0;
+
+                img {
+                    display: block;
+
+                    &:nth-of-type(1) {
+                        margin-bottom: 0.75vw;
+                    }
+                }
+            }
+        }
+
+        >p {
+            position: absolute;
+            right: 10%;
+            bottom: 2.5vw;
+            font-size: pxConvertor(18);
+            letter-spacing: 0.1em;
+            font-weight: 600;
         }
     }
 }

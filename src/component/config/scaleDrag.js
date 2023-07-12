@@ -60,7 +60,7 @@ export default function ScaleDrag({ children, maxRatio = 1, zoomImg1, zoomImg2, 
     const imgBoxStyle = {
         position: "relative",
         overflow: "hidden",
-        pointerEvents: "auto",
+        pointerEvents: scaleRatio == 1 ? "none" : "auto",
     }
     const boxStyle = {
         position: "relative",

@@ -37,7 +37,7 @@ export default function WindowProtect() {
         <section className='sewage' ref={animateRef} style={{ width: "80%", margin: "0 auto", alignItems: "center" }}>
             <div className="left" style={{ flex: "0 0 40%" }}>
                 <EquipmentTitle />
-                <h4>處理後的水質</h4>
+                <h4>防霾紗窗</h4>
                 <p>
                     •  有效阻隔PM2.5<br />
                     •  抵禦紫外線入侵<br />

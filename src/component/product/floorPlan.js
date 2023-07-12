@@ -6,6 +6,7 @@ import { sortData } from './floor/data/floorData'
 import FancyBox from "@/src/component/config/fancyBox"
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ScaleDrag from "@/src/component/config/scaleDrag"
+import { PatternDiagramThumbnail } from '../config/svgCollection'
 export default function FloorPlan() {
     //獲取棟別
     const location = useLocation()
@@ -75,6 +76,7 @@ function FloorPlanImg({ floor, type }) {
                     >
                         <div className="container">
                             {sortData.map((item, i) => {
+
                                 if (floor == item.type) {
                                     if (item.img) {
                                         const imgURL = typeof item.img == "string" ? item.img : item.img[type]
@@ -108,33 +110,39 @@ function FloorPlanImg({ floor, type }) {
                                                     )
                                                 })
                                                     :
-                                                    item.anchor ? item.anchor[type].map((item) => {
+                                                    (typeof item.anchor == "object" && item.anchor.configurationGraph) ? item.anchor[type].map((itemInner) => {
                                                         return (
-                                                            <div className={`${item.class}`} >
-                                                                <FancyBox thumbUrl={item.thumb}>
-                                                                    <div className="floorPlan-fancy">
-                                                                        {item.fancyImg.map((item, i) => {
-                                                                            return (
-                                                                                <img src={item} key={i} style={{ opacity: carousel == i ? 1 : 0 }} />
-                                                                            )
-                                                                        })}
-                                                                        <div className="title">
-                                                                            <p>{`${item.title}-3D示意圖`}</p>
-                                                                        </div>
-                                                                        {item.fancyImg.length > 1 &&
-                                                                            <NavBox carousel={carousel} setCarousel={setCarousel} limit={{ min: 0, max: item.fancyImg.length - 1 }} />
-                                                                        }
-                                                                    </div>
-                                                                </FancyBox>
-                                                                <div className="radiation">
-                                                                    <div className="circle"></div>
-                                                                    <div className="circle"></div>
-                                                                    <div className="circle"></div>
-                                                                </div>
-                                                            </div>
+                                                            // 以下為樓層傢配圖分棟
+                                                            <FunitureFancyBox item={itemInner} configurationGraph={item.anchor.configurationGraph} />
                                                         )
                                                     })
-                                                        : null
+                                                        : typeof item.anchor == "object" && item.anchor[type].map((item) => {
+                                                            // 以下為頂樓公設分棟
+                                                            return (
+                                                                <div className={`${item.class}`} >
+                                                                    <FancyBox thumbUrl={item.thumb}>
+                                                                        <div className="floorPlan-fancy">
+                                                                            {item.fancyImg.map((item, i) => {
+                                                                                return (
+                                                                                    <img src={item} key={i} style={{ opacity: carousel == i ? 1 : 0 }} />
+                                                                                )
+                                                                            })}
+                                                                            <div className="title">
+                                                                                <p>{`${item.title}-3D示意圖`}</p>
+                                                                            </div>
+                                                                            {item.fancyImg.length > 1 &&
+                                                                                <NavBox carousel={carousel} setCarousel={setCarousel} limit={{ min: 0, max: item.fancyImg.length - 1 }} />
+                                                                            }
+                                                                        </div>
+                                                                    </FancyBox>
+                                                                    <div className="radiation">
+                                                                        <div className="circle"></div>
+                                                                        <div className="circle"></div>
+                                                                        <div className="circle"></div>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        })
 
                                                 }
                                                 {item.text &&
@@ -187,6 +195,37 @@ function NavBox({ carousel, setCarousel, limit }) {
             </div>
             <div className="next" onClick={handleClick}>
                 <img src={require("@/img/equipment/svg/003-arrow.svg")} />
+            </div>
+        </div>
+    )
+}
+
+
+const FunitureFancyBox = ({ item, configurationGraph }) => {
+    return (
+        <div className={`${item.class}`} >
+            <FancyBox thumbUrl={item.thumb}>
+                <div className="funiture-fancy" style={{ display: "flex" }}>
+                    <div className="left">
+                        <div className="titleBox">
+                            <h2><span>{item.title.split(",")[0]}</span>{item.title.split(",")[1]}</h2>
+                            <h4>傢俱配置參考示意圖</h4>
+                        </div>
+                        <PatternDiagramThumbnail data={item} configurationGraph={configurationGraph} />
+                        <p>權狀:{item.ping}坪</p>
+                    </div>
+                    <div className="right">
+                        <ScaleDrag maxRatio={1.8} zoomImg1={require("../../../img/urban/svg/001-plus-button.svg")} zoomImg2={require("../../../img/urban/svg/002-minus-button.svg")}>
+                            <img src={item.fancyImg[0]} />
+                        </ScaleDrag>
+                    </div>
+                    <p>本圖僅供俱配置示意參考,實際之格局、建材依合約附圖及建材表為準。</p>
+                </div>
+            </FancyBox>
+            <div className="radiation">
+                <div className="circle"></div>
+                <div className="circle"></div>
+                <div className="circle"></div>
             </div>
         </div>
     )
