@@ -344,56 +344,56 @@ export const sortData = [
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A1.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A1,標準層",
-                    ping: "21.86"
+                    ping: "37.9"
                 },
                 {
                     class: "a2-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A2.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A2,標準層",
-                    ping: "21.86"
+                    ping: "24.43"
                 },
                 {
                     class: "a3-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A3.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A3,標準層",
-                    ping: "21.86"
+                    ping: "37.79"
                 },
                 {
                     class: "a5-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A5.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A5,標準層",
-                    ping: "21.86"
+                    ping: "21.44"
                 },
                 {
                     class: "a6-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A6.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A6,標準層",
-                    ping: "21.86"
+                    ping: "21.44"
                 },
                 {
                     class: "a7-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A7.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A7,標準層",
-                    ping: "21.86"
+                    ping: "33.9"
                 },
                 {
                     class: "a8-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A8.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A8,標準層",
-                    ping: "21.86"
+                    ping: "21.45"
                 },
                 {
                     class: "a9-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/A9.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "A9,標準層",
-                    ping: "21.86"
+                    ping: "34"
                 },
             ],
             B: [
@@ -402,56 +402,56 @@ export const sortData = [
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B1.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B1,標準層",
-                    ping: "21.86"
+                    ping: "37.56"
                 },
                 {
                     class: "b2-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B2.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B2,標準層",
-                    ping: "21.86"
+                    ping: "24.26"
                 },
                 {
                     class: "b3-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B3.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B3,標準層",
-                    ping: "21.86"
+                    ping: "37.45"
                 },
                 {
                     class: "b5-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B5.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B5,標準層",
-                    ping: "21.86"
+                    ping: "21.27"
                 },
                 {
                     class: "b6-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B6.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B6,標準層",
-                    ping: "21.86"
+                    ping: "21.42"
                 },
                 {
                     class: "b7-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B7.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B7,標準層",
-                    ping: "21.86"
+                    ping: "33.96"
                 },
                 {
                     class: "b8-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B8.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B8,標準層",
-                    ping: "21.86"
+                    ping: "21.28"
                 },
                 {
                     class: "b9-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/B9.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "B9,標準層",
-                    ping: "21.86"
+                    ping: "33.75"
                 },
             ],
             C: [
@@ -460,56 +460,56 @@ export const sortData = [
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C1.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C1,標準層",
-                    ping: "21.86"
+                    ping: "35.19"
                 },
                 {
                     class: "c2-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C2.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C2,標準層",
-                    ping: "21.86"
+                    ping: "23.4"
                 },
                 {
                     class: "c3-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C3.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C3,標準層",
-                    ping: "21.86"
+                    ping: "23.4"
                 },
                 {
                     class: "c5-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C5.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C5,標準層",
-                    ping: "21.86"
+                    ping: "36.88"
                 },
                 {
                     class: "c6-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C6.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C6,標準層",
-                    ping: "21.86"
+                    ping: "37.18"
                 },
                 {
                     class: "c7-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C7.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C7,標準層",
-                    ping: "21.86"
+                    ping: "24.93"
                 },
                 {
                     class: "c8-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C8.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C8,標準層",
-                    ping: "21.86"
+                    ping: "24.9"
                 },
                 {
                     class: "c9-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C9.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C9,標準層",
-                    ping: "21.86"
+                    ping: "34.03"
                 },
             ]
         }
@@ -541,28 +541,28 @@ export const sortData = [
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C1-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C1,18~21F",
-                    ping: "21.86"
+                    ping: "60.21"
                 },
                 {
                     class: "c2-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C2-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C2,18~21F",
-                    ping: "21.86"
+                    ping: "63.29"
                 },
                 {
                     class: "c3-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C3-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C3,18~21F",
-                    ping: "21.86"
+                    ping: "65.62"
                 },
                 {
                     class: "c5-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/C5-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
                     title: "C5,18~21F",
-                    ping: "21.86"
+                    ping: "60.72"
                 }
             ]
         }
