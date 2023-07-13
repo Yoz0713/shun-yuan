@@ -110,7 +110,7 @@ function FloorPlanImg({ floor, type }) {
                                                     )
                                                 })
                                                     :
-                                                    ((typeof item.anchor == "object" && type === "C") && item.anchor.configurationGraph) ? item.anchor[type].map((itemInner) => {
+                                                    ((typeof item.anchor == "object" && item.anchor[type]) && item.anchor.configurationGraph) ? item.anchor[type].map((itemInner) => {
                                                         return (
                                                             // 以下為樓層傢配圖分棟
                                                             <FunitureFancyBox item={itemInner} configurationGraph={item.anchor.configurationGraph} />
