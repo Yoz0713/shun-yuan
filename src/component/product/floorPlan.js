@@ -215,7 +215,7 @@ const FunitureFancyBox = ({ item, configurationGraph }) => {
                         <p>權狀:{item.ping}坪</p>
                     </div>
                     <div className="right">
-                        <ScaleDrag maxRatio={1.8} zoomImg1={require("../../../img/urban/svg/001-plus-button.svg")} zoomImg2={require("../../../img/urban/svg/002-minus-button.svg")}>
+                        <ScaleDrag maxRatio={2.2} zoomImg1={require("../../../img/urban/svg/001-plus-button.svg")} zoomImg2={require("../../../img/urban/svg/002-minus-button.svg")}>
                             <img src={item.fancyImg[0]} />
                         </ScaleDrag>
                     </div>
