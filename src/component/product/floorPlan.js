@@ -48,7 +48,7 @@ function FloorPlanTitle({ floor, type }) {
                                 {type}
                                 <span className='dong'>棟</span>
                             </span>
-                            <span className='floor'>{floor}</span>全區平面圖
+                            <span className='floor'>{floor}</span>{floor === "5~8F" ? "標準層" : "全區平面圖"}
                         </h2>
                     ) : (
                         <h2>
@@ -76,9 +76,9 @@ function FloorPlanImg({ floor, type }) {
                     >
                         <div className="container">
                             {sortData.map((item, i) => {
-
                                 if (floor == item.type) {
-                                    if (item.img) {
+                                    if (item.img && (item.img[type] || typeof item.img == "string")) {
+
                                         const imgURL = typeof item.img == "string" ? item.img : item.img[type]
                                         return (
                                             <div className="anchor-area" >
