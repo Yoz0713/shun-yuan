@@ -123,6 +123,10 @@ function MenuContent({ open, setOpen, playVideo }) {
         id: "/equipment/window",
         ch: "防霾紗窗",
         slide: 4,
+    }, {
+        id: "/equipment/elevator",
+        ch: "防疫電梯",
+        slide: 4,
     }], [{
         id: "/news",
         ch: "最新消息",

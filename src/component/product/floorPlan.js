@@ -78,7 +78,6 @@ function FloorPlanImg({ floor, type }) {
                             {sortData.map((item, i) => {
                                 if (floor == item.type) {
                                     if (item.img && (item.img[type] || typeof item.img == "string")) {
-
                                         const imgURL = typeof item.img == "string" ? item.img : item.img[type]
                                         return (
                                             <div className="anchor-area" >

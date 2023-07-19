@@ -99,7 +99,7 @@ function Equipment() {
             <ImgBox img={webp[24].default} text={"櫻花廚下雙溫淨熱飲"} style2={{ objectPosition: "61% 70%" }} url={"/equipment/waterPurifier"} />
             <ImgBox img={webp[25].default} text={"垃圾冷藏"} url={"/equipment/garbage"} />
             <ImgBox img={webp[27].default} text={"防霾紗窗"} style2={{ objectPosition: "65% 65%" }} url={"/equipment/window"} />
-            <ImgBox img={webp[28].default} text={null} style={{ transform: "scale(1.2) translate(-2.05vw,2.05vw)" }} style2={{ objectPosition: "center", }} />
+            <ImgBox img={webp[28].default} text={"防疫電梯"} url={"/equipment/elevator"} style={{ transform: "scale(1.2) translate(-2.05vw,2.05vw)" }} style2={{ objectPosition: "center", }} />
             <ImgBox img={webp[23].default} text={"吊隱式除濕機"} style2={{ objectPosition: "49% center" }} url={"/equipment/dehumidifier"} />
         </>
     )

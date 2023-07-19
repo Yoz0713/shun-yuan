@@ -11,6 +11,7 @@ import Garbage from './garbage'
 import SplitText from "../config/splitText"
 import Sewage from './sewage'
 import WindowProtect from './window'
+import Elevator from './elevator'
 export default function Equipment() {
     return (
         <EquipmentContainer>
@@ -25,6 +26,7 @@ export default function Equipment() {
                 <Route path="/garbage" element={<Garbage />} />
                 <Route path="/sewage" element={<Sewage />} />
                 <Route path="/window" element={<WindowProtect />} />
+                <Route path="/elevator" element={<Elevator />} />
             </Routes>
         </EquipmentContainer>
     )

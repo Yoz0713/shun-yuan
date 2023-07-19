@@ -341,56 +341,56 @@ export const sortData = [
                     class: "a1-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A1.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A1,標準層",
+                    title: "A1,4F",
                     ping: "37.9"
                 },
                 {
                     class: "a2-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A2.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A2,標準層",
+                    title: "A2,4F",
                     ping: "24.43"
                 },
                 {
                     class: "a3-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A3.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A3,標準層",
+                    title: "A3,4F",
                     ping: "37.79"
                 },
                 {
                     class: "a5-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A5.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A5,標準層",
+                    title: "A5,4F",
                     ping: "21.44"
                 },
                 {
                     class: "a6-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A6.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A6,標準層",
+                    title: "A6,4F",
                     ping: "21.44"
                 },
                 {
                     class: "a7-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A7.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A7,標準層",
+                    title: "A7,4F",
                     ping: "33.9"
                 },
                 {
                     class: "a8-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A8.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A8,標準層",
+                    title: "A8,4F",
                     ping: "21.45"
                 },
                 {
                     class: "a9-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A9.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "A9,標準層",
+                    title: "A9,4F",
                     ping: "34"
                 },
             ],
@@ -399,56 +399,56 @@ export const sortData = [
                     class: "b1-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B1.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B1,標準層",
+                    title: "B1,4F",
                     ping: "37.56"
                 },
                 {
                     class: "b2-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B2.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B2,標準層",
+                    title: "B2,4F",
                     ping: "24.26"
                 },
                 {
                     class: "b3-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B3.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B3,標準層",
+                    title: "B3,4F",
                     ping: "37.45"
                 },
                 {
                     class: "b5-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B5.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B5,標準層",
+                    title: "B5,4F",
                     ping: "21.27"
                 },
                 {
                     class: "b6-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B6.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B6,標準層",
+                    title: "B6,4F",
                     ping: "21.42"
                 },
                 {
                     class: "b7-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B7.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B7,標準層",
+                    title: "B7,4F",
                     ping: "33.96"
                 },
                 {
                     class: "b8-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B8.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B8,標準層",
+                    title: "B8,4F",
                     ping: "21.28"
                 },
                 {
                     class: "b9-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B9.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "B9,標準層",
+                    title: "B9,4F",
                     ping: "33.75"
                 },
             ],
@@ -457,56 +457,56 @@ export const sortData = [
                     class: "c1-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C1.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C1,標準層",
+                    title: "C1,4F",
                     ping: "35.19"
                 },
                 {
                     class: "c2-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C2.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C2,標準層",
+                    title: "C2,4F",
                     ping: "23.4"
                 },
                 {
                     class: "c3-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C3.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C3,標準層",
+                    title: "C3,4F",
                     ping: "23.4"
                 },
                 {
                     class: "c5-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C5.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C5,標準層",
+                    title: "C5,4F",
                     ping: "36.88"
                 },
                 {
                     class: "c6-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C6.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C6,標準層",
+                    title: "C6,4F",
                     ping: "37.18"
                 },
                 {
                     class: "c7-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C7.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C7,標準層",
+                    title: "C7,4F",
                     ping: "24.93"
                 },
                 {
                     class: "c8-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C8.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C8,標準層",
+                    title: "C8,4F",
                     ping: "24.9"
                 },
                 {
                     class: "c9-standard",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C9.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C9,標準層",
+                    title: "C9,4F",
                     ping: "34.03"
                 },
             ]
@@ -703,42 +703,337 @@ export const sortData = [
             A: require("@/img/product/floor/floorPlan/svg/A-9~16.svg").default,
             B: require("@/img/product/floor/floorPlan/svg/B-9~16.svg").default,
             C: require("@/img/product/floor/floorPlan/svg/C-9~16.svg").default
+        },
+        anchor: {
+            configurationGraph: "standard",
+            A: [
+                {
+                    class: "a1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A1,9~16F",
+                    ping: "37.9"
+                },
+                {
+                    class: "a2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A2,9~16F",
+                    ping: "24.43"
+                },
+                {
+                    class: "a3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A3,9~16F",
+                    ping: "37.79"
+                },
+                {
+                    class: "a5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A5,9~16F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A6,9~16F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A7,9~16F",
+                    ping: "33.9"
+                },
+                {
+                    class: "a8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A8,9~16F",
+                    ping: "21.45"
+                },
+                {
+                    class: "a9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A9,9~16F",
+                    ping: "34"
+                },
+            ],
+            B: [
+                {
+                    class: "b1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B1,9~16F",
+                    ping: "37.56"
+                },
+                {
+                    class: "b2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B2,9~16F",
+                    ping: "24.26"
+                },
+                {
+                    class: "b3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B3,9~16F",
+                    ping: "37.45"
+                },
+                {
+                    class: "b5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B5,9~16F",
+                    ping: "21.27"
+                },
+                {
+                    class: "b6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B6,9~16F",
+                    ping: "21.42"
+                },
+                {
+                    class: "b7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B7,9~16F",
+                    ping: "33.96"
+                },
+                {
+                    class: "b8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B8,9~16F",
+                    ping: "21.28"
+                },
+                {
+                    class: "b9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B9,9~16F",
+                    ping: "33.75"
+                },
+            ],
+            C: [
+                {
+                    class: "c1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C1,9~16F",
+                    ping: "35.19"
+                },
+                {
+                    class: "c2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C2,9~16F",
+                    ping: "23.4"
+                },
+                {
+                    class: "c3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C3,9~16F",
+                    ping: "23.4"
+                },
+                {
+                    class: "c5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C5,9~16F",
+                    ping: "36.88"
+                },
+                {
+                    class: "c6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C6,9~16F",
+                    ping: "37.18"
+                },
+                {
+                    class: "c7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C7,9~16F",
+                    ping: "24.93"
+                },
+                {
+                    class: "c8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C8,9~16F",
+                    ping: "24.9"
+                },
+                {
+                    class: "c9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "C9,9~16F",
+                    ping: "34.03"
+                },
+            ]
         }
     },
     {
         type: "17F",
         img: {
+            A: require("@/img/product/floor/floorPlan/svg/A-5~8.svg").default,
+            B: require("@/img/product/floor/floorPlan/svg/B-5~8.svg").default,
             C: require("@/img/product/floor/floorPlan/svg/C-18~21.svg").default
         },
         anchor: {
             configurationGraph: "18~21",
+            A: [
+                {
+                    class: "a1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A1,17F",
+                    ping: "37.9"
+                },
+                {
+                    class: "a2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A2,17F",
+                    ping: "24.43"
+                },
+                {
+                    class: "a3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A3,17F",
+                    ping: "37.79"
+                },
+                {
+                    class: "a5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A5,17F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A6,17F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A7,17F",
+                    ping: "33.9"
+                },
+                {
+                    class: "a8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A8,17F",
+                    ping: "21.45"
+                },
+                {
+                    class: "a9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A9,17F",
+                    ping: "34"
+                },
+            ],
+            B: [
+                {
+                    class: "b1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B1,17F",
+                    ping: "37.56"
+                },
+                {
+                    class: "b2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B2,17F",
+                    ping: "24.26"
+                },
+                {
+                    class: "b3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B3,17F",
+                    ping: "37.45"
+                },
+                {
+                    class: "b5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B5,17F",
+                    ping: "21.27"
+                },
+                {
+                    class: "b6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B6,17F",
+                    ping: "21.42"
+                },
+                {
+                    class: "b7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B7,17F",
+                    ping: "33.96"
+                },
+                {
+                    class: "b8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B8,17F",
+                    ping: "21.28"
+                },
+                {
+                    class: "b9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B9,17F",
+                    ping: "33.75"
+                },
+            ],
             C: [
                 {
                     class: "c1-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C1-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C1,18~21F",
+                    title: "C1,17F",
                     ping: "60.21"
                 },
                 {
                     class: "c2-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C2-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C2,18~21F",
+                    title: "C2,17F",
                     ping: "63.29"
                 },
                 {
                     class: "c3-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C3-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C3,18~21F",
+                    title: "C3,17F",
                     ping: "65.62"
                 },
                 {
                     class: "c5-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C5-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C5,18~21F",
+                    title: "C5,17F",
                     ping: "60.72"
                 }
             ]
@@ -754,6 +1049,122 @@ export const sortData = [
         },
         anchor: {
             configurationGraph: "18~21",
+            A: [
+                {
+                    class: "a1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A1,18~21F",
+                    ping: "37.9"
+                },
+                {
+                    class: "a2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A2,18~21F",
+                    ping: "24.43"
+                },
+                {
+                    class: "a3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A3,18~21F",
+                    ping: "37.79"
+                },
+                {
+                    class: "a5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A5,18~21F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A6,18~21F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A7,18~21F",
+                    ping: "33.9"
+                },
+                {
+                    class: "a8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A8,18~21F",
+                    ping: "21.45"
+                },
+                {
+                    class: "a9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A9,18~21F",
+                    ping: "34"
+                },
+            ],
+            B: [
+                {
+                    class: "b1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B1,18~21F",
+                    ping: "37.56"
+                },
+                {
+                    class: "b2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B2,18~21F",
+                    ping: "24.26"
+                },
+                {
+                    class: "b3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B3,18~21F",
+                    ping: "37.45"
+                },
+                {
+                    class: "b5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B5,18~21F",
+                    ping: "21.27"
+                },
+                {
+                    class: "b6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B6,18~21F",
+                    ping: "21.42"
+                },
+                {
+                    class: "b7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B7,18~21F",
+                    ping: "33.96"
+                },
+                {
+                    class: "b8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B8,18~21F",
+                    ping: "21.28"
+                },
+                {
+                    class: "b9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B9,18~21F",
+                    ping: "33.75"
+                },
+            ],
             C: [
                 {
                     class: "c1-18-21",
@@ -790,37 +1201,155 @@ export const sortData = [
     {
         type: "22F",
         img: {
+            A: require("@/img/product/floor/floorPlan/svg/A-5~8.svg").default,
+            B: require("@/img/product/floor/floorPlan/svg/B-5~8.svg").default,
             C: require("@/img/product/floor/floorPlan/svg/C-18~21.svg").default
         },
         anchor: {
             configurationGraph: "18~21",
+            A: [
+                {
+                    class: "a1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A1,22F",
+                    ping: "37.9"
+                },
+                {
+                    class: "a2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A2,22F",
+                    ping: "24.43"
+                },
+                {
+                    class: "a3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A3,22F",
+                    ping: "37.79"
+                },
+                {
+                    class: "a5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A5,22F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A6,22F",
+                    ping: "21.44"
+                },
+                {
+                    class: "a7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A7,22F",
+                    ping: "33.9"
+                },
+                {
+                    class: "a8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A8,22F",
+                    ping: "21.45"
+                },
+                {
+                    class: "a9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-A9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "A9,22F",
+                    ping: "34"
+                },
+            ],
+            B: [
+                {
+                    class: "b1-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B1.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B1,22F",
+                    ping: "37.56"
+                },
+                {
+                    class: "b2-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B2.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B2,22F",
+                    ping: "24.26"
+                },
+                {
+                    class: "b3-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B3.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B3,22F",
+                    ping: "37.45"
+                },
+                {
+                    class: "b5-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B5.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B5,22F",
+                    ping: "21.27"
+                },
+                {
+                    class: "b6-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B6.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B6,22F",
+                    ping: "21.42"
+                },
+                {
+                    class: "b7-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B7.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B7,22F",
+                    ping: "33.96"
+                },
+                {
+                    class: "b8-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B8.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B8,22F",
+                    ping: "21.28"
+                },
+                {
+                    class: "b9-standard",
+                    fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-B9.svg").default],
+                    thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
+                    title: "B9,22F",
+                    ping: "33.75"
+                },
+            ],
             C: [
                 {
                     class: "c1-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C1-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C1,18~21F",
+                    title: "C1,22F",
                     ping: "60.21"
                 },
                 {
                     class: "c2-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C2-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C2,18~21F",
+                    title: "C2,22F",
                     ping: "63.29"
                 },
                 {
                     class: "c3-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C3-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C3,18~21F",
+                    title: "C3,22F",
                     ping: "65.62"
                 },
                 {
                     class: "c5-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C5-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C5,18~21F",
+                    title: "C5,22F",
                     ping: "60.72"
                 }
             ]
@@ -839,28 +1368,28 @@ export const sortData = [
                     class: "c1-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C1-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C1,18~21F",
+                    title: "C1,23F",
                     ping: "60.21"
                 },
                 {
                     class: "c2-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C2-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C2,18~21F",
+                    title: "C2,23F",
                     ping: "63.29"
                 },
                 {
                     class: "c3-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C3-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C3,18~21F",
+                    title: "C3,23F",
                     ping: "65.62"
                 },
                 {
                     class: "c5-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C5-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C5,18~21F",
+                    title: "C5,23F",
                     ping: "60.72"
                 }
             ]
@@ -879,28 +1408,28 @@ export const sortData = [
                     class: "c1-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C1-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C1,18~21F",
+                    title: "C1,24F",
                     ping: "60.21"
                 },
                 {
                     class: "c2-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C2-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C2,18~21F",
+                    title: "C2,24F",
                     ping: "63.29"
                 },
                 {
                     class: "c3-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C3-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C3,18~21F",
+                    title: "C3,24F",
                     ping: "65.62"
                 },
                 {
                     class: "c5-18-21",
                     fancyImg: [require("@/img/product/floor/floorPlan/funiture/F-C5-18-21.svg").default],
                     thumb: require("@/img/urban/svg/003-anchor-dot.svg").default,
-                    title: "C5,18~21F",
+                    title: "C5,24F",
                     ping: "60.72"
                 }
             ]
