@@ -13,9 +13,9 @@ import { slideChangeAction } from '../redux/action/slideChange';
 //引入swiper
 import Swiper, { EffectCreative } from 'swiper';
 import 'swiper/css';
-import SwiperCore, { Mousewheel } from "swiper/core";
+import SwiperCore, { Mousewheel, EffectFade } from "swiper/core";
 import preloadImage from "../config/preload"
-SwiperCore.use([Mousewheel]);
+SwiperCore.use([Mousewheel, EffectFade]);
 const requireWebp1 = require.context("../../../img", true, /^\.\/.*\.webp$/);
 const allWebp = requireWebp1.keys().map(requireWebp1);
 //組合成首頁
@@ -27,16 +27,18 @@ function Home({ slideChangeAction, myState, teamState }) {
     useEffect(() => {
 
         if (swiperRef.current) {
-            Swiper.use([EffectCreative]); // Import the EffectCreative module
 
+            Swiper.use([EffectCreative]); // Import the EffectCreative module
             swiper1 = new Swiper(swiperRef.current, {
                 // Optional parameters
                 direction: 'vertical',
                 // If you want to enable mousewheel support
                 mousewheel: true,
-                speed: 1100,
-                effect: 'custom', // Set the effect to 'creative'
-
+                speed: 700,
+                effect: "fade",
+                fadeEffect: { // configure the fade effect options
+                    crossFade: true // enable cross-fading between slides
+                },
                 on: {
 
                     slideChangeTransitionStart: function (e) {
@@ -63,7 +65,7 @@ function Home({ slideChangeAction, myState, teamState }) {
             <VideoIn />
             <div ref={swiperRef} className="swiper-container">
                 <div className="swiper-wrapper">
-                    <div className="swiper-slide slide1">  <Banner /></div>
+                    <div className="swiper-slide slide1"><Banner /></div>
                     <div className="swiper-slide slide2"> <SecondPage /></div>
                     <div className="swiper-slide slide3"><ThirdPage /></div>
                     <div className="swiper-slide slide4">< ForthPage /></div>

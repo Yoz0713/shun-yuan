@@ -110,3 +110,70 @@ body {
         transform: scale(2.5);
     }
 }
+
+
+@keyframes treeShadow {
+    0% {
+        opacity: 1;
+        rotate: 0;
+        scale: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+        rotate: 6deg;
+        scale: 0.95;
+    }
+
+    75% {
+        opacity: 0.4;
+        rotate: 2deg;
+        scale: 0.975;
+    }
+
+    100% {
+        opacity: 1;
+        rotate: 0;
+        scale: 1;
+    }
+}
+
+@keyframes flowRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(40%);
+    }
+}
+
+@keyframes flowLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-40%);
+    }
+}
+
+@keyframes zoomIn_Out {
+    0% {
+        scale: 1
+    }
+
+    100% {
+        scale: 1.2;
+    }
+}
+
+@keyframes zoomIn_Out_lite {
+    0% {
+        scale: 1
+    }
+
+    100% {
+        scale: 1.07;
+    }
+}

@@ -1,171 +1,173 @@
 import React from 'react';
 
 import { useState } from 'react';
-import { MenuToggleButton } from '../config/svgCollection';
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
-import { playVideo } from '../redux/action/videoToggle';
 import { slideChange } from '../redux/type';
 import { moveToBuildingTeam } from '../redux/action/buildingTeam';
-const requireSvg = require.context("../../../img/layout/svg", false, /^\.\/.*\.svg$/);
-const svg = requireSvg.keys().map(requireSvg);
 
-function Menu({ playVideo }) {
+export default function Menu() {
     const [open, setOpen] = useState(false)
 
     return (
-        <div className="menu" style={{ width: open == false ? "0%" : "100%", transitionDelay: open == true ? "0s" : "0.5s" }}>
+        <div className="menu" style={{ width: open == false ? "0%" : "100%", transitionDelay: open == true ? "0s" : "1.5s", pointerEvents: open == true ? "auto" : "none" }}>
             <ToggleButton open={open} setOpen={setOpen} />
-            <ToggleButton2 open={open} setOpen={setOpen} />
-            <MenuContent open={open} setOpen={setOpen} playVideo={playVideo} />
-            <p style={{ position: "absolute", width: "fit-content", left: 0, right: 0, margin: "0 auto", bottom: "1vw", fontSize: "0.6vw", letterSpacing: "0.05em", color: "rgb(182 147 81)" }}>聯創數位製作</p>
+            <MenuContent open={open} setOpen={setOpen} />
         </div>
     )
 }
 
-function MenuContent({ open, setOpen, playVideo }) {
+function MenuContent({ open, setOpen }) {
+    const dispatch = useDispatch()
+    const [extend, setExtend] = useState(new Array(7).fill(false))
+
     const title = [{
-        ch: "森聯機構",
-        en: "TOP"
+        ch: "國際城市",
+        en: "LOCATION"
     }, {
-        ch: "林口之心",
-        en: "MIDTOWN"
+        ch: "幸福版圖",
+        en: "LIFE"
     }, {
-        ch: "建築設計",
-        en: "DESIGN"
+        ch: "品牌團隊",
+        en: "TEAM"
     }, {
-        ch: "百年工藝",
-        en: "LANDMARK"
+        ch: "當代建築",
+        en: "BUILDING"
     }, {
-        ch: "市場直擊",
+        ch: "極上工藝",
+        en: "MATERIAL"
+    }, {
+        ch: "全球嚴選",
+        en: "EQUIPMENT"
+    }, {
+        ch: "房市熱點",
         en: "NEWS"
     }]
     const item = [[{
-        id: "/team/coporation/sunland",
-        ch: "森築開發",
+        id: "/dayuan",
+        ch: "test",
         slide: 1,
     }, {
-        id: "/team/coporation/oliv",
-        ch: "橄欖樹行銷團隊",
+        id: "/construction",
+        ch: "test",
         slide: 1,
     }, {
-        id: null,
-        ch: "建築團隊",
+        id: "/prospect",
+        ch: "test",
         slide: 1,
-    }], [{
-        id: "/lifefunction",
-        ch: "實景空拍",
-        slide: 2,
     }, {
         id: "/urban",
-        ch: "都市計畫",
+        ch: "test",
+        slide: 1,
+    }], [{
+        id: "/traffic",//"/traffic",
+        ch: "test",
+        slide: 2,
+    }, {
+        id: "/lifefunction",//"/lifefunction",
+        ch: "test",
         slide: 2,
     }], [{
-        id: "/product/exterior",
-        ch: "建築外觀",
+        id: "/team/coporation",
+        ch: "test",
         slide: 3,
     }, {
-        id: "/product/floor",//"/product/floor"
-        ch: "樓層規劃",
-        slide: 3,
-    },
-    //  {
-    //     id: "/product/firstFloor",
-    //     ch: "全區平面圖",
-    //     slide: 3,
-    // },
-    {
-        id: "/product/planet",
-        ch: "植栽規劃",
+        id: "/team/designTeam/building",
+        ch: "test",
         slide: 3,
     }, {
-        id: "/product/cafe",
-        ch: "Mori Café森",
+        id: "/team/designTeam/postulate",
+        ch: "test",
         slide: 3,
     }], [{
-        id: "/equipment/parking",///equipment/parking
-        ch: "車道坡度",
+        id: "/product",
+        ch: "test",
         slide: 4,
+    }], [{
+        id: "/method/structure",
+        ch: "test",
+        slide: 5,
     }, {
-        id: "/equipment/floorHeight",
-        ch: "樓高3米4",
-        slide: 4,
+        id: "/method/waterProof",
+        ch: "test",
+        slide: 5,
     }, {
-        id: "/equipment/cement",
-        ch: "水泥磅數",
-        slide: 4,
+        id: "/method/sweet",
+        ch: "test",
+        slide: 5,
+    }], [{
+        id: "/equipment/kitchen", ch: "test",
+        slide: 6,
     }, {
-        id: "/equipment/floorThick",
-        ch: "樓板厚度",
-        slide: 4,
+        id: "/equipment/bathroom",
+        ch: "test備",
+        slide: 6,
     }, {
-        id: "/equipment/brick",
-        ch: "隔間牆",
-        slide: 4,
-    }, {
-        id: "/equipment/waterPurifier",
-        ch: "櫻花廚下雙溫淨熱飲",
-        slide: 4,
-    }, {
-        id: "/equipment/garbage",
-        ch: "垃圾冷藏",
-        slide: 4,
-    }, {
-        id: "/equipment/dehumidifier",
-        ch: "吊隱式除濕機",
-        slide: 4,
-    }, {
-        id: "/equipment/sewage",
-        ch: "諧振活化水處理器",
-        slide: 4,
+        id: "/equipment/electronLock",
+        ch: "test",
+        slide: 6,
     }, {
         id: "/equipment/window",
-        ch: "防霾紗窗",
-        slide: 4,
+        ch: "test",
+        slide: 6,
     }, {
-        id: "/equipment/elevator",
-        ch: "防疫電梯",
-        slide: 4,
+        id: "/equipment/door",
+        ch: "test",
+        slide: 6,
+    }, {
+        id: "/equipment/floor",
+        ch: "test",
+        slide: 6,
+    }, {
+        id: "/equipment/purifier",
+        ch: "test",
+        slide: 6,
     }], [{
+        id: "/market",
+        ch: "test",
+        slide: 7,
+    }, {
         id: "/news",
-        ch: "最新消息",
-        slide: 5,
+        ch: "test",
+        slide: 7,
     }, {
-        id: "/calculator",
-        ch: "房貸試算",
-        slide: 5,
-    }, {
-        id: "/information",
-        ch: "市場個案",
-        slide: 5,
+        id: "/calculation",///calculation
+        ch: "test",
+        slide: 7,
     }]]
+
     return (
-        <div className="menu-content" style={{ clipPath: open == false ? "polygon(100% 0, 100% 100%, 100% 100%, 100% 0)" : "polygon(100% 0, 100% 100%, 0% 100%, 0% 0)" }}>
+        <div className="menu-content" style={{ WebkitMaskPositionX: open == true ? "-260vw" : "  0vw", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
             <div className="menu-logo">
                 <Link to={"/"} onClick={() => {
-                    playVideo()
+                    dispatch({ type: slideChange, payload: 0 })
+                    dispatch(fullActive())
                     setOpen(false);
 
                 }}>
-                    <img src={svg[1].default} />
+                    {/* <img src={indexSvg[1].default} /> */}
                 </Link>
 
             </div>
             <div className="menu-option">
-                <Option setOpen={setOpen} title={title[0]} item={item[0]} />
-                <Option setOpen={setOpen} title={title[1]} item={item[1]} />
-                <Option setOpen={setOpen} title={title[2]} item={item[2]} />
-                <Option setOpen={setOpen} title={title[3]} item={item[3]} />
-                <Option setOpen={setOpen} title={title[4]} item={item[4]} />
+                {[...Array(7)].map((itm, i) => {
+                    return (
+                        <Option key={i} index={i} setOpen={setOpen} title={title[i]} item={item[i]} extend={extend} setExtend={setExtend} handleClick={() => {
+                            let arr;
+                            arr = new Array(7).fill(false)
+                            if (!extend[i]) {
+                                arr[i] = true;
+                            }
+                            setExtend(arr)
+                        }} />
+                    )
+                })}
             </div>
         </div>
     )
 }
-export default connect(null, {
-    playVideo
-})(Menu)
-function Option({ title, item, setOpen }) {
+
+function Option({ title, item, setOpen, extend, handleClick, index }) {
     const location = useLocation()
     const dispatch = useDispatch()
 
@@ -173,23 +175,24 @@ function Option({ title, item, setOpen }) {
     return (
         <div className="option">
             <div className="option-wrapper">
-                <div className="title-box" >
+                <div className="title-box" onClick={() => {
+                    handleClick();
+                }}>
                     <h2>{title.en}</h2>
                     <h2>{title.ch}</h2>
                 </div>
-                <ul className="nav">
+                <ul className="nav" style={{ transform: extend[index] ? "scaleY(1)" : "scaleY(0)" }}>
                     {item.map((item, i) => {
                         return <li key={item.id} onClick={() => {
                             dispatch({ type: slideChange, payload: item.slide })
-                            dispatch({ type: "videoStop", payload: false })
                             if (item.id == null) {
                                 dispatch(moveToBuildingTeam("team3"))
                             }
                             setOpen(false)
                         }} style={{ pointerEvents: item.id == null ? "auto" : location.pathname == item.id ? "none" : "auto" }}>
                             <Link to={`${item.id == null ? "/" : item.id}`}>
-                                <img src={svg[2]} />
-                                <p style={{ color: item.id == null ? "#000" : location.pathname == item.id ? "#ccc" : "#000" }} >{item.ch}</p>
+                                <div className="square"></div>
+                                <p style={{ color: item.id == null ? "#fff" : location.pathname == item.id ? "#747474" : "#fff" }} >{item.ch}</p>
                             </Link>
                         </li>
                     })}
@@ -205,59 +208,21 @@ function Option({ title, item, setOpen }) {
 
 
 function ToggleButton({ open, setOpen }) {
-    const [enter, setEnter] = useState(false)
-    const [position, setPosition] = useState(null);
-    const [svgHeight, setSvgHeight] = useState(null)
-
-
-    const handleMouseMove = (event) => {
-        setPosition(event.clientY);
-    };
     const handleClick = () => {
         setOpen(!open)
 
     }
-    const handleMouseEnter = () => {
-        setEnter(true)
-    }
+
 
     return (
-        <div className="toggle-button" onMouseMove={handleMouseMove} onClick={handleClick} onMouseLeave={() => setEnter(false)} onMouseEnter={handleMouseEnter} style={{ right: enter == false ? "-3.5vw" : "0", }}>
-            <div className="button-container" style={{ transform: `translateY(${position - (svgHeight / 2)}px)` }}>
-                <MenuToggleButton open={open} setSvgHeight={setSvgHeight} />
-                <div className={`hamburger ${open == true ? "hamburger-active" : null}`}>
+        <div className="toggle-button" onClick={handleClick} style={{ right: 0, pointerEvents: "auto" }}>
 
-                </div>
+            <div className={`hamburger ${open == true ? "hamburger-active" : null}`}>
+
             </div>
+
 
         </div>
     )
 }
 
-function ToggleButton2({ open, setOpen }) {
-    const [enter, setEnter] = useState(false)
-    const [position, setPosition] = useState(null);
-    const [svgHeight, setSvgHeight] = useState(null)
-    const handleMouseMove = (event) => {
-        setPosition(event.clientY);
-    };
-    const handleClick = () => {
-        setOpen(!open)
-
-    }
-    const handleMouseEnter = () => {
-        setEnter(true)
-    }
-
-    return (
-        <div className="toggle-button2" onMouseMove={handleMouseMove} onClick={handleClick} onMouseLeave={() => setEnter(false)} onMouseEnter={handleMouseEnter} style={open == false ? { left: enter == false ? "-108vw" : "-105vw" } : { left: enter == false ? "-8vw" : "-5vw" }}>
-            <div className="button-container" style={{ transform: `translateY(${position - (svgHeight / 2)}px)` }}>
-                <MenuToggleButton open={open} setSvgHeight={setSvgHeight} />
-                <div className={`hamburger ${open == true ? "hamburger-active" : null}`}>
-
-                </div>
-            </div>
-
-        </div>
-    )
-}

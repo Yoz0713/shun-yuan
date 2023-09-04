@@ -2,7 +2,7 @@ import React from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { closeVideo } from '../redux/action/videoToggle';
-const requireSvg = require.context("../../../img/layout/svg", false, /^\.\/.*\.svg$/);
+const requireSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 
 

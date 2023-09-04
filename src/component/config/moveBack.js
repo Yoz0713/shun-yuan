@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { closeVideo } from '../redux/action/videoToggle'
 
 const MoveBack = ({ z }) => {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation()
     const path = location.pathname;
@@ -12,7 +9,6 @@ const MoveBack = ({ z }) => {
     const innerPage = ["/team/portfolio", "/product/floor/choosefloor", "/product/floorPlan"]
 
     const handleClick = function () {
-        dispatch(closeVideo())
         if (innerPage.includes(path)) {
             navigate(-1);
         } else {

@@ -32,8 +32,8 @@
 
 
 .index {
-    background-color: $white_color;
     overflow: hidden;
+    height: 100vh;
 
     //各cut共用高度
     .banner,
@@ -42,7 +42,7 @@
     .forth-page,
     .fifth-page,
     .sixth-page {
-        height: calc(100vw*(9/16));
+        height: 100%;
         transition: 1s;
         //100vw : x = 21 : 9
         //21x = 100vw*9
@@ -57,7 +57,7 @@
         align-items: center;
         position: relative;
         width: fit-content;
-        margin-bottom: 5vw;
+        margin-bottom: 4vw;
 
 
         img {
@@ -73,22 +73,20 @@
             display: block;
             content: "";
             position: absolute;
-            left: 4.5vw;
-            bottom: -3vw;
+            left: 0vw;
+            bottom: -1vw;
             width: 3VW;
             height: 1px;
-            background-color: $gold_color ;
-            transform-origin: left center;
-            transform: rotate(-38deg);
+            background-color: #000;
         }
     }
 
     .nav {
-        width: 70%;
-        margin-left: 3.7vw;
+        width: 80%;
 
         li {
             display: flex;
+            align-items: center;
             margin-bottom: 2vw;
             padding-left: 2vw;
             cursor: pointer;
@@ -100,17 +98,13 @@
             }
 
             & :nth-child(1) {
-                position: absolute;
-                left: 2vw;
-                bottom: -1.5vw;
-                opacity: 0;
-                flex: 0 1 44%;
+                width: 8.5vw;
                 @include title-s-ch();
-
             }
 
             & :nth-child(2) {
-                @include title-s-en()
+                @include title-s-en();
+
             }
 
             &::after {
@@ -118,7 +112,7 @@
                 content: "";
                 width: 0.3vw;
                 height: 0.3vw;
-                background-color: $gold_color;
+                background-color: $brown_color;
                 transform: rotate(45deg);
                 transition: 1s;
                 position: absolute;
@@ -133,25 +127,14 @@
                 content: "";
                 width: 100%;
                 height: 1px;
-                background-color: #cccccc;
+                background-color: #cbcbcb;
                 position: absolute;
                 left: 0;
                 bottom: -1vw;
             }
 
-            &:hover {
-                & :nth-child(1) {
-                    color: $gold_color;
-                    opacity: 1;
-                    bottom: 0;
-                }
 
-                & :nth-child(2) {
-                    color: $gold_color;
-                    transform: translateY(-1.5vw);
-                    opacity: 0;
-                }
-            }
+
 
             &:hover::after {
                 transform: rotate(405deg);
@@ -226,138 +209,44 @@
     }
 
     >.swiper-container {
-        height: calc(100vw*9/16);
+        height: 100%;
 
         .swiper-wrapper {
-
-
-            //第一cut的進退場畫面
-            .swiper-slide-prev.slide1 {
-
-                .banner {
-                    transform: translate(-100%, -100%);
-
-                }
+            .swiper-slide {
+                position: relative;
+                z-index: 0;
+                pointer-events: none;
+                transition: opacity 0.05s;
             }
 
-            //第二cut的進退場畫面
-            .swiper-slide-prev.slide2 {
+            // //第一cut的進退場畫面
+            // .swiper-slide-prev {
 
-                .second-page {
-                    transform: translate(0, -100%);
+            //     .banner {
+            //         opacity: 0;
 
-                }
+            //     }
+            // }
+
+            // //第二cut的進退場畫面
+            // .swiper-slide-prev {
+
+            //     .second-page {
+            //         opacity: 0;
+
+            //     }
+            // }
+
+            .swiper-slide-active {
+                z-index: 10;
+                pointer-events: auto;
+                // .second-page {
+                //     opacity: 1;
+
+                // }
             }
 
-            .swiper-slide-active.slide2 {
 
-                .second-page {
-                    transform: translate(0, 0);
-
-                }
-            }
-
-            .swiper-slide-next.slide2 {
-
-                .second-page {
-                    transform: translate(100%, 100%);
-
-                }
-            }
-
-            //第三cut的進退場畫面
-            .swiper-slide-prev.slide3 {
-
-                .third-page {
-                    transform: translate(100%, -100%);
-
-                }
-            }
-
-            .swiper-slide-active.slide3 {
-
-                .third-page {
-                    transform: translate(0, 0);
-
-                }
-            }
-
-            .swiper-slide-next.slide3 {
-
-                .third-page {
-                    transform: translate(0, 100%);
-
-                }
-            }
-
-            //第四cut的進退場畫面
-            .swiper-slide-prev.slide4 {
-
-                .forth-page {
-                    transform: translate(0%, -100%);
-
-                }
-            }
-
-            .swiper-slide-active.slide4 {
-
-                .forth-page {
-                    transform: translate(0, 0);
-
-                }
-            }
-
-            .swiper-slide-next.slide4 {
-
-                .forth-page {
-                    transform: translate(-100%, 100%);
-
-                }
-            }
-
-            //第五cut的進退場畫面
-
-            .swiper-slide-prev.slide5 {
-
-                .fifth-page {
-                    transform: translate(-100%, -100%);
-
-                }
-            }
-
-            .swiper-slide-active.slide5 {
-
-                .fifth-page {
-                    transform: translate(0, 0);
-
-                }
-            }
-
-            .swiper-slide-next.slide5 {
-
-                .fifth-page {
-                    transform: translate(0%, 100%);
-
-                }
-            }
-
-            //第六cut的進退場畫面
-
-            .swiper-slide-active.slide6 {
-
-                .sixth-page {
-                    transform: translate(0, 0);
-
-                }
-            }
-
-            .swiper-slide-next.slide6 {
-
-                .sixth-page {
-                    transform: translate(100%, 100%);
-
-                }
-            }
         }
     }
 
@@ -369,111 +258,49 @@
         position: relative;
         width: 100%;
 
-
-        svg {
-
-            position: absolute;
-            left: 0;
-            top: 0;
-
-            z-index: 10;
-            pointer-events: none;
-
-            path {
-                transform-origin: center;
-                transform-box: fill-box;
-            }
-        }
-
-        >.imgBox {
-            position: relative;
-            width: 99.9%;
-            height: 100%;
-
-
-
-            .box {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-                overflow: hidden;
-
-                img {
-
-                    width: 100%;
-                    height: 100%;
-                    object-position: cover;
-                }
-
-
-
-
-            }
-
-            & :nth-child(1) {
-                img {
-                    height: 82%;
-                    object-position: center bottom;
-                }
-
-                span {
-                    right: 23.6vw;
-                    bottom: 14.5vw;
-                }
-            }
-
-            & :nth-child(2) {
-                span {
-                    right: 1vw;
-                    bottom: 2.5vw;
-
-                }
-            }
-
-            & :nth-child(3) {
-                span {
-                    right: 48.5vw;
-                    bottom: 1vw;
-
-                }
-            }
-
-        }
-
-        .logo-wrapper {
-            position: absolute;
+        .imgBox {
             width: 100%;
             height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .logoBox {
+            position: absolute;
             left: 0;
+            right: 0;
+            top: pxConvertor(214.01);
+            margin: 0 auto;
+            width: fit-content;
+            z-index: 15;
+
+            img {
+                width: pxConvertor(208.586);
+                height: auto;
+            }
+        }
+
+        .cloud {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .cloud1 {
+            left: 0;
+            bottom: 0;
+            width: 50vw;
+            animation: flowRight 8s linear forwards infinite;
+        }
+
+        .cloud2 {
+            right: 0;
             top: 0;
-            z-index: 11;
-
-            &> :nth-child(1) {
-                position: absolute;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                top: 5vw;
-                width: 8vw;
-            }
-
-            &> :nth-child(2) {
-                position: absolute;
-                left: 5vw;
-                bottom: 0;
-                width: pxConvertor(700);
-            }
-
-            .title-box {
-                position: absolute;
-                bottom: 13vw;
-                left: 16vw;
-                overflow: hidden;
-                margin: 0;
-            }
-
+            width: 50vw;
+            animation: flowLeft 8s linear forwards infinite;
         }
     }
 
@@ -481,476 +308,254 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 85%;
-        margin: 0 auto;
-        padding-left: 2vw;
+        width: 92.5%;
+        margin: 0 auto 0 0;
 
-
-        div {
-            width: 45%;
-        }
 
         .cover-logo {
             display: flex;
             position: relative;
+            width: 65%;
+            height: 100%;
 
-            svg {
+            >a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
                 position: absolute;
                 left: 0;
                 top: 0;
+                right: 0;
                 bottom: 0;
-                margin: auto 0;
-                z-index: 20;
+                margin: auto;
+                transition: 0.3s;
+
+                img {
+                    height: auto;
+                }
             }
 
-            .imgBox {
-                position: relative;
-                width: 100%;
-                height: 25.5vw;
-
-
-                >img {
+            .type1 {
+                svg {
                     position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    margin: auto 0;
+                    z-index: 10;
+                    pointer-events: none;
+                    width: pxConvertor(400);
+                    height: pxConvertor(400);
+                }
+
+                .box {
+                    position: relative;
+                    clip-path: url(#brand-logo);
+                    width: pxConvertor(400);
+                    height: pxConvertor(400);
+                    background-color: #000;
+                    overflow: hidden;
+
+                    img {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: auto;
+                        height: 150%;
+                        scale: 1;
+                        animation: zoomIn_Out 3.5s linear forwards alternate infinite;
+                    }
+                }
+            }
+
+            .type2,
+            .type3 {
+                img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
-                }
-
-                .building-team {
-                    display: flex;
-                    justify-content: center;
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-
-                    a {
-                        img {
-                            width: auto;
-                            height: 15vw;
-                            object-fit: contain;
-                            margin-top: 5vw;
-                        }
-                    }
-
-
-                    .thumb {
-                        display: flex;
-                        position: absolute;
-                        align-items: center;
-                        left: 0;
-                        bottom: -6vw;
-
-                        img {
-                            width: 3vw;
-                            height: 3vw;
-                            border-radius: 50%;
-                            object-fit: cover;
-                            margin-right: 1vw;
-                            cursor: pointer;
-                            transition: filter 0.5s;
-                        }
-                    }
+                    animation: zoomIn_Out_lite 5s linear forwards alternate infinite;
                 }
             }
 
-            .team1 {
-                clip-path: url(#sunLand);
-                transform: scale(0.6, 1);
+            .type2 {
+                img {
+                    object-position: left center;
+                }
             }
 
-            .team2 {
-                clip-path: url(#clipPathTree);
-                transform: scale(1, 1.45) translateY(-3%);
+            .type3 {
+                img {
+                    position: absolute;
+                    bottom: 4vw;
+                }
             }
 
         }
 
+        .section-nav {
+            width: 35%;
+        }
 
     }
 
     .third-page {
         display: flex;
-        align-items: center;
-        width: 95%;
-        margin: 0 0 0 auto;
         position: relative;
+        justify-content: space-between;
+        align-items: center;
+        width: 92.5%;
+        margin: 0 0 0 auto;
 
-        .third-page-bg {
+        .section-nav {
+            width: 30%;
+        }
+
+        .third-page-right {
             position: relative;
-            width: 60%;
-            height: 86%;
-            margin: 0 auto 0 0;
+            width: 70%;
+            height: 100%;
 
-            .svg-cover {
+            a {
                 position: absolute;
-                width: 100%;
-                right: 0;
-                top: -17vw;
-                z-index: 5;
-
-                svg {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            >.imgBox {
+                left: 0;
                 right: 0;
                 top: 0;
                 bottom: 0;
-                left: 0;
                 margin: auto;
-                width: 85%;
+                width: 100%;
                 height: 100%;
-                z-index: 0;
+                transition: 0.4s;
 
-
-                .box {
+                img {
                     width: 100%;
                     height: 100%;
-                    overflow: hidden;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        object-position: 20% center;
-                    }
-
-                    span {
-                        right: 3.5vw;
-                        bottom: 0.5vw;
-                    }
+                    object-fit: cover;
+                    animation: zoomIn_Out_lite 5s linear forwards alternate infinite;
                 }
 
 
             }
         }
-
-        .section-nav {
-            position: relative;
-            z-index: 10;
-            width: 40%;
-        }
-
-
     }
 
     .forth-page {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        width: 91%;
+        justify-content: space-between;
+        width: 92.5%;
         margin: 0 auto 0 0;
         position: relative;
 
-        &-bg {
-            position: absolute;
-            left: 0;
-            top: 0;
+        .forth-page-bg {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 74%;
+            height: 100%;
 
-            &> :nth-child(1) {
-                width: 58vw;
-
-            }
-
-            &> :nth-child(2) {
-                position: absolute;
-                left: 5.8vw;
-                top: 12vw;
-                width: 54vw;
-                -webkit-mask-image: linear-gradient(to top, #000000, #00000010);
-                mask-image: linear-gradient(to top, #000000, #00000010);
-                -webkit-mask-size: 100% 0%;
-                -webkit-mask-position: 0% 100%;
-                -webkit-mask-repeat: no-repeat;
+            a {
+                width: 100%;
+                height: 100%;
 
                 img {
                     width: 100%;
-
-                }
-
-                span {
-                    width: fit-content;
-                    height: fit-content;
-                    right: 0.5vw;
-                    bottom: 0.5vw;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center bottom;
                 }
             }
         }
 
-        &-para {
-            width: fit-content;
+        .forth-page-para {
+            width: 26%;
 
-
-            .paraBox {
-                width: 22vw;
-                line-height: 2.2;
-                margin-left: 4vw;
-
-                >p {
-                    @include para-ch();
-                    font-family: "Microsoft JhengHei", serif;
-                }
-
-                ul {
-                    li {
-                        p {
-                            line-height: 1.7;
-                        }
-                    }
-                }
+            p {
+                color: #666666;
+                font-size: pxConvertor(18);
+                font-family: "Microsoft JhengHei", serif;
+                line-height: 2;
+                letter-spacing: 0.05em;
             }
         }
+
     }
 
     .fifth-page {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-        width: 85%;
-        margin: 0 auto 0 0;
+        justify-content: space-between;
+        width: 92.5%;
+        margin: 0 0 0 auto;
         position: relative;
 
-        .fifth-page-bg {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            position: absolute;
-            left: 8vw;
-            top: -1.5vw;
-            width: 59.6vw;
-            height: fit-content;
-            transform: rotate(45deg);
+        .section-nav {
+            width: 35%;
+        }
 
-            .imgBox {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 19.82vw;
-                height: 19.82vw;
-                position: relative;
-                overflow: hidden;
-                transform: scale(0.95);
-                cursor: pointer;
+        .fifth-page-right {
+            position: relative;
+            width: 65%;
+            height: 100%;
 
-                img,
-                span {
-                    transform: rotate(-45deg);
-                    pointer-events: none;
-                }
+            a {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                transition: 0.4s;
 
                 img {
-                    position: absolute;
-                    left: -25%;
-                    top: -25%;
-                    width: 150%;
-                    height: 150%;
+                    width: 100%;
+                    height: 100%;
                     object-fit: cover;
-                    filter: brightness(0.8) grayscale(1);
-                    transition: filter 0.5s;
-                    object-position: 0% center;
-                }
+                    animation: zoomIn_Out_lite 5s linear forwards alternate infinite;
 
-                span {
-                    position: relative;
-                    width: fit-content;
-                    height: fit-content;
-                    @include title-s-ch();
-                    color: #fff;
-                    letter-spacing: 0.15em;
-                }
-
-                &:hover {
-                    img {
-                        filter: brightness(1) grayscale(0);
-                    }
-                }
-            }
-
-            ul {
-                display: flex;
-                position: absolute;
-                left: 23vw;
-                bottom: -8vw;
-                transform: rotate(-45deg);
-                cursor: pointer;
-
-                li {
-                    font-size: var(--ch_m_text);
-                    font-weight: 500;
-                    letter-spacing: 0.1em;
-                    color: #000000;
-                    transition: 0.2s;
-                    padding: 0.5vw;
-
-                    &:hover {
-                        color: #fff;
-                        background-color: $gold_color;
-                    }
                 }
             }
         }
-
-        //react transition group 套件
-        .fifth-page-toggle-enter {
-            opacity: 0;
-
-            /* 退场动画效果，根据需要进行调整 */
-            .imgBox {
-                transform: rotateY(90deg) scale(0.95);
-            }
-        }
-
-        .fifth-page-toggle-enter-active {
-            opacity: 1;
-            /* 入场动画效果，根据需要进行调整 */
-            transition: opacity 0.5s, transform 0.5s;
-
-            .imgBox {
-                transform: rotateY(0) scale(0.95);
-                transition: transform 0.8s;
-            }
-        }
-
-        .fifth-page-toggle-exit {
-            opacity: 1;
-            /* 退场动画效果，根据需要进行调整 */
-        }
-
-        .fifth-page-toggle-exit-active {
-            opacity: 0;
-            /* 入场动画效果，根据需要进行调整 */
-            transition: opacity 0.8s;
-        }
-
     }
 
     .sixth-page {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 92%;
-        margin: 0 0 0 auto;
+        width: 92.5%;
+        margin: 0 auto 0 0;
         position: relative;
 
-        >img {
-            position: absolute;
-            right: 5vw;
-            bottom: 0.5vw;
-            width: 40vw;
-        }
+        .sixth-page-left {
+            position: relative;
+            width: 65%;
+            height: 100%;
 
-        &-card {
-            display: flex;
-            justify-content: space-between;
-            width: 72%;
-            height: 28vw;
-            margin-right: 4vw;
+            a {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 100%;
+                height: 100%;
+                transition: 0.4s;
 
-
-            /* 创建透视效果 */
-            .card {
-                position: relative;
-                width: 30%;
-                height: 80%;
-                perspective: 1000px;
-                cursor: pointer;
-
-                /* 保持子元素的 3D 转换效果 */
-                .imgBox {
-                    position: relative;
-                    width: 85%;
-                    height: 100%;
-                    margin: 0 auto;
-                    transform-style: preserve-3d;
-
-                    .box {
-                        position: relative;
-                        width: 100%;
-                        height: 100%;
-                        clip-path: polygon(0 15%, 36% 0, 100% 0, 100% 85%, 64% 100%, 0 100%);
-                        z-index: 2;
-                        overflow: hidden;
-
-                        img {
-                            position: relative;
-                            width: 115%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-
-
-                    span {
-                        position: absolute;
-                        left: 1vw;
-                        top: -0.3vw;
-                        color: $gold_color;
-                        font-size: var(--ch_xl_text);
-                        letter-spacing: 0.1em;
-                        z-index: 3;
-                    }
-
-                    &::after,
-                    &::before {
-                        display: block;
-                        content: "";
-                        position: absolute;
-                        right: -0.3vw;
-                        top: -0.3vw;
-                        width: 93%;
-                        height: 102%;
-                        border: 1px solid $gold_color;
-                        z-index: 0;
-                        clip-path: polygon(0 15%, 40% 0, 100% 0, 100% 85%, 60% 100%, 0 100%, 0 30%);
-                        background-color: $gold_color;
-                    }
-
-                    &::before {
-                        z-index: 1;
-                        background-color: #f7f7f7;
-                        border: none;
-                        top: -0.26vw;
-                        right: -0.24vw;
-                        transition: 0.3s;
-                    }
-                }
-
-                .paraBox {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
-                    height: 20%;
-
-                    h6 {
-                        @include title-s-en();
-                    }
-                }
-
-                >a {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
+                img {
                     width: 100%;
                     height: 100%;
-                }
+                    object-fit: cover;
+                    animation: zoomIn_Out_lite 5s linear forwards alternate infinite;
 
-                &:hover {
-                    .imgBox {
-                        &::before {
-                            opacity: 0
-                        }
-                    }
                 }
-
             }
-
         }
+
+        .section-nav {
+            width: 35%;
+        }
+
+
     }
 }

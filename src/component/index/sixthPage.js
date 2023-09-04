@@ -1,116 +1,50 @@
-import React from 'react'
-import { useRef, useState, useLayoutEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-// Import animation libary
-import { gsap } from "gsap";
-
-const requireSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
-const svg = requireSvg.keys().map(requireSvg);
-const requireWebp = require.context("../../../img/index/webp", false, /^\.\/.*\.webp$/);
-const webp = requireWebp.keys().map(requireWebp);
-function SixthPage({ reduxState }) {
-    const animateRef = useRef(null);
-    let animationDone = false
-
-    useLayoutEffect(() => {
-        let gg;
-        let ctx;
-
-        if (reduxState === 5) {
-            ctx = gsap.context(() => {
-                gg = gsap.timeline({ paused: true })
-                gg.from(".sixth-page-card .card", {
-                    opacity: 0,
-                    filter: "blur(2px)",
-                    duration: 1.8,
-                    y: "2.5vw",
-                    stagger: 0.5
-                }).fromTo(".sixth-page-card .card .imgBox", {
-                    rotateY: 60,
-
-                }, {
-                    rotateY: 0,
-                    stagger: 0.5,
-                    duration: 1.4
-                }, "<").then(() => {
-                    animationDone = true
-                })
-            }, animateRef)
-            setTimeout(() => {
-                gg.play()
-            }, 800);
-
-            return () => {
-                ctx.revert()
-            }
-        }
+import { useSelector } from 'react-redux';
+import SectionNav from '../layout/sectionNav';
+import CloudEffect from '../config/cloudEffect';
 
 
-    }, [reduxState])
-
-    const handleMouseMove = function (e) {
-
-        let gg = gsap.timeline({ paused: true })
-        gg.to(".sixth-page-card .imgBox img", {
-            x: `${(animateRef.current.clientWidth / 2 - e.pageX) / 35}px`
-        }).to(".sixth-page-card .imgBox", {
-            rotateY: (animateRef.current.clientWidth / 2 - e.pageX) / 75,
-            // rotateX: (animateRef.current.clientHeight / 2 - e.pageY) / 75,
-        })
-        if (animationDone == true) {
-            gg.play()
-        }
+function SixthPage() {
+    const animate = useRef(null)
+    const swiperState = useSelector(state => state.slideReducer.slide)
+    const [type, setType] = useState("type1")
+    const data = {
+        title: "LIVE\nENVIRONMENT",
+        data: [{
+            type: "type1",
+            ch: "市場個案",
+            en: "MARKET CASE"
+        }, {
+            type: "type2",
+            ch: "房貸試算",
+            en: "MORTGAGE CALCULATION"
+        }]
     }
+
+
     return (
-        <section className="sixth-page" ref={animateRef} onMouseMove={handleMouseMove}>
-            <SixthPagePara />
-            <SixthPageCard />
-            <img src={svg[2]} />
+        <section className="sixth-page" ref={animate}>
+            <div className="sixth-page-left">
+                <Link to={"/team/coporation/sunland"} className='type1' style={{ opacity: type === "type1" ? 1 : 0, pointerEvents: type === "type1" ? "auto" : "none" }}>
+
+                    <CloudEffect start={type === "type1" && swiperState === 5} style={{ height: "100%" }}>
+                        <img src={require("/img/index/webp/sixth-page-bg1.webp").default} style={{ opacity: (type === "type1" && swiperState === 5) ? 1 : 0, transition: "opacity 4.7s" }} />
+                    </CloudEffect>
+
+                </Link>
+                <Link to={"/team/coporation/sunland"} className='type2' style={{ opacity: type === "type2" ? 1 : 0, pointerEvents: type === "type2" ? "auto" : "none" }}>
+                    <CloudEffect start={type === "type2" && swiperState === 5} style={{ height: "100%" }}>
+                        <img src={require("/img/index/webp/sixth-page-bg2.webp").default} style={{ opacity: (type === "type2" && swiperState === 5) ? 1 : 0, transition: "opacity 4.7s" }} />
+                    </CloudEffect>
+                </Link>
+            </div>
+            <SectionNav handleClick={(e) => setType(e.target.className)} data={data} type={type} />
         </section>
     )
 }
-// connect hoc方式綁定sixth-page
-export default connect((state) => {
-    return {
-        reduxState: state.slideReducer.slide
-    }
-}, null)(SixthPage)
+export default SixthPage
 
-function SixthPagePara() {
-    return (
-        <div className="sixth-page-para">
-            <div className="title-box" >
-                <img src={svg[3]} />
-                <h3>LATEST<br />NEWS</h3>
-            </div>
-        </div>
-    )
 
-}
-function SixthPageCard() {
-    return (
-        <div className="sixth-page-card">
-            <Card img={webp[20].default} url={"/news"} num={"01."} text={"NEWS"} style={{ marginTop: "6.5vw" }} style2={{ objectPosition: "center 0%" }} />
-            <Card img={webp[21].default} url={"/calculator"} num={"02."} text={"CALCULATION"} style2={{ objectPosition: "85% center" }} />
-            <Card img={webp[22].default} url={"/information"} num={"03."} text={"INFORMATION"} style={{ marginTop: "-6.5vw" }} />
-        </div>
-    )
-}
-function Card({ img, num, text, style, style2, url }) {
-    return (
-        <div className="card" style={style}>
-            <div className="imgBox">
-                <div className="box">
-                    <img src={img} style={style2} />
-                </div>
 
-                <span>{num}</span>
-            </div>
-            <div className="paraBox">
-                <h6>{text}</h6>
-            </div>
-            <Link to={url}></Link>
-        </div>
-    )
-}

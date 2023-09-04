@@ -2,7 +2,7 @@ import { anchorBuildingTeam } from "../type";
 
 const initialState = {
     flag: true,
-    team: "team1"
+    team: "type1"
 }
 // 這部分和useReducer hook是一樣的
 export const teamReducer = (state = initialState, action) => {

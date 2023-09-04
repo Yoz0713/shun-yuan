@@ -1,5 +1,5 @@
 $gold_color: #c2a357;
-
+$brown_color: #754c24;
 $white_color: #f7f7f7;
 
 @function pxConvertor($args) {
@@ -33,6 +33,7 @@ $white_color: #f7f7f7;
 
     img {
         width: 7vw;
+
     }
 }
 
@@ -47,12 +48,15 @@ $white_color: #f7f7f7;
 
     .hamburger {
         position: absolute;
-        right: 0.5vw;
-        top: 9.8vw;
-        width: 15%;
-        height: 1px;
-        background-color: #fff;
+        right: 1.4vw;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        width: 55%;
+        height: 2px;
+        background-color: $brown_color;
         pointer-events: none;
+        transition: 0.5s;
 
         &::after,
         &::before {
@@ -60,24 +64,35 @@ $white_color: #f7f7f7;
             content: "";
             position: absolute;
             left: 0;
-            top: -0.3vw;
+            top: -0.5vw;
             width: 100%;
-            height: 1px;
-            background-color: #fff;
+            height: 2px;
+            background-color: $brown_color;
+            transform-origin: left center;
+            transition: 0.6s;
         }
+
+
 
         &::before {
             top: auto;
-            bottom: -0.3vw;
+            bottom: -0.5vw;
+
         }
     }
 
     .hamburger-active {
-        background-color: $gold_color;
+        background-color: transparent;
 
-        &::after,
         &::before {
-            background-color: $gold_color;
+            transform: rotate(-45deg);
+            bottom: -0.66vw;
+            background-color: #fff;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+            background-color: #fff;
         }
     }
 
@@ -87,81 +102,27 @@ $white_color: #f7f7f7;
         justify-content: flex-end;
         position: absolute;
         top: 0;
-        width: 5vw;
-        height: 100%;
+        bottom: 0;
+        margin: auto 0;
+        width: 3vw;
+        height: 3vw;
         z-index: 10;
-        transition: right 0.2s;
-
-        .button-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-
-            svg {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 2vw;
-                height: auto;
-                cursor: pointer;
-                margin: 0 0 0 auto;
-
-                path {
-                    transition: 0.5s;
-                }
-
-            }
-
-
-        }
-
+        cursor: pointer;
     }
 
-    .toggle-button2 {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        top: 0;
-        width: 10vw;
-        height: 100%;
-        z-index: 10;
-        transition: left 0.2s;
-        padding-right: 3vw;
 
-        .button-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-
-
-            svg {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 2vw;
-                height: auto;
-                cursor: pointer;
-                margin: 0 0 0 auto;
-                transform: rotateY(180deg);
-
-                path {
-                    transition: 0.5s;
-                }
-
-            }
-
-
-        }
-    }
 
     .menu-content {
         width: 100%;
         height: 100%;
-        background-color: $gold_color;
-        transition: 0.5s;
+        background-color: #5E8895;
+        transition: 1.6s;
         padding-top: 7vw;
         z-index: 1;
+        -webkit-mask-image: linear-gradient(to right, rgba(47, 104, 122, 0) 20%, rgba(47, 104, 122, 1) 50%);
+
+        -webkit-mask-size: 500% 100%;
+        -webkit-mask-repeat: no-repeat;
 
         .menu-logo {
             display: flex;
@@ -191,6 +152,7 @@ $white_color: #f7f7f7;
                         position: relative;
                         width: fit-content;
                         margin-bottom: 2.5vw;
+                        cursor: pointer;
 
 
                         img {
@@ -202,6 +164,7 @@ $white_color: #f7f7f7;
                             font-size: 1.1vw;
                             font-weight: 400;
                             letter-spacing: 0.05em;
+                            color: #fff;
                         }
 
                         & :nth-child(1) {
@@ -214,17 +177,18 @@ $white_color: #f7f7f7;
                             content: "";
                             position: absolute;
                             left: 0vw;
-                            bottom: -1.4vw;
-                            width: 1.4vw;
+                            bottom: -0.8vw;
+                            width: 1.8vw;
                             height: 1px;
-                            background-color: #000;
-                            transform-origin: left center;
-                            transform: rotate(-44deg);
+                            background-color: #fff;
                         }
                     }
 
                     ul {
                         width: 100%;
+                        transform-origin: center top;
+                        transform: scaleY(0);
+                        transition: transform 0.6s;
 
 
                         li {
@@ -237,20 +201,22 @@ $white_color: #f7f7f7;
                                 display: flex;
                                 align-items: center;
 
-                                img {
-                                    width: 0.8vw;
+                                .square {
+                                    width: 0.3vw;
+                                    height: 0.3vw;
+                                    transform: rotate(45deg);
+                                    background-color: $gold_color;
                                     margin-right: 0.5vw;
                                     pointer-events: none;
                                 }
 
                                 p {
                                     font-weight: 500;
-                                    font-size: 1vw;
+                                    font-size: 0.9vw;
                                     letter-spacing: 0.05em;
                                     margin-bottom: 0.3vw;
                                     pointer-events: none;
                                     transition: color 0.3s;
-                                    color: #000;
                                 }
                             }
 
@@ -267,5 +233,22 @@ $white_color: #f7f7f7;
 
             }
         }
+    }
+}
+
+.fixed-background {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
     }
 }
