@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { slideChangeAction } from '../redux/action/slideChange';
 const requireSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
 export default function VideoIn({ videoState }) {
     const [skip, setSkip] = useState(false)
-
-
+    const dispatch = useDispatch(null)
+    const slideReducer = useSelector(state=>state.slideReducer.slide)
     // useEffect(() => {
     //     document.body.style.overflow = skip == false ? "hidden" : "hidden"
 
@@ -21,6 +22,10 @@ export default function VideoIn({ videoState }) {
         } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
             document.documentElement.msRequestFullscreen();
         }
+        if(slideReducer === -1){
+            dispatch(slideChangeAction(0))
+        }
+     
         setSkip(true)
     })
     return (

@@ -1,9 +1,11 @@
 import React from 'react';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import Video from "/video/banner-cloud.mp4";
 // Import animation libary
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 const requireSvg = require.context("../../../img/index/svg", false, /^\.\/.*\.svg$/);
 const svg = requireSvg.keys().map(requireSvg);
@@ -16,30 +18,19 @@ const webp = requireWebp.keys().map(requireWebp);
 //Banner組件
 export default function Banner() {
     const banner = useRef();
-    const videoRef = useRef(null)
-    const setPlayBack = () => {
-        videoRef.current.playbackRate = 0.8;
-    };
-
+    const slideRedux = useSelector(state=>state.slideReducer.slide)
+   
     return (
-        <section className='banner' ref={banner}>
+        <section className='banner' ref={banner} style={{filter:slideRedux === 0 ?"brightness(1) blur(0)":"brightness(2) blur(1em)",transition:"3s"}}>
             <div className="imgBox">
                 <img src={webp[0].default} />
             </div>
             <div className="logoBox">
                 <img src={require("../../../img/index/svg/logo.svg").default} />
             </div>
-            {/* <img src={webp[5].default} className="cloud cloud1" />
-            <img src={webp[5].default} className="cloud cloud2" /> */}
-            <video ref={videoRef}
-                src={Video}
-                style={{ position: "absolute", left: 0, top: 0, zIndex: 10, pointerEvents: "none", mixBlendMode: "screen", width: "100%", height: "100%", objectFit: "cover" }}
-                onCanPlay={() => { setPlayBack() }}
-                autoPlay
-                muted
-                playsInline
-                loop
-            ></video>
+            <img src={require("@/img/index/webp/banner-cloud.png").default} className="cloud cloud1" />
+            <img src={require("@/img/index/webp/banner-cloud.png").default} className="cloud cloud2" />
+            <img src={require("@/img/index/webp/banner-cloud.png").default} className="cloud cloud3" />
         </section>
 
     )

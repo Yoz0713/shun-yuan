@@ -144,7 +144,7 @@ body {
     }
 
     100% {
-        transform: translateX(40%);
+        transform: translateX(200vw);
     }
 }
 
@@ -154,7 +154,16 @@ body {
     }
 
     100% {
-        transform: translateX(-40%);
+        transform: translateX(-230vw);
+    }
+}
+@keyframes flowLeft2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-180vw);
     }
 }
 

@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { slideChange } from '../redux/type';
 import { moveToBuildingTeam } from '../redux/action/buildingTeam';
+import { slideChangeAction } from '../redux/action/slideChange';
 
 export default function Menu() {
     const [open, setOpen] = useState(false)
@@ -140,14 +141,12 @@ function MenuContent({ open, setOpen }) {
         <div className="menu-content" style={{ WebkitMaskPositionX: open == true ? "-260vw" : "  0vw", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
             <div className="menu-logo">
                 <Link to={"/"} onClick={() => {
-                    dispatch({ type: slideChange, payload: 0 })
-                    dispatch(fullActive())
-                    setOpen(false);
-
+                     setOpen(false);
+                     dispatch(slideChangeAction(-1))
+                    // dispatch(fullActive())
                 }}>
-                    {/* <img src={indexSvg[1].default} /> */}
+                    <img src={require("@/img/index/svg/logo-white.svg").default} />
                 </Link>
-
             </div>
             <div className="menu-option">
                 {[...Array(7)].map((itm, i) => {

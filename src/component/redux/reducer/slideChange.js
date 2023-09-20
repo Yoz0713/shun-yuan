@@ -1,7 +1,7 @@
 import { slideChange } from "../type";
 
 const initialState = {
-    slide: 0,
+    slide: -1,
 
 }
 // 這部分和useReducer hook是一樣的

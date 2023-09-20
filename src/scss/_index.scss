@@ -263,6 +263,7 @@
             height: 100%;
 
             img {
+                display: block;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -287,20 +288,28 @@
         .cloud {
             position: absolute;
             z-index: 1;
+            mix-blend-mode: screen;
+            opacity: 0.5;
         }
 
         .cloud1 {
-            left: 0;
+            right: 100%;
             bottom: 0;
-            width: 50vw;
-            animation: flowRight 8s linear forwards infinite;
+            width: 80vw;
+            animation: flowRight 50s 3s linear forwards infinite;
         }
 
         .cloud2 {
-            right: 0;
+            left: 100%;
             top: 0;
-            width: 50vw;
-            animation: flowLeft 8s linear forwards infinite;
+            width: 120vw;
+            animation: flowLeft 55s 4s linear forwards infinite;
+        }
+        .cloud3 {
+            left: 100%;
+            top: 0;
+            width: 40vw;
+            animation: flowLeft2 40s  linear forwards infinite;
         }
     }
 
@@ -344,6 +353,17 @@
                     pointer-events: none;
                     width: pxConvertor(400);
                     height: pxConvertor(400);
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                    margin: auto;
+                    path{
+                        fill: none;
+                        stroke: #333333;
+                        stroke-dasharray: 2400;
+                        stroke-dashoffset: 2400;
+                    }
                 }
 
                 .box {
@@ -353,7 +373,6 @@
                     height: pxConvertor(400);
                     background-color: #000;
                     overflow: hidden;
-
                     img {
                         position: absolute;
                         left: 0;
@@ -364,6 +383,7 @@
                         animation: zoomIn_Out 3.5s linear forwards alternate infinite;
                     }
                 }
+
             }
 
             .type2,
@@ -461,6 +481,7 @@
                     height: 100%;
                     object-fit: cover;
                     object-position: center bottom;
+                    animation: zoomIn_Out_lite 5s linear forwards alternate infinite;
                 }
             }
         }

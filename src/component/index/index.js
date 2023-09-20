@@ -57,8 +57,12 @@ function Home({ slideChangeAction, myState, teamState }) {
     }, []);
 
     useEffect(() => {
-        console.log(swiperRef.current.swiper.slideTo(myState, 0))
-    }, [teamState])
+      if(myState === -1){
+        swiperRef.current.swiper.slideTo(0)
+      }else{
+        swiperRef.current.swiper.slideTo(myState)
+      }
+    }, [myState])
 
     return (
         <div className='index' >
